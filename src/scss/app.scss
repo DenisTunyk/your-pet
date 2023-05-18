@@ -3,5 +3,7 @@
 @import './utils/mixin';
 
 // base styles
-@import './base/base';
+
 @import './base/reset';
+@import './base/base';
+@import './base/container';

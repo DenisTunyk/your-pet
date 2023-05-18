@@ -1,8 +1,12 @@
-$yellow: #ffc107;
-$grey: #fdf7f2;
-$black: #111111;
+:root {
+  --color-yellow: #ffc107;
+  --color-blue: #54adff;
+  --color-grey: #fdf7f2;
+  --color-black: #111111;
+  --color-blue-light: #cce4fb;
+  --color-green: #00c3ad;
+  --color-red: #f43f5e;
 
-$blue: #54adff;
-$blue-light: #cce4fb;
-$green: #00c3ad;
-$red: #f43f5e;
+  --color-text: #888888;
+  --color-text-btn: #fef9f9;
+}

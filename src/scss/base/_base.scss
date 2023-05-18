@@ -1,0 +1,16 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  //color: var(--black-color);
+  overflow-x: hidden;
+  margin: 0;
+  transition: 0.5s ease-in-out;
+}
+* {
+  box-sizing: border-box;
+}
+.no-scroll {
+  overflow: hidden;
+}

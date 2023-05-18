@@ -22,12 +22,10 @@ export const App = () => {
         <Route path="/ourfriend" element={<OurFriend />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
-
         <Route path="/notices/">
           <Route index element={<Navigate to="/notices/sell" />} />
           <Route path=":categoryName" element={<NoticesPage />} />
         </Route>
-
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

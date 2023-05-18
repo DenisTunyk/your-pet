@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { Header } from './Header/Header';
 import { Home } from '../pages/Home/Home';
@@ -9,6 +9,7 @@ import { Login } from '../pages/Login/Login';
 import { FindPet } from '../pages/FindPet/FindPet';
 import { News } from '../pages/News/News';
 import { Profile } from '../pages/Profile/Profile';
+import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
 
 export const App = () => {
   return (
@@ -21,6 +22,12 @@ export const App = () => {
         <Route path="/ourfriend" element={<OurFriend />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+
+        <Route path="/notices/">
+          <Route index element={<Navigate to="/notices/sell" />} />
+          <Route path=":categoryName" element={<NoticesPage />} />
+        </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

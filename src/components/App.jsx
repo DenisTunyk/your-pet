@@ -6,7 +6,7 @@ import { Header } from './Header/Header';
 import { Home } from '../pages/Home/Home';
 import { NotFound } from '../pages/NotFound/NotFound';
 import { OurFriend } from '../pages/OurFriend/OurFriend';
-import { LoginPage } from 'pages/LoginPage/LoginPage';
+import LoginPage  from '../pages/LoginPage/LoginPage';
 import { FindPet } from '../pages/FindPet/FindPet';
 import { News } from '../pages/News/News';
 import { Profile } from '../pages/Profile/Profile';

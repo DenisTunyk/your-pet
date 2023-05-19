@@ -23,8 +23,8 @@ export const App = () => {
         <Route path="login" element={<LoginPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/notices/">
-        <Route index element={<Navigate to="/notices/sell" />} />
-         <Route path=":categoryName" element={<NoticesPage />} />
+          <Route index element={<Navigate to="/notices/sell" />} />
+          <Route path=":categoryName" element={<NoticesPage />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

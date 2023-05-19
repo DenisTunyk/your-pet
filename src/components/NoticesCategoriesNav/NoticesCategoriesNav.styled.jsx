@@ -55,6 +55,5 @@ const Btn = styled.button`
     color: ${({theme}) => theme.colors.white};
     background-color: transparent;
 }
-
-`
+`;
 export {List, Btn};

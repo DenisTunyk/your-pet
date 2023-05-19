@@ -10,7 +10,6 @@ import { FindPet } from '../pages/FindPet/FindPet';
 import { News } from '../pages/News/News';
 import { Profile } from '../pages/Profile/Profile';
 import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
-import { AuthForm } from './AuthForm/AuthForm';
 
 export const App = () => {
   return (
@@ -29,7 +28,6 @@ export const App = () => {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <AuthForm />
     </div>
   );
 };

@@ -17,5 +17,7 @@ export const ageDeterminationFunc = bd => {
         termin = months === 1 ? 'month' : 'months';
     } 
 
-    const age = years ? `${years} $ {termin}` : ${}
+    const age = years ? `${years} $ {termin}` : `${months} ${termin}`;
+
+return age;
 }

@@ -8,3 +8,12 @@ export const Container = styled.div`
   background-color: #ffff;
   padding: 40px 12px;
 `;
+
+export const Title = styled.h1`
+  font-size: 24px;
+  line-height: 33px;
+
+  align-items: center;
+  text-align: center;
+  color: #111111;
+`;

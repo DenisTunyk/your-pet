@@ -1,10 +1,24 @@
-import { NavLink } from 'react-router-dom';
+import { AuthNavBts, List, PawIcon } from './AuthNav.styled';
 
-export const AuthNav = () => {
+const isAuth = true;
+export const AuthNav = ({ handleLinkClick }) => {
+  const handleClick = () => {
+    if (handleLinkClick) {
+      handleLinkClick();
+    }
+  };
   return (
-    <div>
-      <NavLink to="/register">Log IN</NavLink>
-      <NavLink to="/login">Registration</NavLink>
-    </div>
+    <>
+      {!isAuth ? null : (
+        <List>
+          <AuthNavBts to="/register" onClick={handleClick}>
+            Log IN <PawIcon />
+          </AuthNavBts>
+          <AuthNavBts to="/login" onClick={handleClick}>
+            Registration
+          </AuthNavBts>
+        </List>
+      )}
+    </>
   );
 };

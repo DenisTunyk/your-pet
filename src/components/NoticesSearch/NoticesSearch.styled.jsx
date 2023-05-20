@@ -8,7 +8,7 @@ export const Form = styled.form`
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 24px;
 
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   display: flex;
   overflow: hidden;

@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
-import { Container, Title } from './RegisterForm.styled';
+import {
+  Container,
+  Title,
+  Form,
+  Input,
+  Button,
+  Span,
+} from './RegisterForm.styled';
 
 export const RegisterForm = () => {
   const [email, setEmail] = useState('');
@@ -39,9 +46,9 @@ export const RegisterForm = () => {
   return (
     <Container>
       <Title>Registration</Title>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <label>
-          <input
+          <Input
             type="text"
             name="email"
             value={email}
@@ -50,7 +57,7 @@ export const RegisterForm = () => {
           />
         </label>
         <label>
-          <input
+          <Input
             type="text"
             name="password"
             value={password}
@@ -59,7 +66,7 @@ export const RegisterForm = () => {
           />
         </label>
         <label>
-          <input
+          <Input
             type="text"
             name="confirmPassword"
             value={confirmPassword}
@@ -67,9 +74,9 @@ export const RegisterForm = () => {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Registration</button>
-      </form>
-      <span>Already have an account? </span>
+        <Button type="submit">Registration</Button>
+      </Form>
+      <Span>Already have an account? </Span>
     </Container>
   );
 };

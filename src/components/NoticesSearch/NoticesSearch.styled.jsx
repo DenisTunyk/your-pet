@@ -11,6 +11,8 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   display: flex;
+  overflow: hidden;
+  padding-left: 20px;
 
   @media screen and (min-width: 768px) {
     width: 608px;

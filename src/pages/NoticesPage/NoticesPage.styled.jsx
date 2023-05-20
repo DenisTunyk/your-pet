@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled('div')`
-  margin-bottom: 100px;
+  margin-top: 100px;
+  margin-bottom: 30px;
 `;
 
 export const Title = styled('h2')`

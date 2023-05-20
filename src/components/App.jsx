@@ -14,7 +14,7 @@ import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
 export const App = () => {
   return (
     <div className="container">
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/findpet" element={<FindPet />} />

@@ -14,7 +14,7 @@ import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
 export const App = () => {
   return (
     <div className="container">
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/findpet" element={<FindPet />} />
@@ -23,8 +23,8 @@ export const App = () => {
         <Route path="login" element={<LoginPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/notices/">
-        <Route index element={<Navigate to="/notices/sell" />} />
-         <Route path=":categoryName" element={<NoticesPage />} />
+          <Route index element={<Navigate to="/notices/sell" />} />
+          <Route path=":categoryName" element={<NoticesPage />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

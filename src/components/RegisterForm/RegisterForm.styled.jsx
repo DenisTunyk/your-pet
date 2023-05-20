@@ -2,20 +2,20 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 441px;
-  background: #ffffff;
-  box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
+  height: 473px;
   border-radius: 20px;
+  box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
+  background-color: #ffff;
   padding: 40px 12px;
 `;
 
-export const Titel = styled.h1`
+export const Title = styled.h1`
   font-size: 24px;
   line-height: 33px;
   align-items: center;
   text-align: center;
-  color: #111111;
   margin-bottom: 40px;
+  color: #111111;
 `;
 
 export const Form = styled.form`
@@ -43,7 +43,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   width: 100%;
   height: 48px;
-  padding: 10px 100px;
+  padding: 10px 75px;
   background: #54adff;
   border-radius: 40px;
   border: none;

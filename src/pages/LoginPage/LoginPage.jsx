@@ -1,14 +1,12 @@
-import LoginForm from 'components/LoginForm/LoginForm';
+import { LoginForm } from 'components/LoginForm/LoginForm';
 import { LoginFormWrapper, LogInPage } from './LoginPage.styled';
 
-const LoginPage = () => {
+export const LoginPage = () => {
   return (
     <LogInPage>
       <LoginFormWrapper>
-        <LoginForm /> 
+        <LoginForm />
       </LoginFormWrapper>
     </LogInPage>
   );
 };
-
-export default LoginPage;

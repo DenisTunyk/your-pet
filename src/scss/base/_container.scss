@@ -3,7 +3,11 @@
 
   @media screen and (min-width: 320px) {
     width: 100%;
+ Header
+    // padding-top: 20px;
+=======
     padding-top: 20px;
+ main
     padding-bottom: 100px;
     padding-left: 20px;
     padding-right: 20px;
@@ -12,7 +16,7 @@
   @media screen and (min-width: 768px) {
     width: 768px;
 
-    padding-top: 24px;
+    // padding-top: 24px;
     padding-bottom: 192px;
     padding-left: 32px;
     padding-right: 32px;
@@ -21,7 +25,6 @@
   @media screen and (min-width: 1280px) {
     width: 1280px;
 
-    padding-top: 20px;
     padding-bottom: 100px;
     padding-left: 16px;
     padding-right: 16px;

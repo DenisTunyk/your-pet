@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/auth-operations';
+import {
+  Container,
+  Form,
+  Input,
+  Titel,
+  Button,
+  Span,
+} from './LoginForm.styled';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -30,11 +38,11 @@ export const LoginForm = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+    <Container>
+      <Titel>Login</Titel>
+      <Form onSubmit={handleSubmit}>
         <label>
-          <input
+          <Input
             type="text"
             name="email"
             value={email}
@@ -43,7 +51,7 @@ export const LoginForm = () => {
           />
         </label>
         <label>
-          <input
+          <Input
             type="text"
             name="password"
             value={password}
@@ -51,9 +59,9 @@ export const LoginForm = () => {
             placeholder="Password"
           />
         </label>
-        <button type="submit">Login</button>
-      </form>
-      <span>Don't have an account?</span>
-    </div>
+        <Button type="submit">Login</Button>
+      </Form>
+      <Span>Don't have an account?</Span>
+    </Container>
   );
 };

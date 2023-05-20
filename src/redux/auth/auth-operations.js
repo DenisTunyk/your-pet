@@ -37,4 +37,11 @@ export const logIn = createAsyncThunk(
   }
 );
 
-export const logOut = createAsyncThunk('user/logout');
+export const logOut = createAsyncThunk('user/logout', async (_, thunkAPI) => {
+  try {
+    await axios.get('/user/logout');
+    clearAuthHeader();
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});

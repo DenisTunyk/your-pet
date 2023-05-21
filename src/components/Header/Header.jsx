@@ -1,15 +1,17 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
-import Nav from 'components/Nav/Nav';
+// import Nav from 'components/Nav/Nav';
 import { HeaderWrapper } from './Header.styled';
-import { AuthNav } from 'components/AuthNav/AuthNav';
+// import { AuthNav } from 'components/AuthNav/AuthNav';
+import Navigation from 'components/Navigation/Navigation';
 
 export const Header = () => {
   return (
     <HeaderWrapper>
       <Logo />
-      <Nav />
-      <AuthNav />
+      <Navigation />
+      {/* <Nav />
+      <AuthNav /> */}
     </HeaderWrapper>
   );
 };

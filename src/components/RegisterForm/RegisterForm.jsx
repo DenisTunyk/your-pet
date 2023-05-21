@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Formik } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
@@ -17,12 +17,12 @@ const validationRegister = yup.object().shape({
     .string()
     .min(10, 'Minimum 10 characters')
     .max(70, 'Maximum 70 characters')
-    .required(),
+    .required('Email field is required'),
   password: yup
     .string()
     .max(32, 'Please enter 32 characters or less')
     .min(7, 'Enter 7 or more characters')
-    .required(),
+    .required('Password field is required'),
   confirmPassword: yup.string(),
 });
 
@@ -83,6 +83,7 @@ export const RegisterForm = () => {
               placeholder="Email"
               // onChange={handleChange}
             />
+            <ErrorMessage name="email" />
           </label>
           <label htmlFor="password">
             <Input
@@ -92,6 +93,7 @@ export const RegisterForm = () => {
               placeholder="Password"
               // onChange={handleChange}
             />
+            <ErrorMessage name="password" />
           </label>
           <label>
             <Input
@@ -101,6 +103,7 @@ export const RegisterForm = () => {
               placeholder="Confirm password"
               // onChange={handleChange}
             />
+            <ErrorMessage name="confirmPassword" />
           </label>
           <Button type="submit">Registration</Button>
         </FormAuth>

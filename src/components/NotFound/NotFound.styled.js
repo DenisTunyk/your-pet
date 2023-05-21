@@ -44,13 +44,8 @@ export const NFText = styled.p`
   letter-spacing: -0.02em;
   color: #000000;
 
-  
   @media (min-width: 768px) {
     width: 100%;
-  }
-  @media (min-width: 1440px) {
-    font-size: 18px;
-    line-height: 24px;
   }
 `;
 

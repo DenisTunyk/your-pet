@@ -7,7 +7,7 @@ export const UserData = () => {
   return (
     <div className={css.profile__conteiner}>
       <div className={css.profile__content}>
-        <img src="" alt="user-photo" className={css.profile__photo} />
+        <img src="" alt="userPhoto" className={css.profile__photo} />
         <button type="button" className={css.profile__btn}>
           <img className={css.profile__icon} src={camera} alt="camera" />
           Edit photo

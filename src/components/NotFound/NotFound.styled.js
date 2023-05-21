@@ -1,0 +1,127 @@
+import styled from 'styled-components';
+import { ReactComponent as Paw } from '../../images/icons/pawprint.svg';
+
+import NFbgImgMobileX1 from 'images/notFound/notFound-mobile@2x.png';
+import NFbgImgTabletX1 from 'images/notFound/notFound-tablet@2x.png';
+import NFbgImgDesktopX1 from 'images/notFound/notFound-desktop@2x.png';
+
+export const NFDivWrap = styled.div`
+  max-width: 768px;
+  height: 512px;
+  padding-top: 164px;
+  padding-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* background-image: url(${NFbgImgMobileX1}); */
+  /* background-repeat: no-repeat; */
+  /* background-position: top 285px left 1px;
+  display:flex; */
+  /* @media (min-width: 768px) {
+    background-image: url(${NFbgImgTabletX1});
+    background-position: top 365px left 1px;
+    max-width: 1440px;
+    padding-bottom: 204px;
+  }
+  @media (min-width: 1440px) {
+    background-image: url(${NFbgImgDesktopX1});
+    background-position: top 265px left 1px;
+  } */
+`;
+
+export const NFText = styled.p`
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+
+  /* margin-top: 14px; */
+  /* display: flex; */
+  /* flex-direction:raw;
+  margin-left: auto;
+  margin-right: auto; */
+  /* width: 206px; */
+  /* @media (min-width: 768px) {
+    width: 100%;
+  }
+  @media (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
+  } */
+`;
+
+export const NFImg = styled.div`
+  width: 257px;
+  height: 170px;
+  margin-bottom: 14px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-image: url(${NFbgImgDesktopX1});
+  background-repeat: no-repeat;
+  background-size:contain;
+  /* @media (min-width: 768px) {
+    
+    width: 498px;
+    height: 327px;
+    margin-bottom: 32px;
+  }
+  @media (min-width: 1440px) {
+    
+  } */
+`;
+
+
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 52px;
+  font-family: 'Manrope';
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: #ffc107;
+  text-decoration: none;
+  border-radius: 40px;
+  border: 2px solid;
+  border-color: var(--color-blue);
+  cursor: pointer;
+
+  margin:auto;
+
+  background: var(--color-blue);
+  color: var(--color-text-btn);
+
+  span {
+    margin-right: 12px;
+  }
+
+  svg {
+    fill: var(--color-text-btn);
+  }
+
+  transition: color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color:var(--color-blue);
+    background-color: white;
+  }
+  &:hover svg,
+  &:focus svg {
+    fill: var(--color-blue);
+  }
+`;
+
+export const PawIcon = styled(Paw)`
+  fill: var(--color-blue);
+
+  transition: fill 350ms cubic-bezier(0.4, 0, 0.2, 1);
+`;

@@ -1,3 +1,4 @@
+import { Field, Form } from 'formik';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -18,14 +19,14 @@ export const Title = styled.h1`
   color: #111111;
 `;
 
-export const Form = styled.form`
+export const FormAuth = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin-bottom: 24px;
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   display: flex;
   flex-direction: row;
   align-items: center;

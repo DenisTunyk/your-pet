@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 
 export const NoticesPage = () => {
   const [filter, setFilter] = useState('');
+  console.log(filter);
 
   return (
     <Container>

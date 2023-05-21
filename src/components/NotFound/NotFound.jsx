@@ -1,4 +1,4 @@
-import { NFText, NFImg, NFDivWrap,Button, PawIcon } from './NotFound.styled';
+import { NFText, NFImg, NFDivWrap,Button, PawIcon} from './NotFound.styled';
 
 
 export const NotFound = () => {

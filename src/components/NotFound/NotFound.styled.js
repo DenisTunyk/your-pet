@@ -1,32 +1,37 @@
 import styled from 'styled-components';
 import { ReactComponent as Paw } from '../../images/icons/pawprint.svg';
 
+
 import NFbgImgMobileX1 from 'images/notFound/notFound-mobile@2x.png';
 import NFbgImgTabletX1 from 'images/notFound/notFound-tablet@2x.png';
 import NFbgImgDesktopX1 from 'images/notFound/notFound-desktop@2x.png';
 
+import PawBgImgDesctop from 'images/bg_desctop1x.png';
+import PawBgImgTablet from 'images/bg_tablet1x.png';
+import PawBgImgMobile from 'images/bg_mobile1x.png';
+
 export const NFDivWrap = styled.div`
   max-width: 768px;
   height: 512px;
-  padding-top: 164px;
+  padding-top: 71px;
   padding-bottom: 100px;
   margin-left: auto;
   margin-right: auto;
 
-  /* background-image: url(${NFbgImgMobileX1}); */
-  /* background-repeat: no-repeat; */
-  /* background-position: top 285px left 1px;
-  display:flex; */
-  /* @media (min-width: 768px) {
-    background-image: url(${NFbgImgTabletX1});
-    background-position: top 365px left 1px;
+  background-image: url(${PawBgImgMobile});
+  background-repeat: no-repeat;
+  background-position: top -200px left 100px;
+
+  @media (min-width: 768px) {
+    background-image: url(${PawBgImgTablet});
+    background-position: bottom -150px right 100px;
     max-width: 1440px;
     padding-bottom: 204px;
   }
   @media (min-width: 1440px) {
-    background-image: url(${NFbgImgDesktopX1});
-    background-position: top 265px left 1px;
-  } */
+    background-image: url(${PawBgImgDesctop});
+    background-position: bottom -150px right 100px;
+  }
 `;
 
 export const NFText = styled.p`
@@ -39,40 +44,37 @@ export const NFText = styled.p`
   letter-spacing: -0.02em;
   color: #000000;
 
-  /* margin-top: 14px; */
-  /* display: flex; */
-  /* flex-direction:raw;
-  margin-left: auto;
-  margin-right: auto; */
-  /* width: 206px; */
-  /* @media (min-width: 768px) {
+  
+  @media (min-width: 768px) {
     width: 100%;
   }
   @media (min-width: 1440px) {
     font-size: 18px;
     line-height: 24px;
-  } */
+  }
 `;
 
 export const NFImg = styled.div`
-  width: 257px;
+  width: 292px;
   height: 170px;
   margin-bottom: 14px;
   margin-left: auto;
   margin-right: auto;
+  text-align:center;
+  margin-top:100px;
 
-  background-image: url(${NFbgImgDesktopX1});
+  background-image: url(${NFbgImgMobileX1});
   background-repeat: no-repeat;
   background-size:contain;
-  /* @media (min-width: 768px) {
-    
+   @media (min-width: 768px) {
+    background-image: url(${NFbgImgTabletX1});
     width: 498px;
     height: 327px;
     margin-bottom: 32px;
   }
   @media (min-width: 1440px) {
-    
-  } */
+    background-image: url(${NFbgImgDesktopX1});
+  }
 `;
 
 
@@ -94,6 +96,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   margin:auto;
+  
 
   background: var(--color-blue);
   color: var(--color-text-btn);
@@ -125,3 +128,4 @@ export const PawIcon = styled(Paw)`
 
   transition: fill 350ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
+

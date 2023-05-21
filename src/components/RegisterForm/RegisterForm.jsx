@@ -69,7 +69,11 @@ export const RegisterForm = () => {
   return (
     <Container>
       <Title>Registration</Title>
-      <Formik initialValues={initialVelues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialVelues}
+        validationSchema={validationRegister}
+        onSubmit={handleSubmit}
+      >
         <FormAuth autoComplete="off">
           <label htmlFor="login">
             <Input

@@ -1,8 +1,11 @@
-import { useState } from 'react';
-import { Formik, ErrorMessage } from 'formik';
-import * as yup from 'yup';
+import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { register } from 'redux/auth/auth-operations';
+import {
+  validationRegister,
+  InputError,
+} from 'components/FormValidation/FormValidation';
 import {
   Container,
   Title,
@@ -12,20 +15,6 @@ import {
   FormAuth,
 } from './RegisterForm.styled';
 
-const validationRegister = yup.object().shape({
-  email: yup
-    .string()
-    .min(10, 'Minimum 10 characters')
-    .max(70, 'Maximum 70 characters')
-    .required('Email field is required'),
-  password: yup
-    .string()
-    .max(32, 'Please enter 32 characters or less')
-    .min(7, 'Enter 7 or more characters')
-    .required('Password field is required'),
-  confirmPassword: yup.string(),
-});
-
 const initialVelues = {
   email: '',
   password: '',
@@ -33,38 +22,29 @@ const initialVelues = {
 };
 
 export const RegisterForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
-      case 'confirmPassword':
-        return setConfirmPassword(value);
-      default:
-        return;
+  const handleSubmit = (values, actions) => {
+    const { email, password, confirmPassword } = values;
+    console.log(values);
+
+    if (password === confirmPassword) {
+      dispatch(
+        register({
+          email: email,
+          password: password,
+        })
+      ).then(res => {
+        if (res.payload.code === 201) {
+          navigate('/user', { replace: true });
+          actions.resetForm();
+        }
+        if (res.payload === 'Request failed with status code 409') {
+        }
+      });
     }
   };
-
-  const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    resetForm();
-    // if (password === confirmPassword) {
-    //   dispatch(register({ email, password }));
-    // }
-    // reset();
-  };
-
-  // const reset = () => {
-  //   setEmail('');
-  //   setPassword('');
-  //   setConfirmPassword('');
-  // };
 
   return (
     <Container>
@@ -76,34 +56,20 @@ export const RegisterForm = () => {
       >
         <FormAuth autoComplete="off">
           <label htmlFor="login">
-            <Input
-              type="text"
-              name="email"
-              // value={email}
-              placeholder="Email"
-              // onChange={handleChange}
-            />
-            <ErrorMessage name="email" />
+            <Input type="text" name="email" placeholder="Email" />
+            <InputError name="email" />
           </label>
           <label htmlFor="password">
-            <Input
-              type="text"
-              name="password"
-              // value={password}
-              placeholder="Password"
-              // onChange={handleChange}
-            />
-            <ErrorMessage name="password" />
+            <Input type="text" name="password" placeholder="Password" />
+            <InputError name="password" />
           </label>
           <label>
             <Input
               type="text"
               name="confirmPassword"
-              // value={confirmPassword}
               placeholder="Confirm password"
-              // onChange={handleChange}
             />
-            <ErrorMessage name="confirmPassword" />
+            <InputError name="confirmPassword" />
           </label>
           <Button type="submit">Registration</Button>
         </FormAuth>

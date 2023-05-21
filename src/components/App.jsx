@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-// import { Header } from './Header/Header';
+import { Header } from './Header/Header';
 import { Home } from '../pages/Home/Home';
-import { NotFound } from '../pages/NotFound/NotFound';
+import  {NotFoundPage}  from 'pages/NotFoundPage/NotFoundPage';
 import { OurFriend } from '../pages/OurFriend/OurFriend';
 import { FindPet } from '../pages/FindPet/FindPet';
 import { News } from '../pages/News/News';
@@ -17,7 +17,7 @@ import SharedLayout from './SharedLayout/SharedLayout';
 export const App = () => {
   return (
     <div className="container">
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/" element={<Home />} />
@@ -30,7 +30,7 @@ export const App = () => {
             <Route index element={<Navigate to="/notices/sell" />} />
             <Route path=":categoryName" element={<NoticesPage />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage/>} />
         </Route>
       </Routes>
       <RegisterForm />

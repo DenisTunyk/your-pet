@@ -1,8 +1,5 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-
-
-import { Header } from './Header/Header';
 import { Home } from '../pages/Home/Home';
 import { NotFound } from '../pages/NotFound/NotFound';
 import { OurFriend } from '../pages/OurFriend/OurFriend';
@@ -15,7 +12,6 @@ import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
 export const App = () => {
   return (
     <div className="container">
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/findpet" element={<FindPet />} />

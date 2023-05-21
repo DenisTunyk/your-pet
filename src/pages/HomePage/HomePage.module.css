@@ -1,0 +1,58 @@
+.h1 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  color: black;
+  padding-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  .h1 {
+    font-size: 68px;
+    line-height: 100px;
+    padding-top: 88px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .h1 {
+    padding-top: 92px;
+      font-size: 68px;
+  }
+}
+
+.page {
+  height: calc(100vh - 64px);
+  padding: 0 20px;
+  background-image: url('../../images/main_img/tablet/1tablet1x.png'),
+      url('../../images/main_img/tablet/2tablet1x.png'),
+      url('../../images/main_img/tablet/3tablet1x.png');
+    background-repeat: no-repeat;
+    background-position: top 500px right 400px, top 325px right -30px,
+      top 700px right 0px;
+    background-size: 350px auto, 400px auto, 350px auto, 425px auto;
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    height: 1115px;
+    background-image: url('../../images/main_img/tablet/1tablet1x.png'),
+      url('../../images/main_img/tablet/2tablet1x.png'),
+      url('../../images/main_img/tablet/3tablet1x.png');
+    background-repeat: no-repeat;
+    background-position: top 500px right 400px, top 325px right -30px,
+      top 700px right 0px;
+  background-size: 350px auto, 400px auto, 350px auto, 425px auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .page {
+    max-height: calc(100vh - 74px);
+    background-image: url('../../images/main_img/desctop/1desctop1x.png'),
+      url('../../images/main_img/desctop/2desctop1x.png'),
+      url('../../images/main_img/desctop/3desctop1x.png');
+    background-repeat: no-repeat;
+    background-position: top 259px right 555px, top 59px right 18px,
+      top 560px right 170px;
+    background-size: 450px auto, 524px auto, 350px auto, 425px auto;
+  }
+}

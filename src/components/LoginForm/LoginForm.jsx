@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/auth-operations';
 import { useAuth } from 'hooks/useAutn';
+import { Spinner } from 'components/Spinner/Spinner';
 import {
   validattionLogin,
   InputError,
   InputCorrect,
 } from 'components/FormValidation/FormValidation';
-import { ReactComponent as BiHide } from '../../assets/icon/eye-closed.svg';
-import { ReactComponent as BiShow } from '../../assets/icon/eye-open.svg';
+import { ReactComponent as Closed } from '../../assets/icon/eye-closed.svg';
+import { ReactComponent as Open } from '../../assets/icon/eye-open.svg';
 import {
   Container,
   Input,
@@ -85,16 +86,21 @@ export const LoginForm = () => {
               <InputError name="email" />
             </label>
             <label>
-              className=
-              {!formik.errors.password && formik.values.password !== ''
-                ? 'success'
-                : formik.errors.password && formik.values.password !== ''
-                ? 'error'
-                : 'default'}
-              <Input type="text" name="password" placeholder="Password" />
+              <Input
+                className={
+                  !formik.errors.password && formik.values.password !== ''
+                    ? 'success'
+                    : formik.errors.password && formik.values.password !== ''
+                    ? 'error'
+                    : 'default'
+                }
+                type={showPassword ? 'text' : 'password'}
+                name="password"
+                placeholder="Password"
+              />
               {
                 <IconShow onClick={togglePassword}>
-                  {showPassword ? <BiHide /> : <BiShow />}
+                  {showPassword ? <Open /> : <Closed />}
                 </IconShow>
               }
               {!formik.errors.password && formik.values.password !== '' ? (
@@ -102,7 +108,16 @@ export const LoginForm = () => {
               ) : null}
               <InputError name="password" />
             </label>
-            <Button type="submit">Login</Button>
+            {isPending ? (
+              <Spinner />
+            ) : (
+              <Button
+                disabled={formik.errors.email || formik.errors.password}
+                type="submit"
+              >
+                Login
+              </Button>
+            )}
           </FormAuth>
         )}
       </Formik>

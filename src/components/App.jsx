@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 // import { Header } from './Header/Header';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 import { OurFriend } from '../pages/OurFriend/OurFriend';
-import { FindPet } from '../pages/FindPet/FindPet';
+import AddPetPage  from '../pages/AddPetPage/AddPetPage';
 import { News } from '../pages/News/News';
 import { Profile } from '../pages/Profile/Profile';
 import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
@@ -19,7 +19,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="/findpet" element={<FindPet />} />
+          <Route path="/add-pet" element={<AddPetPage />} />
           <Route path="/main" element={<HomePage />} />
           <Route path="/news" element={<News />} />
           <Route path="/ourfriend" element={<OurFriend />} />

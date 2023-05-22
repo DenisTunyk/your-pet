@@ -37,11 +37,22 @@ export const logIn = createAsyncThunk(
   }
 );
 
-export const logOut = createAsyncThunk('user/logout', async (_, thunkAPI) => {
+export const logOut = createAsyncThunk('user/logOut', async (_, thunkAPI) => {
   try {
-    await axios.get('/user/logout');
+    await axios.get('/user/logOut');
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+export const addMyPet = createAsyncThunk(
+  'user/addMyPet',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      await axios.post('api/pets', credentials);
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

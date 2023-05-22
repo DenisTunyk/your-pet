@@ -54,25 +54,38 @@ export const RegisterForm = () => {
         validationSchema={validationRegister}
         onSubmit={handleSubmit}
       >
-        <FormAuth autoComplete="off">
-          <label htmlFor="login">
-            <Input type="text" name="email" placeholder="Email" />
-            <InputError name="email" />
-          </label>
-          <label htmlFor="password">
-            <Input type="text" name="password" placeholder="Password" />
-            <InputError name="password" />
-          </label>
-          <label>
-            <Input
-              type="text"
-              name="confirmPassword"
-              placeholder="Confirm password"
-            />
-            <InputError name="confirmPassword" />
-          </label>
-          <Button type="submit">Registration</Button>
-        </FormAuth>
+        {({ errors, values }) => (
+          <FormAuth autoComplete="off">
+            <label htmlFor="login">
+              <Input
+                className={
+                  !errors.email && values.email !== ''
+                    ? 'success'
+                    : errors.email && values.email !== ''
+                    ? 'error'
+                    : 'default'
+                }
+                type="text"
+                name="email"
+                placeholder="Email"
+              />
+              <InputError name="email" />
+            </label>
+            <label htmlFor="password">
+              <Input type="text" name="password" placeholder="Password" />
+              <InputError name="password" />
+            </label>
+            <label>
+              <Input
+                type="text"
+                name="confirmPassword"
+                placeholder="Confirm password"
+              />
+              <InputError name="confirmPassword" />
+            </label>
+            <Button type="submit">Registration</Button>
+          </FormAuth>
+        )}
       </Formik>
       <Span>Already have an account? </Span>
     </Container>

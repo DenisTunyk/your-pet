@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/your-pet/static/css/main.76988dcb.css",
-    "main.js": "/your-pet/static/js/main.b4739929.js",
+    "main.css": "/your-pet/static/css/main.dd14f42d.css",
+    "main.js": "/your-pet/static/js/main.be0c85d5.js",
     "static/media/notFound-desktop@2x.png": "/your-pet/static/media/notFound-desktop@2x.979ed45eae2668dc25c0.png",
     "static/media/notFound-tablet@2x.png": "/your-pet/static/media/notFound-tablet@2x.5c90e53b2b390ab1691a.png",
     "static/media/notFound-mobile@2x.png": "/your-pet/static/media/notFound-mobile@2x.1970d45193704718a62e.png",
@@ -14,12 +14,13 @@
     "static/media/search.svg": "/your-pet/static/media/search.41d49a9ae2e0cf1b87a3b9eb48d223c9.svg",
     "static/media/camera.svg": "/your-pet/static/media/camera.e6d4499ab7c7bbb556db649b1c44ee31.svg",
     "static/media/logout.svg": "/your-pet/static/media/logout.8790af7bde245471313fc2a3bdb4b2da.svg",
-    "static/media/cross-small.svg": "/your-pet/static/media/cross-small.8da70af0e6f5ef55f05592dc1412e003.svg",
-    "main.76988dcb.css.map": "/your-pet/static/css/main.76988dcb.css.map",
-    "main.b4739929.js.map": "/your-pet/static/js/main.b4739929.js.map"
+    "static/media/cross-small.svg": "/your-pet/static/media/cross-small.7b3821a2ab5686b23a2f771591b8b66c.svg",
+    "static/media/menu-hamburger.svg": "/your-pet/static/media/menu-hamburger.ba07d0653921591ce68428ee98dbc9ac.svg",
+    "main.dd14f42d.css.map": "/your-pet/static/css/main.dd14f42d.css.map",
+    "main.be0c85d5.js.map": "/your-pet/static/js/main.be0c85d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.76988dcb.css",
-    "static/js/main.b4739929.js"
+    "static/css/main.dd14f42d.css",
+    "static/js/main.be0c85d5.js"
   ]
 }

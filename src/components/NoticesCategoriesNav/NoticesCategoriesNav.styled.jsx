@@ -1,59 +1,30 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-const List = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
-    gap: ${({theme}) => theme.space[3] + 'px'};
-    
-    @media screen and (min-width: ${({theme}) => theme.breakpoints.tablet}){
-        gap: ${({theme}) => theme.space[2] * 3 + 'px'};
-    }
+export const List = styled('ul')`
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 `;
 
+export const Item = styled('li')``;
 
-const Btn = styled.button`
-    position: relative;
-    padding-top: ${({theme}) => theme.space[3] + 'px'};
-    padding-bottom: ${({theme}) => theme.space[3] + 'px'};
-    padding-left: ${({theme}) => theme.space[4] + 'px'};
-    padding-right: ${({theme}) => theme.space[4] + 'px'};
+export const Link = styled(NavLink)`
+  display: block;
+  padding: 8px 16px;
+  background: #cce4fb;
+  border-radius: 40px;
 
-    color: ${({theme}) => theme.colors.blue};
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.73;
+  color: #54adff;
+  letter-spacing: 0.04em;
 
-    background-color: ${({theme}) => theme.colors.lightBlue};
-    border: none; 
-    border-radius: 40px;
-
-    transition: color 300ms ${({theme}) => theme.transition.main},
-    background-color 300ms ${({theme}) => theme.transition.main};
-
-    &::before{
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        width: 100%;
-        height: 100%;
-
-        background: ${({theme}) => theme.colors.gradientBlue};
-        border-radius: 40px;
-        opacity: 0;
-
-        z-index: -1;
-
-        transition: opacity 300ms ${({theme}) => theme.transition.main};
-    }
-
-&:hover::before,
-&:focus::before{
-    opacity: 1;
-}
-
-&:hover,
-&:focus{
-    color: ${({theme}) => theme.colors.white};
-    background-color: transparent;
-}
+  &.active,
+  &:hover {
+    color: #fef9f9;
+    background-color: #54adff;
+  }
 `;
-export {List, Btn};

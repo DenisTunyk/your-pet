@@ -10,6 +10,7 @@ import { Profile } from '../pages/Profile/Profile';
 import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import SharedLayout from './SharedLayout/SharedLayout';
+import { HomePage } from '../pages/HomePage/HomePage';
 
 export const App = () => {
   return (
@@ -17,7 +18,9 @@ export const App = () => {
       {/* <Header /> */}
       <Routes>
         <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
           <Route path="/findpet" element={<FindPet />} />
+          <Route path="/main" element={<HomePage />} />
           <Route path="/news" element={<News />} />
           <Route path="/ourfriend" element={<OurFriend />} />
           <Route path="login" element={<LoginPage />} />

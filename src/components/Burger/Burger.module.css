@@ -1,0 +1,19 @@
+.burger {
+  width: auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media screen and (min-width: 767px) {
+  .burger {
+    margin-left: 24px;
+  }
+}
+
+.burger img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}

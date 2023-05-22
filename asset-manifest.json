@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/your-pet/static/css/main.3ed89bde.css",
-    "main.js": "/your-pet/static/js/main.735a796f.js",
+    "main.css": "/your-pet/static/css/main.e916ba09.css",
+    "main.js": "/your-pet/static/js/main.fdbfe0ac.js",
     "static/media/notFound-desktop@2x.png": "/your-pet/static/media/notFound-desktop@2x.979ed45eae2668dc25c0.png",
     "static/media/notFound-tablet@2x.png": "/your-pet/static/media/notFound-tablet@2x.5c90e53b2b390ab1691a.png",
     "static/media/2desctop1x.png": "/your-pet/static/media/2desctop1x.b5608ff9f68fb086c797.png",
@@ -19,14 +19,16 @@
     "static/media/edit-2.svg": "/your-pet/static/media/edit-2.8f394d4128bbe14a9429e841fcf6d51d.svg",
     "static/media/search.svg": "/your-pet/static/media/search.41d49a9ae2e0cf1b87a3b9eb48d223c9.svg",
     "static/media/camera.svg": "/your-pet/static/media/camera.e6d4499ab7c7bbb556db649b1c44ee31.svg",
+    "static/media/eye-closed.svg": "/your-pet/static/media/eye-closed.095a971de4c426c21e89ae6c71345c51.svg",
+    "static/media/eye-open.svg": "/your-pet/static/media/eye-open.1aad4261a9f03e6275c5a789e0a7310b.svg",
     "static/media/logout.svg": "/your-pet/static/media/logout.8790af7bde245471313fc2a3bdb4b2da.svg",
     "static/media/cross-small.svg": "/your-pet/static/media/cross-small.7b3821a2ab5686b23a2f771591b8b66c.svg",
     "static/media/menu-hamburger.svg": "/your-pet/static/media/menu-hamburger.ba07d0653921591ce68428ee98dbc9ac.svg",
-    "main.3ed89bde.css.map": "/your-pet/static/css/main.3ed89bde.css.map",
-    "main.735a796f.js.map": "/your-pet/static/js/main.735a796f.js.map"
+    "main.e916ba09.css.map": "/your-pet/static/css/main.e916ba09.css.map",
+    "main.fdbfe0ac.js.map": "/your-pet/static/js/main.fdbfe0ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ed89bde.css",
-    "static/js/main.735a796f.js"
+    "static/css/main.e916ba09.css",
+    "static/js/main.fdbfe0ac.js"
   ]
 }

@@ -9,6 +9,8 @@ import {
   InputError,
   InputCorrect,
 } from 'components/FormValidation/FormValidation';
+import { ReactComponent as BiHide } from '../../assets/icon/eye-closed.svg';
+import { ReactComponent as BiShow } from '../../assets/icon/eye-open.svg';
 import {
   Container,
   Input,
@@ -16,6 +18,8 @@ import {
   Button,
   Span,
   FormAuth,
+  LinkToRegister,
+  IconShow,
 } from './LoginForm.styled';
 
 const initialValues = {
@@ -60,17 +64,50 @@ export const LoginForm = () => {
         onSubmit={handleSubmit}
         initialValues={initialValues}
       >
-        <FormAuth onSubmit={handleSubmit}>
-          <label>
-            <Input type="text" name="email" placeholder="Email" />
-          </label>
-          <label>
-            <Input type="text" name="password" placeholder="Password" />
-          </label>
-          <Button type="submit">Login</Button>
-        </FormAuth>
+        {formik => (
+          <FormAuth onSubmit={handleSubmit}>
+            <label>
+              <Input
+                className={
+                  !formik.errors.email && formik.values.email !== ''
+                    ? 'success'
+                    : formik.errors.email && formik.values.email !== ''
+                    ? 'error'
+                    : 'default'
+                }
+                type="text"
+                name="email"
+                placeholder="Email"
+              />
+              {!formik.errors.email && formik.values.email !== '' ? (
+                <InputCorrect name="Email is correct" />
+              ) : null}
+              <InputError name="email" />
+            </label>
+            <label>
+              className=
+              {!formik.errors.password && formik.values.password !== ''
+                ? 'success'
+                : formik.errors.password && formik.values.password !== ''
+                ? 'error'
+                : 'default'}
+              <Input type="text" name="password" placeholder="Password" />
+              {
+                <IconShow onClick={togglePassword}>
+                  {showPassword ? <BiHide /> : <BiShow />}
+                </IconShow>
+              }
+              {!formik.errors.password && formik.values.password !== '' ? (
+                <InputCorrect name="Password is correct" />
+              ) : null}
+              <InputError name="password" />
+            </label>
+            <Button type="submit">Login</Button>
+          </FormAuth>
+        )}
       </Formik>
       <Span>Don't have an account?</Span>
+      <LinkToRegister to="/register">Register</LinkToRegister>
     </Container>
   );
 };

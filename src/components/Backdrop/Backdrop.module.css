@@ -21,7 +21,7 @@
   transform: translate(-50%, -50%);
   background-color: #fdf7f2;
   border: 1px solid #000;
-  padding: 24px 32px;
+  padding: 25px 32px;
 }
 
 .btn {
@@ -40,12 +40,12 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  /* border: 1.5px solid #FFC107; */
+
   stroke: #ffc107;
   stroke-width: 1.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  /* fill: none; */
+
   border-radius: 50%;
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -74,11 +74,6 @@
   margin-top: 40px;
 }
 
-.backdrop_auth img {
-  width: 116px;
-  height: 20px;
-}
-
 .backdrop_auth a:first-child {
   margin-bottom: 12px;
 }
@@ -87,23 +82,15 @@
   margin-left: 0px;
 }
 
-.backdrop_nav ul {
-  margin-top: 40px;
+.backdrop_nav {
+  margin-top: 0px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.backdrop_nav li {
   font-weight: 500;
   font-size: 32px;
   line-height: 44px;
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-}
-
-.backdrop_nav li:not(:last-child) {
-  margin-bottom: 20px;
-  margin-right: 0px;
 }

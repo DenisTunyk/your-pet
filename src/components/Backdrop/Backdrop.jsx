@@ -27,9 +27,12 @@ const BackdropMenu = ({ isOpen, handleClose }) => {
               <CrossSmallIcon id="svg" className={css.crossSmallIcon} />
             </button>
             <Logo handleLinkClick={handleLinkClick} />
-            <Tablet>
-              <AuthNav />
-            </Tablet>
+
+            <div className={css.backdrop_auth}>
+              <Tablet>
+                <AuthNav handleLinkClick={handleLinkClick} />
+              </Tablet>
+            </div>
             <div className={css.backdrop_nav}>
               <Nav handleLinkClick={handleLinkClick} />
             </div>

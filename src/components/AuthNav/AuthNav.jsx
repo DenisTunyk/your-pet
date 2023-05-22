@@ -11,10 +11,10 @@ export const AuthNav = ({ handleLinkClick }) => {
     <>
       {!isAuth ? null : (
         <List>
-          <AuthNavBts to="/register" onClick={handleClick}>
+          <AuthNavBts to="/login" onClick={handleClick}>
             Log IN <PawIcon />
           </AuthNavBts>
-          <AuthNavBts to="/login" onClick={handleClick}>
+          <AuthNavBts to="/register" onClick={handleClick}>
             Registration
           </AuthNavBts>
         </List>

@@ -11,6 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/auth-slice';
+import { petsReducer } from './pets/pets-slice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -18,9 +19,15 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+const categoryPersistConfig = {
+  key: 'category',
+  storage,
+};
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    pets: persistReducer(categoryPersistConfig, petsReducer),
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

@@ -1,3 +1,5 @@
+import { Field, Form } from 'formik';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -18,14 +20,14 @@ export const Titel = styled.h1`
   margin-bottom: 40px;
 `;
 
-export const Form = styled.form`
+export const FormAuth = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin-bottom: 24px;
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -62,4 +64,20 @@ export const Span = styled.span`
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
+`;
+
+export const LinkToRegister = styled(Link)`
+  color: #54adff;
+  text-decoration: underline;
+`;
+
+export const IconShow = styled.span`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: grey;
+  cursor: pointer;
 `;

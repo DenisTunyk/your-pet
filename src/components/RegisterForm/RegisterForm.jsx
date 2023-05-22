@@ -1,11 +1,17 @@
+import { useState } from 'react';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { register } from 'redux/auth/auth-operations';
+import { Spinner } from 'components/Spinner/Spinner';
+import { useAuth } from 'hooks/useAutn';
 import {
   validationRegister,
   InputError,
+  InputCorrect,
 } from 'components/FormValidation/FormValidation';
+import { ReactComponent as Closed } from '../../assets/icon/eye-closed.svg';
+import { ReactComponent as Open } from '../../assets/icon/eye-open.svg';
 import {
   Container,
   Title,
@@ -13,6 +19,7 @@ import {
   Button,
   Span,
   FormAuth,
+  IconShow,
 } from './RegisterForm.styled';
 
 const initialVelues = {
@@ -22,12 +29,14 @@ const initialVelues = {
 };
 
 export const RegisterForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const { isPending } = useAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = (values, actions) => {
     const { email, password, confirmPassword } = values;
-    console.log(values);
 
     if (password === confirmPassword) {
       dispatch(
@@ -46,6 +55,14 @@ export const RegisterForm = () => {
     }
   };
 
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   return (
     <Container>
       <Title>Registration</Title>
@@ -54,25 +71,91 @@ export const RegisterForm = () => {
         validationSchema={validationRegister}
         onSubmit={handleSubmit}
       >
-        <FormAuth autoComplete="off">
-          <label htmlFor="login">
-            <Input type="text" name="email" placeholder="Email" />
-            <InputError name="email" />
-          </label>
-          <label htmlFor="password">
-            <Input type="text" name="password" placeholder="Password" />
-            <InputError name="password" />
-          </label>
-          <label>
-            <Input
-              type="text"
-              name="confirmPassword"
-              placeholder="Confirm password"
-            />
-            <InputError name="confirmPassword" />
-          </label>
-          <Button type="submit">Registration</Button>
-        </FormAuth>
+        {({ errors, values }) => (
+          <FormAuth autoComplete="off">
+            <label>
+              <Input
+                className={
+                  !errors.email && values.email !== ''
+                    ? 'success'
+                    : errors.email && values.email !== ''
+                    ? 'error'
+                    : 'default'
+                }
+                type="text"
+                name="email"
+                placeholder="Email"
+              />
+              {!errors.email && values.email !== '' ? (
+                <InputCorrect name="Email is correct" />
+              ) : null}
+              <InputError name="email" />
+            </label>
+            <label>
+              <Input
+                className={
+                  !errors.password && values.password !== ''
+                    ? 'success'
+                    : errors.password && values.password !== ''
+                    ? 'error'
+                    : 'default'
+                }
+                type={showPassword ? 'text' : 'password'}
+                name="password"
+                placeholder="Password"
+              />
+              <IconShow onClick={togglePassword}>
+                {showPassword ? <Closed size={24} /> : <Open size={24} />}
+              </IconShow>
+              {!errors.password && values.password !== '' ? (
+                <InputCorrect name="Password is correct" />
+              ) : null}
+              <InputError name="password" />
+            </label>
+            <label>
+              <Input
+                className={
+                  !errors.confirmPassword && values.confirmPassword !== ''
+                    ? 'success'
+                    : errors.confirmPassword && values.confirmPassword !== ''
+                    ? 'error'
+                    : 'default'
+                }
+                type={showConfirmPassword ? 'text' : 'password'}
+                name="confirmPassword"
+                placeholder="Confirm password"
+              />
+              <IconShow onClick={toggleConfirmPassword}>
+                {showConfirmPassword ? (
+                  <Closed size={24} />
+                ) : (
+                  <Open size={24} />
+                )}
+              </IconShow>
+              {!errors.confirmPassword && values.confirmPassword !== '' ? (
+                <InputCorrect name="Password confirmed" />
+              ) : null}
+              <InputError name="confirmPassword" />
+            </label>
+            {isPending ? (
+              <Spinner />
+            ) : (
+              <Button
+                disabled={
+                  errors.email || errors.password || errors.confirmPassword
+                }
+                type="submit"
+                onClick={
+                  values.email !== '' &&
+                  values.password !== '' &&
+                  values.confirmPassword !== ''
+                }
+              >
+                Registration
+              </Button>
+            )}
+          </FormAuth>
+        )}
       </Formik>
       <Span>Already have an account? </Span>
     </Container>

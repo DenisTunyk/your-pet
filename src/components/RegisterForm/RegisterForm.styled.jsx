@@ -64,3 +64,14 @@ export const Span = styled.span`
   text-align: center;
   letter-spacing: 0.04em;
 `;
+
+export const IconShow = styled.span`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: grey;
+  cursor: pointer;
+`;

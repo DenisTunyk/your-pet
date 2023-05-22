@@ -1,66 +1,75 @@
+import { Formik } from 'formik';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/auth-operations';
+import { useAuth } from 'hooks/useAutn';
+import {
+  validattionLogin,
+  InputError,
+  InputCorrect,
+} from 'components/FormValidation/FormValidation';
 import {
   Container,
-  Form,
   Input,
   Titel,
   Button,
   Span,
+  FormAuth,
 } from './LoginForm.styled';
 
+const initialValues = {
+  email: '',
+  password: '',
+};
+
 export const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { isPending } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
-      default:
-        return;
-    }
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    dispatch(logIn({ email, password }));
-    reset();
-  };
-
-  const reset = () => {
-    setEmail('');
-    setPassword('');
+  const handleSubmit = (values, actions) => {
+    const { email, password } = values;
+    dispatch(
+      logIn({
+        email: email,
+        password: password,
+      })
+    ).then(res => {
+      if (res.payload.code === 200) {
+        navigate('/user', { replace: true });
+        actions.resetForm();
+      }
+      if (res.payload === 'Request failed with status code 409') {
+      }
+      if (res.payload === 'Request failed with status code 401') {
+      }
+    });
   };
 
   return (
     <Container>
       <Titel>Login</Titel>
-      <Form onSubmit={handleSubmit}>
-        <label>
-          <Input
-            type="text"
-            name="email"
-            value={email}
-            onChange={handleChange}
-            placeholder="Email"
-          />
-        </label>
-        <label>
-          <Input
-            type="text"
-            name="password"
-            value={password}
-            onChange={handleChange}
-            placeholder="Password"
-          />
-        </label>
-        <Button type="submit">Login</Button>
-      </Form>
+      <Formik
+        validationSchema={validattionLogin}
+        onSubmit={handleSubmit}
+        initialValues={initialValues}
+      >
+        <FormAuth onSubmit={handleSubmit}>
+          <label>
+            <Input type="text" name="email" placeholder="Email" />
+          </label>
+          <label>
+            <Input type="text" name="password" placeholder="Password" />
+          </label>
+          <Button type="submit">Login</Button>
+        </FormAuth>
+      </Formik>
       <Span>Don't have an account?</Span>
     </Container>
   );

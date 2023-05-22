@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/your-pet/static/css/main.36cf6c04.css",
-    "main.js": "/your-pet/static/js/main.f13175f0.js",
+    "main.css": "/your-pet/static/css/main.6faaf21f.css",
+    "main.js": "/your-pet/static/js/main.1c0b078c.js",
     "static/media/notFound-desktop@2x.png": "/your-pet/static/media/notFound-desktop@2x.979ed45eae2668dc25c0.png",
     "static/media/notFound-tablet@2x.png": "/your-pet/static/media/notFound-tablet@2x.5c90e53b2b390ab1691a.png",
     "static/media/2desctop1x.png": "/your-pet/static/media/2desctop1x.b5608ff9f68fb086c797.png",
@@ -22,11 +22,11 @@
     "static/media/logout.svg": "/your-pet/static/media/logout.8790af7bde245471313fc2a3bdb4b2da.svg",
     "static/media/cross-small.svg": "/your-pet/static/media/cross-small.7b3821a2ab5686b23a2f771591b8b66c.svg",
     "static/media/menu-hamburger.svg": "/your-pet/static/media/menu-hamburger.ba07d0653921591ce68428ee98dbc9ac.svg",
-    "main.36cf6c04.css.map": "/your-pet/static/css/main.36cf6c04.css.map",
-    "main.f13175f0.js.map": "/your-pet/static/js/main.f13175f0.js.map"
+    "main.6faaf21f.css.map": "/your-pet/static/css/main.6faaf21f.css.map",
+    "main.1c0b078c.js.map": "/your-pet/static/js/main.1c0b078c.js.map"
   },
   "entrypoints": [
-    "static/css/main.36cf6c04.css",
-    "static/js/main.f13175f0.js"
+    "static/css/main.6faaf21f.css",
+    "static/js/main.1c0b078c.js"
   ]
 }

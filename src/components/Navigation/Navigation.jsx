@@ -3,7 +3,7 @@ import React from 'react';
 // import { useSelector } from 'react-redux';
 import Nav from 'components/Nav/Nav';
 import { AuthNav } from 'components/AuthNav/AuthNav';
-import BurgerMenu from 'components/Burger/Burger';
+import { Burger } from 'components/Burger/Burger';
 
 import { useMediaQuery } from 'react-responsive';
 
@@ -20,7 +20,7 @@ const Mobile = ({ children }) => {
   return isMobile ? children : null;
 };
 
-function Navigation() {
+export const Navigation = () => {
   return (
     <>
       <Desktop>
@@ -29,15 +29,13 @@ function Navigation() {
       </Desktop>
       <Tablet>
         <AuthNav />
-        <BurgerMenu />
+        <Burger />
       </Tablet>
       <Mobile>
-        <BurgerMenu>
+        <Burger>
           <AuthNav />
-        </BurgerMenu>
+        </Burger>
       </Mobile>
     </>
   );
-}
-
-export default Navigation;
+};

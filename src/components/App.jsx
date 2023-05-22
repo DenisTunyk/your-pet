@@ -4,13 +4,14 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 // import { Header } from './Header/Header';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 import { OurFriend } from '../pages/OurFriend/OurFriend';
-import AddPetPage  from '../pages/AddPetPage/AddPetPage';
+import AddPetPage from '../pages/AddPetPage/AddPetPage';
 import { News } from '../pages/News/News';
 import { Profile } from '../pages/Profile/Profile';
 import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import SharedLayout from './SharedLayout/SharedLayout';
 import { HomePage } from '../pages/HomePage/HomePage';
+import { RegisterForm } from './RegisterForm/RegisterForm';
 
 export const App = () => {
   return (
@@ -24,6 +25,7 @@ export const App = () => {
           <Route path="/news" element={<News />} />
           <Route path="/ourfriend" element={<OurFriend />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="registration" element={<RegisterForm />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/notices/">
             <Route index element={<Navigate to="/notices/sell" />} />

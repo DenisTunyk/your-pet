@@ -43,7 +43,7 @@ export const PawIcon = styled(Paw)`
   transition: fill 350ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
-const List = styled.div`
+export const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,5 +59,3 @@ const List = styled.div`
     gap: 20px;
   }
 `;
-
-export { List };

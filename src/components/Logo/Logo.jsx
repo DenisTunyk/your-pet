@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import OurLogo from '../../images/logo/logo.svg';
 import css from './Logo.module.css';
 
-function Logo({ handleLinkClick }) {
+export const Logo = ({ handleLinkClick }) => {
   const handleClick = () => {
     if (handleLinkClick) {
       handleLinkClick();
@@ -13,6 +13,4 @@ function Logo({ handleLinkClick }) {
       <img className={css.logo} src={OurLogo} alt="YourPetLogo" />
     </Link>
   );
-}
-
-export default Logo;
+};

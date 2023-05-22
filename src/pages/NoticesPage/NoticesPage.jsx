@@ -6,6 +6,7 @@ import { NoticesCategoriesNav } from 'components/NoticesCategoriesNav/NoticesCat
 
 export const NoticesPage = () => {
   const [search, setSearch] = useState('');
+  console.log(search);
 
   return (
     <Container>

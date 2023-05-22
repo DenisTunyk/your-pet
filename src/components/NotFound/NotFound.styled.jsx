@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as Paw } from '../../images/icons/pawprint.svg';
 
-
 import NFbgImgMobileX1 from 'images/notFound/notFound-mobile@2x.png';
 import NFbgImgTabletX1 from 'images/notFound/notFound-tablet@2x.png';
 import NFbgImgDesktopX1 from 'images/notFound/notFound-desktop@2x.png';
@@ -11,7 +10,7 @@ import PawBgImgTablet from 'images/bg_tablet1x.png';
 import PawBgImgMobile from 'images/bg_mobile1x.png';
 
 export const NFDivWrap = styled.div`
-  max-width: 768px;
+  max-width: 767px;
   height: 512px;
   padding-top: 71px;
   padding-bottom: 100px;
@@ -25,10 +24,10 @@ export const NFDivWrap = styled.div`
   @media (min-width: 768px) {
     background-image: url(${PawBgImgTablet});
     background-position: bottom -150px right 100px;
-    max-width: 1440px;
+    max-width: 1280px;
     padding-bottom: 204px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     background-image: url(${PawBgImgDesctop});
     background-position: bottom -150px right 100px;
   }
@@ -67,7 +66,7 @@ export const NFImg = styled.div`
     height: 327px;
     margin-bottom: 32px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     background-image: url(${NFbgImgDesktopX1});
   }
 `;

@@ -12,6 +12,7 @@ import { LoginPage } from 'pages/LoginPage/LoginPage';
 import SharedLayout from './SharedLayout/SharedLayout';
 import { HomePage } from '../pages/HomePage/HomePage';
 
+
 export const App = () => {
   return (
     <div className="container">

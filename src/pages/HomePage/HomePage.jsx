@@ -4,10 +4,11 @@ export const HomePage = () => {
   return (
     <>
       <div className={css.page}>
-        <h1 className={css.h1}>
-          Take good care of <br />
-          your small pets
-        </h1>
+        <div className={css.title}>
+          <h1 className={css.h1}>
+            Take good care of your small pets <br />
+          </h1>
+        </div>
       </div>
     </>
   );

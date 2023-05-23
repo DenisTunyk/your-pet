@@ -1,20 +1,35 @@
 {
   "files": {
-    "main.css": "/your-pet/static/css/main.8458c6b8.css",
-    "main.js": "/your-pet/static/js/main.68812152.js",
+    "main.css": "/your-pet/static/css/main.05ef6d5d.css",
+    "main.js": "/your-pet/static/js/main.d523b079.js",
     "static/media/notFound-desktop@2x.png": "/your-pet/static/media/notFound-desktop@2x.979ed45eae2668dc25c0.png",
     "static/media/notFound-tablet@2x.png": "/your-pet/static/media/notFound-tablet@2x.5c90e53b2b390ab1691a.png",
+    "static/media/2tablet2x.png": "/your-pet/static/media/2tablet2x.47f06a7c4df0356ad25d.png",
+    "static/media/2desctop2x.png": "/your-pet/static/media/2desctop2x.2f146333d7cbe7bf103c.png",
+    "static/media/3desctop2x.png": "/your-pet/static/media/3desctop2x.7ab43e06e018c38cb3f3.png",
+    "static/media/3tablet2x.png": "/your-pet/static/media/3tablet2x.408f9dcfa5c75aa1f6c1.png",
+    "static/media/1tablet2x.png": "/your-pet/static/media/1tablet2x.bc89bbe7b4e887c78c2b.png",
+    "static/media/1desctop2x.png": "/your-pet/static/media/1desctop2x.d61324a4a37451632b94.png",
     "static/media/2desctop1x.png": "/your-pet/static/media/2desctop1x.b5608ff9f68fb086c797.png",
     "static/media/2tablet1x.png": "/your-pet/static/media/2tablet1x.514b3f334c7a384dfb14.png",
+    "static/media/2mobile2x.png": "/your-pet/static/media/2mobile2x.bcc66d12b739e60317a9.png",
     "static/media/notFound-mobile@2x.png": "/your-pet/static/media/notFound-mobile@2x.1970d45193704718a62e.png",
+    "static/media/bg_desctop2x.png": "/your-pet/static/media/bg_desctop2x.9cd9f6fdaf76dd7c4216.png",
     "static/media/3tablet1x.png": "/your-pet/static/media/3tablet1x.8cbe96eeb4a0605e3db2.png",
     "static/media/3desctop1x.png": "/your-pet/static/media/3desctop1x.9750431eb92db05d6d69.png",
     "static/media/1tablet1x.png": "/your-pet/static/media/1tablet1x.5de60683ae04f82f1dc0.png",
     "static/media/1desctop1x.png": "/your-pet/static/media/1desctop1x.875796899e9cf81356d5.png",
+    "static/media/3mobile2x.png": "/your-pet/static/media/3mobile2x.aca5cab185d1660a2d5e.png",
+    "static/media/1mobile2x.png": "/your-pet/static/media/1mobile2x.1602bcaab1f317130f0b.png",
     "static/media/logo.svg": "/your-pet/static/media/logo.67df985f2a92100dfe3756e777ff40e8.svg",
+    "static/media/2mobile1x.png": "/your-pet/static/media/2mobile1x.2c9107d6311dbc03e2f3.png",
     "static/media/bg_desctop1x.png": "/your-pet/static/media/bg_desctop1x.c5e15b9db9a5e4ea4e7d.png",
+    "static/media/bg_tablet2x.png": "/your-pet/static/media/bg_tablet2x.fa1f7b2125f63bd4d24a.png",
     "static/media/logo-small.svg": "/your-pet/static/media/logo-small.1831dfd0a186e519aaa095fff8b89442.svg",
+    "static/media/3mobile1x.png": "/your-pet/static/media/3mobile1x.a4ec4a7c2d3f9a905a1b.png",
+    "static/media/1mobile1x.png": "/your-pet/static/media/1mobile1x.76a99ea28a3efc315a10.png",
     "static/media/bg_tablet1x.png": "/your-pet/static/media/bg_tablet1x.2d8714c017d261e954b2.png",
+    "static/media/bg_mobile2x.png": "/your-pet/static/media/bg_mobile2x.678a492847b0e788bf16.png",
     "static/media/pawprint.svg": "/your-pet/static/media/pawprint.1d85490412e256c453b6d4423f12bbec.svg",
     "index.html": "/your-pet/index.html",
     "static/media/edit-2.svg": "/your-pet/static/media/edit-2.d42e538238954ca1306e4b97a5f226f3.svg",
@@ -43,11 +58,11 @@
     "static/media/chevron-up.svg": "/your-pet/static/media/chevron-up.8b1ae116e1912ee79d301b6e7f32426a.svg",
     "static/media/chevron-down.svg": "/your-pet/static/media/chevron-down.1a212c1c13748ebea659b0fd342f0062.svg",
     "static/media/plus.svg": "/your-pet/static/media/plus.82f4622ce65fb42acb45c3cd956c8148.svg",
-    "main.8458c6b8.css.map": "/your-pet/static/css/main.8458c6b8.css.map",
-    "main.68812152.js.map": "/your-pet/static/js/main.68812152.js.map"
+    "main.05ef6d5d.css.map": "/your-pet/static/css/main.05ef6d5d.css.map",
+    "main.d523b079.js.map": "/your-pet/static/js/main.d523b079.js.map"
   },
   "entrypoints": [
-    "static/css/main.8458c6b8.css",
-    "static/js/main.68812152.js"
+    "static/css/main.05ef6d5d.css",
+    "static/js/main.d523b079.js"
   ]
 }

@@ -126,6 +126,7 @@ export const Title = styled.h1`
   font-size: 32px;
   color: black;
   padding-top: 60px;
+
   @media screen and (min-width: 768px) {
     font-size: 68px;
     line-height: 100px;
@@ -135,8 +136,10 @@ export const Title = styled.h1`
   }
   @media screen and (min-width: 1280px) {
     width: 501px;
+    font-weight: 800;
     margin-left: 32px;
     padding-top: 92px;
+    line-height: 88.4px;
   }
 `;
 export const Gif = styled.iframe`

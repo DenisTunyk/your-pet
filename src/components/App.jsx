@@ -13,6 +13,7 @@ import SharedLayout from './SharedLayout/SharedLayout';
 import { HomePage } from '../pages/HomePage/HomePage';
 import { RegisterForm } from './RegisterForm/RegisterForm';
 
+
 export const App = () => {
   return (
     <div className="container">

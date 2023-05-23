@@ -20,6 +20,7 @@ import {
   Span,
   FormAuth,
   IconShow,
+  LinkToLogIn,
 } from './RegisterForm.styled';
 
 const initialVelues = {
@@ -158,6 +159,7 @@ export const RegisterForm = () => {
         )}
       </Formik>
       <Span>Already have an account? </Span>
+      <LinkToLogIn to="/login">Login</LinkToLogIn>
     </Container>
   );
 };

@@ -141,12 +141,12 @@ export const Title = styled.h1`
   }
 `;
 export const Gif = styled.iframe`
-  width: 180px;
+  /* width: 180px; */
   background-image: url(${ImgGif});
   background-repeat: no-repeat;
-  background-size: 450px auto;
+  background-size: 200px auto;
   width: 250px;
-  height: 400px;
+  height: 150px;
   /* background-size: 200px auto; */
   @media screen and (min-width: 768px) {
     background-size: 350px auto;

@@ -69,7 +69,6 @@ export const Backgraund = styled.section`
 
 export const Page = styled.section`
   height: 100vh;
-  /* padding: 0 20px; */
   margin-left: auto;
   margin-right: auto;
   background-image: url(${Img1M}), url(${Img2M}), url(${ImgCatM});

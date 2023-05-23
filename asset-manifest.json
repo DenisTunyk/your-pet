@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/your-pet/static/css/main.8458c6b8.css",
-    "main.js": "/your-pet/static/js/main.02abddec.js",
+    "main.js": "/your-pet/static/js/main.68812152.js",
     "static/media/notFound-desktop@2x.png": "/your-pet/static/media/notFound-desktop@2x.979ed45eae2668dc25c0.png",
     "static/media/notFound-tablet@2x.png": "/your-pet/static/media/notFound-tablet@2x.5c90e53b2b390ab1691a.png",
     "static/media/2desctop1x.png": "/your-pet/static/media/2desctop1x.b5608ff9f68fb086c797.png",
@@ -44,10 +44,10 @@
     "static/media/chevron-down.svg": "/your-pet/static/media/chevron-down.1a212c1c13748ebea659b0fd342f0062.svg",
     "static/media/plus.svg": "/your-pet/static/media/plus.82f4622ce65fb42acb45c3cd956c8148.svg",
     "main.8458c6b8.css.map": "/your-pet/static/css/main.8458c6b8.css.map",
-    "main.02abddec.js.map": "/your-pet/static/js/main.02abddec.js.map"
+    "main.68812152.js.map": "/your-pet/static/js/main.68812152.js.map"
   },
   "entrypoints": [
     "static/css/main.8458c6b8.css",
-    "static/js/main.02abddec.js"
+    "static/js/main.68812152.js"
   ]
 }

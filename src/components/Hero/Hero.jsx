@@ -1,4 +1,4 @@
-import { Backgraund, Page, Container, Title } from './Hero.styled';
+import { Backgraund, Page, Container, Title, Gif } from './Hero.styled';
 
 export const Hero = () => {
   return (
@@ -8,6 +8,7 @@ export const Hero = () => {
           <Container>
             <Title>Take good care of your small pets</Title>
           </Container>
+          <Gif frameBorder="0" allowFullScreen />
         </Page>
       </Backgraund>
     </>

@@ -27,7 +27,8 @@ import Img2M2x from '../../images/main_img/mobile/2mobile2x.png';
 import ImgCatM from '../../images/main_img/mobile/3mobile1x.png';
 import ImgCatM2x from '../../images/main_img/mobile/3mobile2x.png';
 
-// import {HomePage} from '../../images/main_img/mobile/1mobile1x.png';
+import ImgGif from '../../images/background/dog.gif';
+import ImgGifCat from '../../images/background/Cat.webp';
 
 export const Backgraund = styled.section`
   display: flex;
@@ -45,6 +46,7 @@ export const Backgraund = styled.section`
     background-image: url(${BgM2x});
   }
   @media screen and (min-width: 768px) {
+    display: inherit;
     background-image: url(${BgT});
   }
   @media (min-device-pixel-ratio: 2),
@@ -67,7 +69,6 @@ export const Backgraund = styled.section`
 
 export const Page = styled.section`
   height: 100vh;
-  /* padding: 0 20px; */
   margin-left: auto;
   margin-right: auto;
   background-image: url(${Img1M}), url(${Img2M}), url(${ImgCatM});
@@ -112,9 +113,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 280px;
-  /* align-items: center; */
   @media screen and (min-width: 768px) {
-    display: contents;
+    display: inherit;
   }
 `;
 export const Title = styled.h1`
@@ -125,6 +125,7 @@ export const Title = styled.h1`
   font-size: 32px;
   color: black;
   padding-top: 60px;
+
   @media screen and (min-width: 768px) {
     font-size: 68px;
     line-height: 100px;
@@ -134,8 +135,28 @@ export const Title = styled.h1`
   }
   @media screen and (min-width: 1280px) {
     width: 501px;
+    font-weight: 800;
     margin-left: 32px;
     padding-top: 92px;
-    font-size: 68px;
+    line-height: 88.4px;
+  }
+`;
+export const Gif = styled.iframe`
+  width: 180px;
+  background-image: url(${ImgGif});
+  background-repeat: no-repeat;
+  background-size: 450px auto;
+  width: 250px;
+  height: 400px;
+  background-size: 200px auto;
+  @media screen and (min-width: 768px) {
+    background-size: 350px auto;
+    width: 450px;
+    height: 400px;
+  }
+  @media screen and (min-width: 1280px) {
+    background-image: url(${ImgGifCat});
+    background-size: 250px auto;
+    height: 300px;
   }
 `;

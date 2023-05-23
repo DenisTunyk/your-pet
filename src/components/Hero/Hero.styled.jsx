@@ -30,8 +30,6 @@ import ImgCatM2x from '../../images/main_img/mobile/3mobile2x.png';
 import ImgGif from '../../images/background/dog.gif';
 import ImgGifCat from '../../images/background/Cat.webp';
 
-// import {HomePage} from '../../images/main_img/mobile/1mobile1x.png';
-
 export const Backgraund = styled.section`
   display: flex;
   height: 100%;
@@ -116,7 +114,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 280px;
-  /* align-items: center; */
   @media screen and (min-width: 768px) {
     display: inherit;
   }
@@ -149,7 +146,6 @@ export const Gif = styled.iframe`
   background-size: 450px auto;
   width: 250px;
   height: 400px;
-  /* margin: 300px 50px 50px 50px; */
   background-size: 200px auto;
   @media screen and (min-width: 768px) {
     background-size: 350px auto;
@@ -159,7 +155,6 @@ export const Gif = styled.iframe`
   @media screen and (min-width: 1280px) {
     background-image: url(${ImgGifCat});
     background-size: 250px auto;
-    /* width: 300px; */
     height: 300px;
   }
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 
 // import { Header } from './Header/Header';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
@@ -11,8 +12,7 @@ import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import SharedLayout from './SharedLayout/SharedLayout';
 import { HomePage } from '../pages/HomePage/HomePage';
-import { RegisterForm } from './RegisterForm/RegisterForm';
-
+import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 
 export const App = () => {
   return (
@@ -25,8 +25,24 @@ export const App = () => {
           <Route path="/main" element={<HomePage />} />
           <Route path="/news" element={<News />} />
           <Route path="/ourfriend" element={<OurFriend />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="registration" element={<RegisterForm />} />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute
+                redirectTo="/profile"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="registration"
+            element={
+              <RestrictedRoute
+                redirectTo="/profile"
+                component={<RegisterPage />}
+              />
+            }
+          />
           <Route path="/profile" element={<Profile />} />
           <Route path="/notices/">
             <Route index element={<Navigate to="/notices/sell" />} />

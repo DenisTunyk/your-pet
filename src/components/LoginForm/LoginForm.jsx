@@ -122,7 +122,7 @@ export const LoginForm = () => {
         )}
       </Formik>
       <Span>Don't have an account?</Span>
-      <LinkToRegister to="/register">Register</LinkToRegister>
+      <LinkToRegister to="/registration">Register</LinkToRegister>
     </Container>
   );
 };

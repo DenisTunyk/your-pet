@@ -28,7 +28,6 @@ import ImgCatM from '../../images/main_img/mobile/3mobile1x.png';
 import ImgCatM2x from '../../images/main_img/mobile/3mobile2x.png';
 
 import ImgGif from '../../images/background/dog.gif';
-import ImgGifCat from '../../images/background/Cat.webp';
 
 export const Backgraund = styled.section`
   display: flex;
@@ -148,15 +147,14 @@ export const Gif = styled.iframe`
   background-size: 450px auto;
   width: 250px;
   height: 400px;
-  background-size: 200px auto;
+  /* background-size: 200px auto; */
   @media screen and (min-width: 768px) {
     background-size: 350px auto;
     width: 450px;
     height: 400px;
   }
   @media screen and (min-width: 1280px) {
-    background-image: url(${ImgGifCat});
-    background-size: 250px auto;
+    background-size: 450px auto;
     height: 300px;
   }
 `;

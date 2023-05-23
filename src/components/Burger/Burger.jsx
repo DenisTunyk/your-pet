@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { ReactComponent as BurgerSvg } from '../../images/icons/menu-hamburger.svg';
 
 import css from './Burger.module.css';
-import BackdropMenu from 'components/Backdrop/Backdrop';
+import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
 
-function BurgerMenu() {
+export const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -21,11 +21,7 @@ function BurgerMenu() {
       <button className={css.burger} onClick={handleOpen}>
         <BurgerSvg alt="Menu" />
       </button>
-      {isOpen ? (
-        <BackdropMenu isOpen={isOpen} handleClose={handleClose} />
-      ) : null}
+      {isOpen ? <BurgerMenu isOpen={isOpen} handleClose={handleClose} /> : null}
     </>
   );
-}
-
-export default BurgerMenu;
+};

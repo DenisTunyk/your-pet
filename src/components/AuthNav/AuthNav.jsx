@@ -1,4 +1,4 @@
-import { AuthNavBts, List, PawIcon } from './AuthNav.styled';
+import { AuthNavBts, Box, PawIcon } from './AuthNav.styled';
 
 const isAuth = true;
 export const AuthNav = ({ handleLinkClick }) => {
@@ -10,14 +10,14 @@ export const AuthNav = ({ handleLinkClick }) => {
   return (
     <>
       {!isAuth ? null : (
-        <List>
+        <Box>
           <AuthNavBts to="/login" onClick={handleClick}>
             Log IN <PawIcon />
           </AuthNavBts>
-          <AuthNavBts to="/register" onClick={handleClick}>
+          <AuthNavBts to="/registration" onClick={handleClick}>
             Registration
           </AuthNavBts>
-        </List>
+        </Box>
       )}
     </>
   );

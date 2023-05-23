@@ -5,7 +5,7 @@ export const HeaderWrapper = styled.header`
   top: 0;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 32px 12px;
+  /* padding: 24px 32px 12px; */
   background-color: #fdf7f2;
 
   /* @media screen and (min-width: 1280px) {

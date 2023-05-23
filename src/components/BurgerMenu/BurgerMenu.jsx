@@ -1,11 +1,9 @@
 import { React } from 'react';
-import css from './Backdrop.module.css';
-// import { useSelector } from 'react-redux';
-
+import css from './BurgerMenu.module.css';
 import { ReactComponent as CrossSmallIcon } from '../../images/icons/cross-small.svg';
-import Logo from 'components/Logo/Logo';
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import Nav from 'components/Nav/Nav';
+import { Logo } from 'components/Logo/Logo';
 
 import { useMediaQuery } from 'react-responsive';
 
@@ -13,7 +11,7 @@ const Tablet = ({ children }) => {
   const isTablet = useMediaQuery({ minWidth: 320, maxWidth: 766 });
   return isTablet ? children : null;
 };
-const BackdropMenu = ({ isOpen, handleClose }) => {
+export const BurgerMenu = ({ isOpen, handleClose }) => {
   const handleLinkClick = () => {
     handleClose();
   };
@@ -21,7 +19,7 @@ const BackdropMenu = ({ isOpen, handleClose }) => {
   return (
     <>
       {isOpen && (
-        <div className={css.backdrop}>
+        <div className={css.wrapper}>
           <div className={css.menu}>
             <button className={css.btn} onClick={handleClose}>
               <CrossSmallIcon id="svg" className={css.crossSmallIcon} />
@@ -42,5 +40,3 @@ const BackdropMenu = ({ isOpen, handleClose }) => {
     </>
   );
 };
-
-export default BackdropMenu;

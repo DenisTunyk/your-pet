@@ -1,4 +1,5 @@
 import { Field, Form } from 'formik';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -74,4 +75,9 @@ export const IconShow = styled.span`
   right: 10px;
   color: grey;
   cursor: pointer;
+`;
+
+export const LinkToLogIn = styled(Link)`
+  color: #54adff;
+  text-decoration: underline;
 `;

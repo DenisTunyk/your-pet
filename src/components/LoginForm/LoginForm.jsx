@@ -12,16 +12,19 @@ import {
 } from 'components/FormValidation/FormValidation';
 import { ReactComponent as Closed } from '../../assets/icon/eye-closed.svg';
 import { ReactComponent as Open } from '../../assets/icon/eye-open.svg';
+import { ReactComponent as Check } from '../../assets/icon/check.svg';
+import { ReactComponent as Cross } from '../../assets/icon/cross-small.svg';
 import {
   Container,
   Input,
   Titel,
   Button,
-  Span,
   FormAuth,
   LinkToRegister,
   IconShow,
   Label,
+  TextLink,
+  IconMail,
 } from './LoginForm.styled';
 
 const initialValues = {
@@ -82,6 +85,15 @@ export const LoginForm = () => {
                 placeholder="Email"
               />
               {!formik.errors.email && formik.values.email !== '' ? (
+                <IconMail>
+                  <Check />
+                </IconMail>
+              ) : null}
+              {formik.errors.email && formik.values.email !== '' ? (
+                <Cross />
+              ) : null}
+
+              {!formik.errors.email && formik.values.email !== '' ? (
                 <InputCorrect name="Email is correct" />
               ) : null}
               <InputError name="email" />
@@ -105,7 +117,7 @@ export const LoginForm = () => {
                 </IconShow>
               }
               {!formik.errors.password && formik.values.password !== '' ? (
-                <InputCorrect name="Password is correct" />
+                <InputCorrect name="Password is secure " />
               ) : null}
               <InputError name="password" />
             </Label>
@@ -122,8 +134,10 @@ export const LoginForm = () => {
           </FormAuth>
         )}
       </Formik>
-      <Span>Don't have an account?</Span>
-      <LinkToRegister to="/registration">Register</LinkToRegister>
+      <TextLink>
+        <span>Don't have an account?</span>
+        <LinkToRegister to="/registration">Register</LinkToRegister>
+      </TextLink>
     </Container>
   );
 };

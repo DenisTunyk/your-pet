@@ -66,12 +66,12 @@
   display: flex;
 }
 
-.backdrop_auth div {
+.backdrop_auth {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 40px;
+  padding-top: 40px;
 }
 
 .backdrop_auth a:first-child {

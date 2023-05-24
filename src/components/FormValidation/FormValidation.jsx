@@ -9,7 +9,7 @@ const passwordValid = /(?!\s)^[^ ]*$/;
 export const validattionLogin = yup.object().shape({
   email: yup
     .string()
-    .required('Email field is required')
+    .required('Enter a valid Email')
     .matches(emailValid, "Email must contain '@', example: user@mail.com")
     .max(70, 'Maximum 70 characters')
     .min(10, 'Minimum 10 characters')

@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
+  position: absolute;
+  left: 6.25%;
+  right: 6.25%;
+  top: 15.31%;
+  bottom: 11.31%;
+
   height: 441px;
   background: #ffffff;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
@@ -23,7 +28,10 @@ export const Titel = styled.h1`
 export const FormAuth = styled(Form)`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+`;
+
+export const Label = styled.label`
+  position: relative;
   margin-bottom: 24px;
 `;
 
@@ -54,6 +62,8 @@ export const Button = styled.button`
   font-weight: 600;
   font-size: 20px;
   line-height: 27px;
+  margin-top: 56px;
+  margin-bottom: 24px;
 `;
 
 export const Span = styled.span`
@@ -77,7 +87,6 @@ export const IconShow = styled.span`
   height: 24px;
   top: 50%;
   transform: translateY(-50%);
-  right: 10px;
-  color: grey;
+  right: 15px;
   cursor: pointer;
 `;

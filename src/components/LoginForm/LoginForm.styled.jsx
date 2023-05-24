@@ -1,5 +1,6 @@
 import { Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -8,12 +9,30 @@ export const Container = styled.div`
   right: 6.25%;
   top: 15.31%;
   bottom: 11.31%;
-
   height: 441px;
   background: #ffffff;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 20px;
   padding: 40px 12px;
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    left: 10.42%;
+    right: 10.42%;
+    top: 12.41%;
+    bottom: 47.28%;
+    width: 608px;
+    height: 481px;
+    padding: 60px 75px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    position: absolute;
+    left: 26.25%;
+    right: 26.25%;
+    top: 19.27%;
+    bottom: 18.1%;
+  }
 `;
 
 export const Titel = styled.h1`
@@ -33,6 +52,10 @@ export const FormAuth = styled(Form)`
 export const Label = styled.label`
   position: relative;
   margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const Input = styled(Field)`
@@ -48,6 +71,15 @@ export const Input = styled(Field)`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+  outline: none;
+  cursor: pointer;
+
+  &.success {
+    border-color: green;
+  }
+  &.error {
+    border-color: red;
+  }
 `;
 
 export const Button = styled.button`
@@ -64,16 +96,11 @@ export const Button = styled.button`
   line-height: 27px;
   margin-top: 56px;
   margin-bottom: 24px;
-`;
 
-export const Span = styled.span`
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  display: block;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.04em;
+  @media screen and (min-width: 768px) {
+    margin-top: 28px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const LinkToRegister = styled(Link)`
@@ -82,6 +109,37 @@ export const LinkToRegister = styled(Link)`
 `;
 
 export const IconShow = styled.span`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  cursor: pointer;
+`;
+
+export const TextLink = styled.p`
+  left: 19.69%;
+  right: 20%;
+  top: 79.37%;
+  bottom: 17.97%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  padding: auto;
+  color: #888888;
+
+  @media screen and (min-width: 768px) {
+    left: 37.5%;
+    right: 37.37%;
+    top: 46.35%;
+    bottom: 52.31%;
+  }
+`;
+export const IconMail = styled.span`
   position: absolute;
   width: 24px;
   height: 24px;

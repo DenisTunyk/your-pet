@@ -17,7 +17,6 @@ import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 export const App = () => {
   return (
     <div className="container">
-      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />

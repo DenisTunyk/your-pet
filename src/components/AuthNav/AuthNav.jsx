@@ -1,7 +1,9 @@
+import { UserNav } from 'components/UserNav/UserNav';
 import { AuthNavBts, Box, PawIcon } from './AuthNav.styled';
-
-const isAuth = true;
+import { useAuth } from '../../hooks/useAutn';
 export const AuthNav = ({ handleLinkClick }) => {
+  const { isLoggedIn } = useAuth();
+  const { user } = useAuth();
   const handleClick = () => {
     if (handleLinkClick) {
       handleLinkClick();
@@ -9,7 +11,9 @@ export const AuthNav = ({ handleLinkClick }) => {
   };
   return (
     <>
-      {!isAuth ? null : (
+      {isLoggedIn ? (
+        <UserNav userName={user.name} handleLinkClick={handleLinkClick} />
+      ) : (
         <Box>
           <AuthNavBts to="/login" onClick={handleClick}>
             Log IN <PawIcon />

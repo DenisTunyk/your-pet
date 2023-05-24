@@ -13,10 +13,11 @@ export const Form = styled.form`
   display: flex;
   overflow: hidden;
   padding-left: 20px;
+  margin: 0 auto;
+  margin-top: 24px;
 
   @media screen and (min-width: 768px) {
     width: 608px;
-    margin: 0 auto;
   }
 `;
 

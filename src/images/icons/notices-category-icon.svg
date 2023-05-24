@@ -1,0 +1,25 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="male" viewBox="0 0 19 32">
+<path fill="none" stroke="#54adff" stroke-width="2.4" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--color1, #54adff)" d="M9.213 14.4c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 8-3.582 8-8s-3.582-8-8-8zM9.213 14.4v-12.8M9.213 1.6l6.4 6.4M9.213 1.6l-6.4 6.4"></path>
+</symbol>
+<symbol id="location" viewBox="0 0 29 32">
+<path fill="none" stroke="#54adff" stroke-width="2.4" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--color1, #54adff)" d="M27.2 14.4c0 7.069-5.731 12.8-12.8 16-7.069-3.2-12.8-8.931-12.8-16s5.731-12.8 12.8-12.8c7.069 0 12.8 5.731 12.8 12.8z"></path>
+<path fill="none" stroke="#54adff" stroke-width="2.4" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--color1, #54adff)" d="M19.2 14.4c0 2.651-2.149 4.8-4.8 4.8s-4.8-2.149-4.8-4.8c0-2.651 2.149-4.8 4.8-4.8s4.8 2.149 4.8 4.8z"></path>
+</symbol>
+<symbol id="like" viewBox="0 0 32 32">
+<path stroke-width="2.4" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M3.73 16.076l12.27 12.724 12.27-12.724c1.364-1.415 2.13-3.333 2.13-5.333 0-4.166-3.256-7.542-7.273-7.542-1.929 0-3.779 0.795-5.143 2.209l-1.984 2.058-1.984-2.058c-1.364-1.414-3.214-2.209-5.143-2.209-4.017 0-7.273 3.377-7.273 7.542 0 2 0.766 3.919 2.13 5.333z"></path>
+</symbol>
+<symbol id="female" viewBox="0 0 19 32">
+<path fill="none" stroke="#54adff" stroke-width="2.4" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--color1, #54adff)" d="M9.6 17.6c4.418 0 8-3.582 8-8s-3.582-8-8-8c-4.418 0-8 3.582-8 8s3.582 8 8 8zM9.6 17.6v12.8M4.8 25.6h9.6"></path>
+</symbol>
+<symbol id="clock" viewBox="0 0 32 32">
+<path fill="none" stroke-width="2.4" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--color1, #54adff)" d="M15.613 8v8l4.8 4.8M30.012 16c0 7.953-6.447 14.4-14.4 14.4s-14.4-6.447-14.4-14.4c0-7.953 6.447-14.4 14.4-14.4s14.4 6.447 14.4 14.4z"></path>
+</symbol>
+<symbol id="close" viewBox="0 0 16 16">
+<path d="M15 1L1 15M1.00004 1L15 15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<symbol id="trash" viewBox="0 0 24 24">
+<path d="M18 6V18C18 19.1046 17.1046 20 16 20H8C6.89543 20 6 19.1046 6 18V6M15 6V5C15 3.89543 14.1046 3 13 3H11C9.89543 3 9 3.89543 9 5V6M4 6H20M10 10V16M14 10V16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</symbol>
+</defs>
+</svg>

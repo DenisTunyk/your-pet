@@ -56,3 +56,52 @@ export const addMyPet = createAsyncThunk(
     }
   }
 );
+
+export const updateUser = createAsyncThunk(
+  '/auth/updateUser',
+  async ({ value }, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+    try {
+      setAuthHeader(persistedToken);
+      const config = {
+        headers: {
+          Accept: '*/*',
+          Authorization: `Bearer ${persistedToken}`,
+          'Content-Type': 'application/json,multipart/form-data',
+        },
+      };
+
+      const response = await axios.patch('/user/auth/update', value, config);
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteUsersAvatar = createAsyncThunk(
+  '/auth/updateUser/deleteUsersAvatar',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+    try {
+      setAuthHeader(persistedToken);
+      const response = await axios.get('user/auth/deleteAvatar');
+
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

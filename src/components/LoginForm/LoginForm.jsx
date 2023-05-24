@@ -21,6 +21,7 @@ import {
   FormAuth,
   LinkToRegister,
   IconShow,
+  Label,
 } from './LoginForm.styled';
 
 const initialValues = {
@@ -67,7 +68,7 @@ export const LoginForm = () => {
       >
         {formik => (
           <FormAuth onSubmit={handleSubmit}>
-            <label>
+            <Label>
               <Input
                 className={
                   !formik.errors.email && formik.values.email !== ''
@@ -84,8 +85,8 @@ export const LoginForm = () => {
                 <InputCorrect name="Email is correct" />
               ) : null}
               <InputError name="email" />
-            </label>
-            <label>
+            </Label>
+            <Label>
               <Input
                 className={
                   !formik.errors.password && formik.values.password !== ''
@@ -107,7 +108,7 @@ export const LoginForm = () => {
                 <InputCorrect name="Password is correct" />
               ) : null}
               <InputError name="password" />
-            </label>
+            </Label>
             {isPending ? (
               <Spinner />
             ) : (

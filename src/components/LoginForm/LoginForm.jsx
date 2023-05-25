@@ -24,7 +24,8 @@ import {
   IconShow,
   Label,
   TextLink,
-  IconMail,
+  IconCross,
+  IconCheck,
 } from './LoginForm.styled';
 
 const initialValues = {
@@ -85,12 +86,14 @@ export const LoginForm = () => {
                 placeholder="Email"
               />
               {!formik.errors.email && formik.values.email !== '' ? (
-                <IconMail>
-                  <Check />
-                </IconMail>
+                <IconCheck>
+                  <Check stroke="green" />
+                </IconCheck>
               ) : null}
               {formik.errors.email && formik.values.email !== '' ? (
-                <Cross />
+                <IconCross>
+                  <Cross stroke="red" />
+                </IconCross>
               ) : null}
 
               {!formik.errors.email && formik.values.email !== '' ? (
@@ -111,11 +114,25 @@ export const LoginForm = () => {
                 name="password"
                 placeholder="Password"
               />
-              {
+              {!formik.errors.password && formik.values.password !== '' ? (
+                <IconCheck>
+                  <Check stroke="green" />
+                </IconCheck>
+              ) : (
                 <IconShow onClick={togglePassword}>
                   {showPassword ? <Open /> : <Closed />}
                 </IconShow>
-              }
+              )}
+              {/* {formik.errors.password && formik.values.password !== '' ? (
+                <IconCross>
+                  <Cross stroke="red" />
+                </IconCross>
+              ) : null} */}
+              {/* {
+                <IconShow onClick={togglePassword}>
+                  {showPassword ? <Open /> : <Closed />}
+                </IconShow>
+              } */}
               {!formik.errors.password && formik.values.password !== '' ? (
                 <InputCorrect name="Password is secure " />
               ) : null}

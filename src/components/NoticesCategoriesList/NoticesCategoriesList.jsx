@@ -1,4 +1,3 @@
-
 import { NoticeCategiriesItem } from '../NoticeCategoryItem/NoticeCategoryItem';
 import { CardContainer } from './NoticesCategoriesList.styled';
 

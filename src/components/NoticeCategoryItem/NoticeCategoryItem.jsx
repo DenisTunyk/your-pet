@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../../hooks/useAutn';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Icons from '../../images/icons/notices-category-icon.svg'
+import Icons from '../../images/icons/notices-category-icon.svg';
 
 export const NoticeCategiriesItem = data => {
   const { image, description, age, city, sex, category } = data;
@@ -26,29 +26,22 @@ export const NoticeCategiriesItem = data => {
     document.body.style.overflow = showLearMore ? 'hidden' : 'scroll';
   }, [showLearMore]);
 
-  const sexIcon =
-    sex === 'male'
-      ? `${Icons}#female`
-      : `${Icons}#male`;
-
+  const sexIcon = sex === 'male' ? `${Icons}#female` : `${Icons}#male`;
 
   const handleAdd = () => {
-    if(!isLoggedIn){
-      toast("You're not logged in", {type: "warning"});
+    if (!isLoggedIn) {
+      toast("You're not logged in", { type: 'warning' });
     }
-  }
+  };
   return (
     <>
       <Card>
-      <ToastContainer/>
+        <ToastContainer />
         <Image img={image}>
           <Category>{category}</Category>
           <AddToFaivoriteButton filled={fill} onClick={handleAdd}>
             <svg width="20" height="18">
-              <use
-                className="icon"
-                href={`${Icons}#like`}
-              />
+              <use className="icon" href={`${Icons}#like`} />
             </svg>
           </AddToFaivoriteButton>
           <RemoveFaivoriteButton onClick={() => setFill(false)}>
@@ -59,10 +52,7 @@ export const NoticeCategiriesItem = data => {
           <ContentContainer>
             <Content>
               <svg width="18" height="18">
-                <use
-                  className="icon"
-                  href={`${Icons}#location`}
-                />
+                <use className="icon" href={`${Icons}#location`} />
               </svg>
               {city}
             </Content>

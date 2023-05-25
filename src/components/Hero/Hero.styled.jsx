@@ -140,7 +140,7 @@ export const Title = styled.h1`
     line-height: 88.4px;
   }
 `;
-export const Gif = styled.div`
+export const Gif = styled.iframe`
   /* width: 180px; */
   background-image: url(${ImgGif});
   background-repeat: no-repeat;

@@ -141,7 +141,6 @@ export const Title = styled.h1`
   }
 `;
 export const Gif = styled.iframe`
-  /* width: 180px; */
   background-image: url(${ImgGif});
   background-repeat: no-repeat;
   background-size: 200px auto;

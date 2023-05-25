@@ -91,11 +91,9 @@ export const LoginForm = () => {
                 </IconCheck>
               ) : null}
               {formik.errors.email && formik.values.email !== '' ? (
-                <div>
-                  <IconCross>
-                    <Cross stroke="red" />
-                  </IconCross>
-                </div>
+                <IconCross>
+                  <Cross stroke="red" />
+                </IconCross>
               ) : null}
 
               {!formik.errors.email && formik.values.email !== '' ? (
@@ -116,11 +114,25 @@ export const LoginForm = () => {
                 name="password"
                 placeholder="Password"
               />
-              {
+              {!formik.errors.password && formik.values.password !== '' ? (
+                <IconCheck>
+                  <Check stroke="green" />
+                </IconCheck>
+              ) : (
                 <IconShow onClick={togglePassword}>
                   {showPassword ? <Open /> : <Closed />}
                 </IconShow>
-              }
+              )}
+              {/* {formik.errors.password && formik.values.password !== '' ? (
+                <IconCross>
+                  <Cross stroke="red" />
+                </IconCross>
+              ) : null} */}
+              {/* {
+                <IconShow onClick={togglePassword}>
+                  {showPassword ? <Open /> : <Closed />}
+                </IconShow>
+              } */}
               {!formik.errors.password && formik.values.password !== '' ? (
                 <InputCorrect name="Password is secure " />
               ) : null}

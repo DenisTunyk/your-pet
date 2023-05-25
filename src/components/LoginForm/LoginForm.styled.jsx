@@ -90,6 +90,7 @@ export const IconCross = styled.span`
 `;
 
 export const Button = styled.button`
+  display: block;
   width: 100%;
   height: 48px;
   padding: 10px auto;

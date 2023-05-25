@@ -10,7 +10,7 @@ export const validattionLogin = yup.object().shape({
   email: yup
     .string()
     .required('Enter a valid Email')
-    .matches(emailValid, "Email must contain '@', example: user@mail.com")
+    .matches(emailValid, 'Enter a valid Email')
     .max(70, 'Maximum 70 characters')
     .min(10, 'Minimum 10 characters')
     .email(),
@@ -48,19 +48,13 @@ export const validationRegister = yup.object().shape({
 
 export const InputError = ({ name }) => {
   return (
-    <div>
-      <ErrorMessage
-        name={name}
-        render={message => <ErrorText>{message}</ErrorText>}
-      />
-    </div>
+    <ErrorMessage
+      name={name}
+      render={message => <ErrorText>{message}</ErrorText>}
+    />
   );
 };
 
 export const InputCorrect = ({ name }) => {
-  return (
-    <div>
-      <CorrectText>{name}</CorrectText>
-    </div>
-  );
+  return <CorrectText>{name}</CorrectText>;
 };

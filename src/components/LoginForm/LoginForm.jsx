@@ -24,7 +24,8 @@ import {
   IconShow,
   Label,
   TextLink,
-  IconMail,
+  IconCross,
+  IconCheck,
 } from './LoginForm.styled';
 
 const initialValues = {
@@ -85,12 +86,16 @@ export const LoginForm = () => {
                 placeholder="Email"
               />
               {!formik.errors.email && formik.values.email !== '' ? (
-                <IconMail>
-                  <Check />
-                </IconMail>
+                <IconCheck>
+                  <Check stroke="green" />
+                </IconCheck>
               ) : null}
               {formik.errors.email && formik.values.email !== '' ? (
-                <Cross />
+                <div>
+                  <IconCross>
+                    <Cross stroke="red" />
+                  </IconCross>
+                </div>
               ) : null}
 
               {!formik.errors.email && formik.values.email !== '' ? (

@@ -1,11 +1,17 @@
 import { React } from 'react';
-import css from './BurgerMenu.module.css';
-import { ReactComponent as CrossSmallIcon } from '../../images/icons/cross-small.svg';
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import Nav from 'components/Nav/Nav';
 import { Logo } from 'components/Logo/Logo';
 
 import { useMediaQuery } from 'react-responsive';
+import {
+  BackdropAuth,
+  BackdropNav,
+  Btn,
+  CrossIcon,
+  Menu,
+  Wrapper,
+} from './BurgerMenu.styled';
 
 const Tablet = ({ children }) => {
   const isTablet = useMediaQuery({ minWidth: 320, maxWidth: 766 });
@@ -19,23 +25,23 @@ export const BurgerMenu = ({ isOpen, handleClose }) => {
   return (
     <>
       {isOpen && (
-        <div className={css.wrapper}>
-          <div className={css.menu}>
-            <button className={css.btn} onClick={handleClose}>
-              <CrossSmallIcon id="svg" className={css.crossSmallIcon} />
-            </button>
+        <Wrapper>
+          <Menu>
+            <Btn onClick={handleClose}>
+              <CrossIcon />
+            </Btn>
             <Logo handleLinkClick={handleLinkClick} />
 
-            <div className={css.backdrop_auth}>
+            <BackdropAuth>
               <Tablet>
                 <AuthNav handleLinkClick={handleLinkClick} />
               </Tablet>
-            </div>
-            <div className={css.backdrop_nav}>
+            </BackdropAuth>
+            <BackdropNav>
               <Nav handleLinkClick={handleLinkClick} />
-            </div>
-          </div>
-        </div>
+            </BackdropNav>
+          </Menu>
+        </Wrapper>
       )}
     </>
   );

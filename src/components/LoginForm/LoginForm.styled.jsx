@@ -1,14 +1,11 @@
 import { Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
-
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  position: absolute;
-  left: 6.25%;
-  right: 6.25%;
-  top: 15.31%;
-  bottom: 11.31%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 44px;
   height: 441px;
   background: #ffffff;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
@@ -16,22 +13,13 @@ export const Container = styled.div`
   padding: 40px 12px;
 
   @media screen and (min-width: 768px) {
-    position: absolute;
-    left: 10.42%;
-    right: 10.42%;
-    top: 12.41%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
     bottom: 47.28%;
     width: 608px;
     height: 481px;
     padding: 60px 75px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    position: absolute;
-    left: 26.25%;
-    right: 26.25%;
-    top: 19.27%;
-    bottom: 18.1%;
   }
 `;
 
@@ -59,7 +47,6 @@ export const Label = styled.label`
 `;
 
 export const Input = styled(Field)`
-  display: flex;
   flex-direction: row;
   align-items: center;
   padding: 12px 16px;
@@ -82,10 +69,30 @@ export const Input = styled(Field)`
   }
 `;
 
+export const IconCheck = styled.span`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  cursor: pointer;
+`;
+
+export const IconCross = styled.span`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  cursor: pointer;
+`;
+
 export const Button = styled.button`
   width: 100%;
   height: 48px;
-  padding: 10px 100px;
+  padding: 10px auto;
   background: #54adff;
   border-radius: 40px;
   border: none;
@@ -138,13 +145,4 @@ export const TextLink = styled.p`
     top: 46.35%;
     bottom: 52.31%;
   }
-`;
-export const IconMail = styled.span`
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 15px;
-  cursor: pointer;
 `;

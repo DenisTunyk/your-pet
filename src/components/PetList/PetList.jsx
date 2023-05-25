@@ -1,3 +1,5 @@
+import { PetsItem } from 'components/PetsItem/PetsItem';
+
 export const PetsData = ({ pets }) => {
   return (
     <ul>

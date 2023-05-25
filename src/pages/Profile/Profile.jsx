@@ -1,21 +1,23 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { UserData } from '../../components/UserData/UserData';
-import { Logout } from '../../components/Logout/Logout';
+import { selectUser } from '../../redux/auth/auth-selectors';
+
 import { PetsData } from '../../components/PetsData/PetsData';
-import css from '../../components/UserData/UserData.module.css';
+import { Title, Section } from 'components/UserData/UserData.styled';
 
 export const Profile = () => {
+  const user = useSelector(selectUser);
   return (
-    <section className={css.profile}>
+    <Section>
       <div>
-        <h3 className={css.profile__title}>My information:</h3>
-        <UserData />
-        <Logout />
+        <Title>My information:</Title>
+        <UserData user={user} />
       </div>
       <div>
-        <h3 className={css.profile__title}>My pets:</h3>
+        <Title>My pets:</Title>
         <PetsData />
       </div>
-    </section>
+    </Section>
   );
 };

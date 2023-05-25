@@ -1,0 +1,42 @@
+// .button {
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+//   padding: 0;
+//   border: none;
+//   background-color: transparent;
+//   color: #888888;
+// }
+
+// .button:hover,
+// .button:focus {
+//   text-shadow: 2px 2px 4px #456a8e84;
+//   transform: scale(1.07);
+// }
+
+// .button__icon {
+//   padding-right: 12px;
+// }
+
+import styled from 'styled-components';
+
+export const ButtonLogout = styled.button`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #888888;
+  width: fit-content;
+
+  &:hover,
+  &:focus {
+    text-shadow: 2px 2px 4px #456a8e84;
+    transform: scale(1.05);
+  }
+`;
+
+export const LogoutIcon = styled.img`
+  padding-right: 12px;
+`;

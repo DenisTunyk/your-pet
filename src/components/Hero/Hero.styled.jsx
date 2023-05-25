@@ -156,7 +156,6 @@ export const Gif = styled.iframe`
   }
   @media screen and (min-width: 1280px) {
     display: inline-block;
-    position: absolute;
     margin-top: 250px;
     background-size: 450px auto;
     height: 300px;

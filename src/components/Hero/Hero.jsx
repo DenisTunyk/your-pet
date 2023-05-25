@@ -8,8 +8,8 @@ export const Hero = () => {
           <Container>
             <Title>Take good care of your small pets</Title>
           </Container>
-          <Gif frameBorder="0" allowFullScreen />
         </Page>
+        <Gif frameBorder="0" allowFullScreen />
       </Backgraund>
     </>
   );

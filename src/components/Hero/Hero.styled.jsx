@@ -161,6 +161,5 @@ export const Gif = styled.iframe`
     margin-top: 250px;
     background-size: 450px auto;
     height: 300px;
-    /* background-position: top 500px; */
   }
 `;

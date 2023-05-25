@@ -140,14 +140,14 @@ export const Title = styled.h1`
     line-height: 88.4px;
   }
 `;
-export const Gif = styled.iframe`
+export const Gif = styled.div`
   /* width: 180px; */
   background-image: url(${ImgGif});
   background-repeat: no-repeat;
   background-size: 200px auto;
   width: 250px;
   height: 150px;
-  background-position: top 500px;
+  /* background-position: top 500px; */
   /* background-size: 200px auto; */
   @media screen and (min-width: 768px) {
     background-size: 350px auto;
@@ -157,6 +157,6 @@ export const Gif = styled.iframe`
   @media screen and (min-width: 1280px) {
     background-size: 450px auto;
     height: 300px;
-    background-position: top 500px;
+    /* background-position: top 500px; */
   }
 `;

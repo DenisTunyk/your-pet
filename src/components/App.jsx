@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
-import { ToastContainer } from 'react-toastify';
 
 // import { Header } from './Header/Header';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';

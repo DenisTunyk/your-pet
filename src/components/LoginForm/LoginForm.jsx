@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/auth-operations';
 import { useAuth } from 'hooks/useAutn';
 import { Spinner } from 'components/Spinner/Spinner';
+import { ToastContainer, Slide } from 'react-toastify';
+import { notifyError } from 'helpers/Toastify';
 import {
   validattionLogin,
   InputError,
@@ -52,8 +54,10 @@ export const LoginForm = () => {
         actions.resetForm();
       }
       if (res.payload === 'Request failed with status code 409') {
+        notifyError('User not found');
       }
       if (res.payload === 'Request failed with status code 401') {
+        notifyError('Invalid email or password');
       }
     });
   };
@@ -64,6 +68,7 @@ export const LoginForm = () => {
 
   return (
     <Container>
+      <ToastContainer transition={Slide} />
       <Titel>Login</Titel>
       <Formik
         validationSchema={validattionLogin}

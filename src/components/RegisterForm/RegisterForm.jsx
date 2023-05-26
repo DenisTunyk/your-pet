@@ -120,9 +120,15 @@ export const RegisterForm = () => {
                 name="password"
                 placeholder="Password"
               />
-              <IconShow onClick={togglePassword}>
-                {showPassword ? <Closed size={24} /> : <Open size={24} />}
-              </IconShow>
+              {!errors.password && values.password !== '' ? (
+                <IconCheck>
+                  <Check stroke="green" />
+                </IconCheck>
+              ) : (
+                <IconShow onClick={togglePassword}>
+                  {showPassword ? <Open /> : <Closed />}
+                </IconShow>
+              )}
               {!errors.password && values.password !== '' ? (
                 <InputCorrect name="Password is correct" />
               ) : null}
@@ -141,13 +147,15 @@ export const RegisterForm = () => {
                 name="confirmPassword"
                 placeholder="Confirm password"
               />
-              <IconShow onClick={toggleConfirmPassword}>
-                {showConfirmPassword ? (
-                  <Closed size={24} />
-                ) : (
-                  <Open size={24} />
-                )}
-              </IconShow>
+              {!errors.confirmPassword && values.confirmPassword !== '' ? (
+                <IconCheck>
+                  <Check stroke="green" />
+                </IconCheck>
+              ) : (
+                <IconShow onClick={toggleConfirmPassword}>
+                  {showConfirmPassword ? <Open /> : <Closed />}
+                </IconShow>
+              )}
               {!errors.confirmPassword && values.confirmPassword !== '' ? (
                 <InputCorrect name="Password confirmed" />
               ) : null}

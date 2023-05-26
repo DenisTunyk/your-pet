@@ -1,5 +1,5 @@
 import React from 'react';
-import { Btn } from './ButtonBigW.module.style';
+import { Btn } from './ButtonBigW.module.styled';
 
 export const ButtonBigW = () => {
   return (

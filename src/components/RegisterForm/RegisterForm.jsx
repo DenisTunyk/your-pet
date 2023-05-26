@@ -3,6 +3,8 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { register } from 'redux/auth/auth-operations';
+import { ToastContainer, Slide } from 'react-toastify';
+import { notifyError } from 'helpers/Toastify';
 import { Spinner } from 'components/Spinner/Spinner';
 import { useAuth } from 'hooks/useAutn';
 import {
@@ -56,6 +58,7 @@ export const RegisterForm = () => {
           actions.resetForm();
         }
         if (res.payload === 'Request failed with status code 409') {
+          notifyError(`User with email ${email} already exist`);
         }
       });
     }
@@ -71,6 +74,7 @@ export const RegisterForm = () => {
 
   return (
     <Container>
+      <ToastContainer transition={Slide} />
       <Title>Registration</Title>
       <Formik
         initialValues={initialVelues}

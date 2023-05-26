@@ -12,15 +12,20 @@ import {
 } from 'components/FormValidation/FormValidation';
 import { ReactComponent as Closed } from '../../assets/icon/eye-closed.svg';
 import { ReactComponent as Open } from '../../assets/icon/eye-open.svg';
+import { ReactComponent as Check } from '../../assets/icon/check.svg';
+import { ReactComponent as Cross } from '../../assets/icon/cross-small.svg';
 import {
   Container,
   Title,
   Input,
   Button,
-  Span,
   FormAuth,
   IconShow,
   LinkToLogIn,
+  Label,
+  TextLink,
+  IconCheck,
+  IconCross,
 } from './RegisterForm.styled';
 
 const initialVelues = {
@@ -74,7 +79,7 @@ export const RegisterForm = () => {
       >
         {({ errors, values }) => (
           <FormAuth autoComplete="off">
-            <label>
+            <Label>
               <Input
                 className={
                   !errors.email && values.email !== ''
@@ -88,11 +93,21 @@ export const RegisterForm = () => {
                 placeholder="Email"
               />
               {!errors.email && values.email !== '' ? (
+                <IconCheck>
+                  <Check stroke="green" />
+                </IconCheck>
+              ) : null}
+              {errors.email && values.email !== '' ? (
+                <IconCross>
+                  <Cross stroke="red" />
+                </IconCross>
+              ) : null}
+              {!errors.email && values.email !== '' ? (
                 <InputCorrect name="Email is correct" />
               ) : null}
               <InputError name="email" />
-            </label>
-            <label>
+            </Label>
+            <Label>
               <Input
                 className={
                   !errors.password && values.password !== ''
@@ -112,8 +127,8 @@ export const RegisterForm = () => {
                 <InputCorrect name="Password is correct" />
               ) : null}
               <InputError name="password" />
-            </label>
-            <label>
+            </Label>
+            <Label>
               <Input
                 className={
                   !errors.confirmPassword && values.confirmPassword !== ''
@@ -137,7 +152,7 @@ export const RegisterForm = () => {
                 <InputCorrect name="Password confirmed" />
               ) : null}
               <InputError name="confirmPassword" />
-            </label>
+            </Label>
             {isPending ? (
               <Spinner />
             ) : (
@@ -153,8 +168,10 @@ export const RegisterForm = () => {
           </FormAuth>
         )}
       </Formik>
-      <Span>Already have an account? </Span>
-      <LinkToLogIn to="/login">Login</LinkToLogIn>
+      <TextLink>
+        <span>Already have an account? </span>
+        <LinkToLogIn to="/login">Login</LinkToLogIn>
+      </TextLink>
     </Container>
   );
 };

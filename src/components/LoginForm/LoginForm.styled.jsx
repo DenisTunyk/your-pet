@@ -105,6 +105,11 @@ export const Button = styled.button`
   margin-top: 56px;
   margin-bottom: 24px;
 
+  &:disabled {
+    border: none;
+    cursor: default;
+  }
+
   @media screen and (min-width: 768px) {
     margin-top: 28px;
     margin-bottom: 20px;

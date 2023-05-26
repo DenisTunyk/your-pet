@@ -122,16 +122,6 @@ export const LoginForm = () => {
                   {showPassword ? <Open /> : <Closed />}
                 </IconShow>
               )}
-              {/* {formik.errors.password && formik.values.password !== '' ? (
-                <IconCross>
-                  <Cross stroke="red" />
-                </IconCross>
-              ) : null} */}
-              {/* {
-                <IconShow onClick={togglePassword}>
-                  {showPassword ? <Open /> : <Closed />}
-                </IconShow>
-              } */}
               {!errors.password && values.password !== '' ? (
                 <InputCorrect name="Password is secure " />
               ) : null}

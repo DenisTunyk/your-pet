@@ -26,7 +26,7 @@ export const validationRegister = yup.object().shape({
   email: yup
     .string()
     .required('Email field is required')
-    .matches(emailValid, "Email must contain '@', example: user@mail.com")
+    .matches(emailValid, 'Enter a valid Email')
     .min(10, 'Minimum 10 characters')
     .max(70, 'Maximum 70 characters')
     .email(),

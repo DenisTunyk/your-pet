@@ -146,11 +146,6 @@ export const RegisterForm = () => {
                   errors.email || errors.password || errors.confirmPassword
                 }
                 type="submit"
-                onClick={
-                  values.email !== '' &&
-                  values.password !== '' &&
-                  values.confirmPassword !== ''
-                }
               >
                 Registration
               </Button>

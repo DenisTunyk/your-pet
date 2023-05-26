@@ -1,10 +1,11 @@
 import React from 'react';
-import styles from './ButtonBigBlue.module.scss';
+// import styles from './ButtonBigBlue.module.scss';
+import { Btn } from './ButtonBigBlue.module.styled';
 
 export const ButtonBigBlue = () => {
   return (
     <div>
-      <button className={styles.btn}>
+      <Btn>
         <span>Learn more</span>
         <svg
           width="24"
@@ -25,7 +26,7 @@ export const ButtonBigBlue = () => {
             </clipPath>
           </defs>
         </svg>
-      </button>
+      </Btn>
     </div>
   );
 };

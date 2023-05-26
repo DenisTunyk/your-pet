@@ -95,7 +95,6 @@ export const LoginForm = () => {
                   <Cross stroke="red" />
                 </IconCross>
               ) : null}
-
               {!errors.email && values.email !== '' ? (
                 <InputCorrect name="Email is correct" />
               ) : null}

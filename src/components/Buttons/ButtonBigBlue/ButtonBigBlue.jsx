@@ -1,5 +1,4 @@
 import React from 'react';
-// import styles from './ButtonBigBlue.module.scss';
 import { Btn } from './ButtonBigBlue.module.styled';
 
 export const ButtonBigBlue = () => {

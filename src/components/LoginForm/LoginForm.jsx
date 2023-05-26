@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/auth-operations';
 import { useAuth } from 'hooks/useAutn';
 import { Spinner } from 'components/Spinner/Spinner';
+import { ToastContainer, Slide } from 'react-toastify';
+import { notifyError } from 'helpers/Toastify';
 import {
   validattionLogin,
   InputError,
@@ -39,10 +41,6 @@ export const LoginForm = () => {
   const { isPending } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
-  const togglePassword = () => {
-    setShowPassword(!showPassword);
-  };
-
   const handleSubmit = (values, actions) => {
     const { email, password } = values;
     dispatch(
@@ -56,28 +54,35 @@ export const LoginForm = () => {
         actions.resetForm();
       }
       if (res.payload === 'Request failed with status code 409') {
+        notifyError('User not found');
       }
       if (res.payload === 'Request failed with status code 401') {
+        notifyError('Invalid email or password');
       }
     });
   };
 
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <Container>
+      <ToastContainer transition={Slide} />
       <Titel>Login</Titel>
       <Formik
         validationSchema={validattionLogin}
         onSubmit={handleSubmit}
         initialValues={initialValues}
       >
-        {formik => (
-          <FormAuth onSubmit={handleSubmit}>
+        {({ errors, values }) => (
+          <FormAuth autoComplete="off">
             <Label>
               <Input
                 className={
-                  !formik.errors.email && formik.values.email !== ''
+                  !errors.email && values.email !== ''
                     ? 'success'
-                    : formik.errors.email && formik.values.email !== ''
+                    : errors.email && values.email !== ''
                     ? 'error'
                     : 'default'
                 }
@@ -85,18 +90,17 @@ export const LoginForm = () => {
                 name="email"
                 placeholder="Email"
               />
-              {!formik.errors.email && formik.values.email !== '' ? (
+              {!errors.email && values.email !== '' ? (
                 <IconCheck>
                   <Check stroke="green" />
                 </IconCheck>
               ) : null}
-              {formik.errors.email && formik.values.email !== '' ? (
+              {errors.email && values.email !== '' ? (
                 <IconCross>
                   <Cross stroke="red" />
                 </IconCross>
               ) : null}
-
-              {!formik.errors.email && formik.values.email !== '' ? (
+              {!errors.email && values.email !== '' ? (
                 <InputCorrect name="Email is correct" />
               ) : null}
               <InputError name="email" />
@@ -104,9 +108,9 @@ export const LoginForm = () => {
             <Label>
               <Input
                 className={
-                  !formik.errors.password && formik.values.password !== ''
+                  !errors.password && values.password !== ''
                     ? 'success'
-                    : formik.errors.password && formik.values.password !== ''
+                    : errors.password && values.password !== ''
                     ? 'error'
                     : 'default'
                 }
@@ -114,7 +118,7 @@ export const LoginForm = () => {
                 name="password"
                 placeholder="Password"
               />
-              {!formik.errors.password && formik.values.password !== '' ? (
+              {!errors.password && values.password !== '' ? (
                 <IconCheck>
                   <Check stroke="green" />
                 </IconCheck>
@@ -123,17 +127,7 @@ export const LoginForm = () => {
                   {showPassword ? <Open /> : <Closed />}
                 </IconShow>
               )}
-              {/* {formik.errors.password && formik.values.password !== '' ? (
-                <IconCross>
-                  <Cross stroke="red" />
-                </IconCross>
-              ) : null} */}
-              {/* {
-                <IconShow onClick={togglePassword}>
-                  {showPassword ? <Open /> : <Closed />}
-                </IconShow>
-              } */}
-              {!formik.errors.password && formik.values.password !== '' ? (
+              {!errors.password && values.password !== '' ? (
                 <InputCorrect name="Password is secure " />
               ) : null}
               <InputError name="password" />
@@ -141,10 +135,7 @@ export const LoginForm = () => {
             {isPending ? (
               <Spinner />
             ) : (
-              <Button
-                disabled={formik.errors.email || formik.errors.password}
-                type="submit"
-              >
+              <Button disabled={errors.email || errors.password} type="submit">
                 Login
               </Button>
             )}

@@ -9,7 +9,7 @@ const passwordValid = /(?!\s)^[^ ]*$/;
 export const validattionLogin = yup.object().shape({
   email: yup
     .string()
-    .required('Enter a valid Email')
+    .required('Email field is required')
     .matches(emailValid, 'Enter a valid Email')
     .max(70, 'Maximum 70 characters')
     .min(10, 'Minimum 10 characters')
@@ -26,7 +26,7 @@ export const validationRegister = yup.object().shape({
   email: yup
     .string()
     .required('Email field is required')
-    .matches(emailValid, "Email must contain '@', example: user@mail.com")
+    .matches(emailValid, 'Enter a valid Email')
     .min(10, 'Minimum 10 characters')
     .max(70, 'Maximum 70 characters')
     .email(),
@@ -36,14 +36,17 @@ export const validationRegister = yup.object().shape({
     .min(7, 'Enter 7 or more characters')
     .max(32, 'Please enter 32 characters or less')
     .required('Password field is required'),
-  confirmPassword: yup.string().when('password', {
-    is: val => (val && val.length > 0 ? true : false),
-    then: () =>
-      yup
-        .string()
-        .oneOf([yup.ref('password')], ' Please confirm your password')
-        .required('Confirm field is required'),
-  }),
+  confirmPassword: yup
+    .string()
+    .required('Confirm field is required')
+    .when('password', {
+      is: val => (val && val.length > 0 ? true : false),
+      then: () =>
+        yup
+          .string()
+          .oneOf([yup.ref('password')], ' Please confirm your password')
+          .required('Confirm field is required'),
+    }),
 });
 
 export const InputError = ({ name }) => {

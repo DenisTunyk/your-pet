@@ -24,12 +24,19 @@ export const Container = styled.div`
 `;
 
 export const Titel = styled.h1`
+  font-weight: 400;
   font-size: 24px;
   line-height: 33px;
   align-items: center;
   text-align: center;
   color: #111111;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 49px;
+  }
 `;
 
 export const FormAuth = styled(Form)`
@@ -104,6 +111,12 @@ export const Button = styled.button`
   line-height: 27px;
   margin-top: 56px;
   margin-bottom: 24px;
+
+  &:disabled {
+    background: #83c2fd;
+    border: none;
+    cursor: default;
+  }
 
   @media screen and (min-width: 768px) {
     margin-top: 28px;

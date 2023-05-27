@@ -112,6 +112,10 @@ export const Button = styled.button`
   margin-top: 16px;
   margin-bottom: 24px;
 
+  &:focus {
+    outline: none;
+  }
+
   &:disabled {
     background: #83c2fd;
     border: none;

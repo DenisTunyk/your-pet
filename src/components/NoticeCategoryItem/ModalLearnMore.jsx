@@ -19,6 +19,7 @@ import {
 import Icons from '../../images/icons/notices-category-icon.svg'
 
 export const ModalLearMore = ({ handler, data }) => {
+  console.log("data", data);
   useEffect(() => {
     const handleEsc = event => {
       if (event.keyCode === 27) {
@@ -33,7 +34,7 @@ export const ModalLearMore = ({ handler, data }) => {
   }, [handler]);
 
   return (
-    <ModalContainer>
+    <ModalContainer onClick={() => handler(false)}>
       <ModalWindow>
         <CloseButton onClick={() => handler(false)}>
           <svg width="20" height="18">
@@ -45,26 +46,17 @@ export const ModalLearMore = ({ handler, data }) => {
             <Category> {data.category}</Category>
           </Image>
           <ContactInfo>
-            <Description>Cute dog looking for a home</Description>
+            <Description>{data.description}</Description>
             <Contact>
               <Contactheader>
-                <div>Name:</div>
-                <div>Birthday:</div>
-                <div>Breed:</div>
-                <div>Place:</div>
-                <div>The sex:</div>
-                <div>Email:</div>
-                <div>Phone:</div>
+                <div>Name:</div><div>{data.name}</div>
+                <div>Birthday:</div><div>{data.age}</div>
+                <div>Breed:</div><div>{data.breed}</div>
+                <div>Place:</div><div>{data.location}</div>
+                <div>The sex:</div><div>{data.sex}</div>
+                <div>Email:</div><div>{data.name}</div>
+                <div>Phone:</div><div>{data.name}</div>
               </Contactheader>
-              <ContactContent>
-                <div>Name:</div>
-                <div>Birthday:</div>
-                <div>Breed:</div>
-                <div>Place:</div>
-                <div>The sex:</div>
-                <div>Email:</div>
-                <div>Phone:</div>
-              </ContactContent>
             </Contact>
           </ContactInfo>
         </Info>

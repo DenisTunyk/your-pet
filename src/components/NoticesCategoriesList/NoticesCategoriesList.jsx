@@ -12,7 +12,7 @@ export const NoticeCategiriesList = ({ search }) => {
   const notices = useSelector(selectNotices);
 
   useEffect(() => {
-    const fetch = async () => {
+    const fetchNotices = async () => {
       if (search) {
         switch (category) {
           case 'favoriteAdds':
@@ -22,7 +22,6 @@ export const NoticeCategiriesList = ({ search }) => {
             // await dispatch(searchMyPets(search));
             break;
           default:
-            console.log(category);
             await dispatch(getNoticesByQuery({ category, search }));
             break;
         }
@@ -44,7 +43,7 @@ export const NoticeCategiriesList = ({ search }) => {
       }
     };
 
-    fetch();
+    fetchNotices();
   }, [category, dispatch, search]);
 
   return (

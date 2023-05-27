@@ -9,6 +9,7 @@ export const getNotices = createAsyncThunk(
   'notices/getNotices',
   async (credentials, { rejectWithValue }) => {
     const { category } = credentials;
+
     try {
       const result = await axios.get(`/api/notices/category/${category}`);
       return result.data;

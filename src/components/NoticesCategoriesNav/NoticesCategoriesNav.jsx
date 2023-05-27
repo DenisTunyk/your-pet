@@ -3,8 +3,11 @@ import { List, Link, Item } from './NoticesCategoriesNav.styled';
 import { useDispatch } from 'react-redux';
 import { updateCategory } from 'redux/pets/pets-slice';
 
+import { useAuth } from 'hooks/useAutn';
+
 export const NoticesCategoriesNav = () => {
   const dispatch = useDispatch();
+  const { isLoggedIn } = useAuth();
 
   return (
     <List>
@@ -41,27 +44,31 @@ export const NoticesCategoriesNav = () => {
         </Link>
       </Item>
 
-      <Item>
-        <Link
-          to="/notices/favorite"
-          onClick={() => {
-            dispatch(updateCategory('favoriteAdds'));
-          }}
-        >
-          favorite ads
-        </Link>
-      </Item>
+      {isLoggedIn && (
+        <Item>
+          <Link
+            to="/notices/favorite"
+            onClick={() => {
+              dispatch(updateCategory('favoriteAdds'));
+            }}
+          >
+            favorite ads
+          </Link>
+        </Item>
+      )}
 
-      <Item>
-        <Link
-          to="/notices/own"
-          onClick={() => {
-            dispatch(updateCategory('myAds'));
-          }}
-        >
-          my ads
-        </Link>
-      </Item>
+      {isLoggedIn && (
+        <Item>
+          <Link
+            to="/notices/own"
+            onClick={() => {
+              dispatch(updateCategory('myAds'));
+            }}
+          >
+            my ads
+          </Link>
+        </Item>
+      )}
     </List>
   );
 };

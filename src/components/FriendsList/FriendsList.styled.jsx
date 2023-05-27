@@ -22,6 +22,7 @@ export const Titel = styled.h1`
   }
 
   @media screen and (min-width: 1280px) {
+    margin-bottom: 60px;
   }
 `;
 
@@ -48,4 +49,9 @@ export const ListItem = styled.li`
   background: #ffffff;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 40px;
+
+  @media screen and (min-width: 767px) {
+    width: 336px;
+    height: 275px;
+  }
 `;

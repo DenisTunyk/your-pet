@@ -5,7 +5,10 @@ import { useDispatch } from 'react-redux';
 import { LogoutBtn } from '../Buttons/LogoutBtn/LogoutBtn';
 import { updateUser, deleteUsersAvatar } from 'redux/auth/auth-operations';
 import { UserDataItem } from 'components/UserDataItem/UserDataItem';
+// ============
+import { useAuth } from '../../hooks/useAutn';
 
+// ================
 import camera from '../../assets/icon/camera.svg';
 import closeShape from '../../assets/icon/cross-small.svg';
 import noAvatar from '../../images/profile_img/Photo_default_2x.jpg';
@@ -38,7 +41,7 @@ const imageExtensions = [
 export const UserData = ({ user }) => {
   const dispatch = useDispatch();
   const [isDisabledBtn, setIsDisabledBtn] = useState(false);
-  const { email, name, birthday, phone, city, avatarURL } = user;
+  const { email, name, birthday, phone, city, avatarURL } = useAuth();
 
   const handleFileChange = async e => {
     const splitToFindExtension = e.target.value.split('.');

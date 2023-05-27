@@ -139,7 +139,7 @@ export const IconShow = styled.span`
   height: 24px;
   top: 50%;
   transform: translateY(-50%);
-  right: 10px;
+  right: 15px;
   color: grey;
   cursor: pointer;
 `;

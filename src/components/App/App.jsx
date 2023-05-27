@@ -14,10 +14,11 @@ import SharedLayout from '../SharedLayout/SharedLayout';
 import { HomePage } from '../../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
+import { Container } from './App.styled';
 
 export const App = () => {
   return (
-    <div>
+    <Container>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
@@ -51,6 +52,6 @@ export const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-    </div>
+    </Container>
   );
 };

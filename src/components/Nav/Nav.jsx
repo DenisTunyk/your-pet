@@ -15,7 +15,7 @@ const Nav = ({ handleLinkClick }) => {
       <LinkNav to="/notices" onClick={handleClick}>
         Find pet
       </LinkNav>
-      <LinkNav to="/friends" onClick={handleClick}>
+      <LinkNav to="/ourfriend" onClick={handleClick}>
         Our friends
       </LinkNav>
     </NavCss>

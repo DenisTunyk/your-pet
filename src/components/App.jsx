@@ -4,7 +4,7 @@ import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 
 // import { Header } from './Header/Header';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
-import { OurFriend } from '../pages/OurFriend/OurFriend';
+
 import AddPetPage from '../pages/AddPetPage/AddPetPage';
 import { News } from '../pages/News/News';
 import { Profile } from '../pages/Profile/Profile';
@@ -13,6 +13,7 @@ import { LoginPage } from 'pages/LoginPage/LoginPage';
 import SharedLayout from './SharedLayout/SharedLayout';
 import { HomePage } from '../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
+import { OurFriend } from 'pages/OurFriend/OurFriend';
 
 export const App = () => {
   return (

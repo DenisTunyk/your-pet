@@ -3,7 +3,7 @@ import newsData from './news.json';
 import { Card, Wrapper } from './NewsItem.styled';
 
 export const NewsItem = () => {
-  const [news, setNews] = useState(newsData.news);
+  const [news] = useState(newsData.news);
 
   return (
     <Wrapper>
@@ -12,7 +12,7 @@ export const NewsItem = () => {
           <h2>{item.title}</h2>
           <p>{item.text}</p>
           <p>{item.date}</p>
-          <p>{item.url}</p>
+          <a href={item.url}>Read more</a>
           <hr />
         </Card>
       ))}

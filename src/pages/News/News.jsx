@@ -1,9 +1,9 @@
 import React from 'react';
-import NewsCard from '../../components/NewsItem/NewsItem';
+import NewsList from '../../components/NewsList/NewsList';
 export const News = () => {
   return (
     <div>
-      <NewsCard />
+      <NewsList />
     </div>
   );
 };

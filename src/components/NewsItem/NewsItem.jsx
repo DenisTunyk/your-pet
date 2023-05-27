@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import newsData from './news.json';
 
-export const NewsCard = () => {
+export const NewsItem = () => {
   const [news, setNews] = useState(newsData.news);
 
   return (
     <div>
-      {news.map((item, index) => (
-        <div key={index}>
+      {news.map((item, id) => (
+        <div key={id}>
           <h2>{item.title}</h2>
-          <p>{item.description}</p>
-          <p>Автор: {item.author}</p>
-          <p>Дата: {item.date}</p>
+          <p>{item.text}</p>
+          <p>дата: {item.date}</p>
+          <p>посилання: {item.url}</p>
           <hr />
         </div>
       ))}
@@ -19,4 +19,4 @@ export const NewsCard = () => {
   );
 };
 
-export default NewsCard;
+export default NewsItem;

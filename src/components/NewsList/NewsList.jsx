@@ -2,10 +2,11 @@
 // import { List } from './NewsList.styled';
 import NewsItem from '../NewsItem/NewsItem';
 
-export default function NewsList() {
+export const NewsList = () => {
   return (
     <>
       <NewsItem />
     </>
   );
-}
+};
+export default NewsList;

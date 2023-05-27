@@ -24,6 +24,14 @@ export const Content = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
+  margin-bottom: 40px;
+`;
+
+export const Link = styled.a`
+  color: #54adff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
 `;
 
 export default Card;

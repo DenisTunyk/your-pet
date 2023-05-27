@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import newsData from './news.json';
-import { Card, Wrapper, Title, Content } from './NewsItem.styled';
+import { Card, Wrapper, Title, Content, Link } from './NewsItem.styled';
 
 export const NewsItem = () => {
   const [news] = useState(newsData.news);
@@ -12,9 +12,9 @@ export const NewsItem = () => {
           <Title>{item.title}</Title>
           <Content>{item.text}</Content>
           <p>{item.date}</p>
-          <a href={item.url} target="blank">
+          <Link href={item.url} target="blank">
             Read more
-          </a>
+          </Link>
           <hr />
         </Card>
       ))}

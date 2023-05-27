@@ -10,15 +10,19 @@ export const NoticeSearch = ({ filterNotice }) => {
   const handleSubmit = e => {
     e.preventDefault();
     filterNotice(search);
-    setSearch('');
   };
 
   const handleChange = e => {
-    setSearch(e.target.value);
+    const input = e.target.value;
+    if (!input) {
+      filterNotice(input);
+    }
+    setSearch(input);
   };
 
   const onClickClear = () => {
     setSearch('');
+    filterNotice('');
   };
 
   return (

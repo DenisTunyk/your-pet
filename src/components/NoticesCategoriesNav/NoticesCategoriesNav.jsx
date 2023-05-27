@@ -12,7 +12,6 @@ export const NoticesCategoriesNav = () => {
         <Link
           to="/notices/sell"
           onClick={() => {
-            // petsSlice.actions = lost-found
             dispatch(updateCategory('sell'));
           }}
         >
@@ -24,7 +23,7 @@ export const NoticesCategoriesNav = () => {
         <Link
           to="/notices/lost-found"
           onClick={() => {
-            dispatch(updateCategory('lost/found'));
+            dispatch(updateCategory('lostFound'));
           }}
         >
           lost/found
@@ -35,7 +34,7 @@ export const NoticesCategoriesNav = () => {
         <Link
           to="/notices/for-free"
           onClick={() => {
-            dispatch(updateCategory('in good hands'));
+            dispatch(updateCategory('inGoodHands'));
           }}
         >
           in good hands
@@ -46,7 +45,7 @@ export const NoticesCategoriesNav = () => {
         <Link
           to="/notices/favorite"
           onClick={() => {
-            dispatch(updateCategory('favorite ads'));
+            dispatch(updateCategory('favoriteAdds'));
           }}
         >
           favorite ads
@@ -57,7 +56,7 @@ export const NoticesCategoriesNav = () => {
         <Link
           to="/notices/own"
           onClick={() => {
-            dispatch(updateCategory('my ads'));
+            dispatch(updateCategory('myAds'));
           }}
         >
           my ads

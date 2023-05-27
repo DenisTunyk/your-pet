@@ -13,4 +13,17 @@ export const Card = styled.div`
   margin-left: auto;
 `;
 
+export const Title = styled.p`
+  color: black;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+`;
+export const Content = styled.p`
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+`;
+
 export default Card;

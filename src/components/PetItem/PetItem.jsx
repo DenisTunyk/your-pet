@@ -12,14 +12,14 @@ import {
 import { ReactComponent as Trash } from '../../assets/icon/trash-2.svg';
 
 export const PetsItem = ({ _id, photo, name, birthday, breed, comments }) => {
-  //   const [deletePet] = useDeleteUserPetMutation();
+  //  const [deletePet] = useDeleteUserPetMutation();
 
   return (
     <>
       <PetItem key={_id} id={_id}>
         <PetImage src={photo} alt={name} />
         <ListPets>
-          <ListItem>
+          {/* <ListItem>
             <Title>Name:</Title> {name}
           </ListItem>
           <ListItem>
@@ -27,15 +27,15 @@ export const PetsItem = ({ _id, photo, name, birthday, breed, comments }) => {
           </ListItem>
           <ListItem>
             <Title>Breed:</Title> {breed}
-          </ListItem>
+          </ListItem> */}
           <ListInfoItem>
             <Title>Comments:</Title> {comments}
           </ListInfoItem>
         </ListPets>
 
-        <DeleteBtn onClick={() => deletePet(_id)}>
-          <Trash />
-        </DeleteBtn>
+        {/* <DeleteBtn onClick={() => deletePet(_id)}> */}
+        <Trash />
+        {/* </DeleteBtn> */}
       </PetItem>
     </>
   );

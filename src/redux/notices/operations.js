@@ -3,8 +3,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import createSearchParams from '../../helpers/createSearchParams';
 axios.defaults.baseURL = 'https://project-7-backend.onrender.com';
 
-//project-7-backend.onrender.com/api/notices/category/${activeCategory}?page=${page}&limit=8
-
 export const getNotices = createAsyncThunk(
   'notices/getNotices',
   async (credentials, { rejectWithValue }) => {

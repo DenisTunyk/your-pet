@@ -4,20 +4,22 @@ import { UserData } from '../../components/UserData/UserData';
 import { selectUser } from '../../redux/auth/auth-selectors';
 
 import { PetsData } from '../../components/PetsData/PetsData';
-import { Title, Section } from 'components/UserData/UserData.styled';
+import {
+  Section,
+  WrapperUser,
+  StyledWrapper,
+} from 'components/UserData/UserData.styled';
 
 export const Profile = () => {
   const user = useSelector(selectUser);
   return (
     <Section>
-      <div>
-        <Title>My information:</Title>
-        <UserData user={user} />
-      </div>
-      <div>
-        <Title>My pets:</Title>
+      <WrapperUser>
+        <StyledWrapper>
+          <UserData user={user} />
+        </StyledWrapper>{' '}
         <PetsData />
-      </div>
+      </WrapperUser>
     </Section>
   );
 };

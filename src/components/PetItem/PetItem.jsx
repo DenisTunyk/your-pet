@@ -5,7 +5,7 @@ import {
   PetImage,
   ListPets,
   ListInfoItem,
-  DeleteBtn,
+  // DeleteBtn,
   Title,
 } from './PetsItem.styled';
 
@@ -21,6 +21,7 @@ export const PetsItem = ({ _id, photo, name, birthday, breed, comments }) => {
         <ListPets>
           {/* <ListItem>
             <Title>Name:</Title> {name}
+            
           </ListItem>
           <ListItem>
             <Title>Date of birth:</Title> {birthday}

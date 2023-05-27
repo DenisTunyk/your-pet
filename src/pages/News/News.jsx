@@ -1,5 +1,9 @@
 import React from 'react';
-
+import NewsList from '../../components/NewsList/NewsList';
 export const News = () => {
-  return <h1> News </h1>;
+  return (
+    <div>
+      <NewsList />
+    </div>
+  );
 };

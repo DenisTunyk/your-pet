@@ -1,23 +1,24 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+import { RestrictedRoute } from '../RestrictedRoute/RestrictedRoute';
 
 // import { Header } from './Header/Header';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 
-import AddPetPage from '../pages/AddPetPage/AddPetPage';
-import { News } from '../pages/News/News';
-import { Profile } from '../pages/Profile/Profile';
-import { NoticesPage } from '../pages/NoticesPage/NoticesPage';
+import AddPetPage from '../../pages/AddPetPage/AddPetPage';
+import { News } from '../../pages/News/News';
+import { Profile } from '../../pages/Profile/Profile';
+import { NoticesPage } from '../../pages/NoticesPage/NoticesPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
-import SharedLayout from './SharedLayout/SharedLayout';
-import { HomePage } from '../pages/HomePage/HomePage';
+import SharedLayout from '../SharedLayout/SharedLayout';
+import { HomePage } from '../../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
+import { Container } from './App.styled';
 
 export const App = () => {
   return (
-    <div>
+    <Container>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
@@ -51,6 +52,6 @@ export const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-    </div>
+    </Container>
   );
 };

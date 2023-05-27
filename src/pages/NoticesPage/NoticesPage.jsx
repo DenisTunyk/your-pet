@@ -7,8 +7,6 @@ import { NoticeCategiriesList } from 'components/NoticesCategoriesList/NoticesCa
 
 export const NoticesPage = () => {
   const [search, setSearch] = useState('');
-  console.log(search);
-
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 5;
 

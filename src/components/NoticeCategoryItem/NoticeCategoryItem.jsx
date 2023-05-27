@@ -17,7 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Icons from '../../images/icons/notices-category-icon.svg';
 
 export const NoticeCategiriesItem = data => {
-  const { image, description, age, city, sex, category } = data;
+  const { avatarURL, name, age, location, sex, category } = data;
   const [fill, setFill] = useState(false);
   const [showLearMore, setShowLearMore] = useState(false);
   const { isLoggedIn } = useAuth();
@@ -33,11 +33,12 @@ export const NoticeCategiriesItem = data => {
       toast("You're not logged in", { type: 'warning' });
     }
   };
+
   return (
     <>
       <Card>
         <ToastContainer />
-        <Image img={image}>
+        <Image img={avatarURL}>
           <Category>{category}</Category>
           <AddToFaivoriteButton filled={fill} onClick={handleAdd}>
             <svg width="20" height="18">
@@ -54,7 +55,7 @@ export const NoticeCategiriesItem = data => {
               <svg width="18" height="18">
                 <use className="icon" href={`${Icons}#location`} />
               </svg>
-              {city}
+              {location}
             </Content>
             <Content>
               <svg width="18" height="18">
@@ -70,7 +71,7 @@ export const NoticeCategiriesItem = data => {
             </Content>
           </ContentContainer>
         </Image>
-        <Description>{description}</Description>
+        <Description>{name}</Description>
         <LearMoreButton onClick={() => setShowLearMore(true)}>
           Lear more
         </LearMoreButton>

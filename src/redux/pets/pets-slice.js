@@ -9,7 +9,6 @@ const petsSlice = createSlice({
   initialState: petsInitialState,
   reducers: {
     updateCategory(state, action) {
-      // category: 'sell',
       state.category = action.payload;
     },
   },

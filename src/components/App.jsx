@@ -14,6 +14,7 @@ import SharedLayout from './SharedLayout/SharedLayout';
 import { HomePage } from '../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
+import { FriendList } from './FriendsList/FriendsList';
 
 export const App = () => {
   return (
@@ -51,6 +52,7 @@ export const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      <FriendList />
     </div>
   );
 };

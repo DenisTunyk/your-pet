@@ -11,8 +11,8 @@ export const NewsItem = () => {
         <Card key={id}>
           <h2>{item.title}</h2>
           <p>{item.text}</p>
-          <p>дата: {item.date}</p>
-          <p>посилання: {item.url}</p>
+          <p>{item.date}</p>
+          <p>{item.url}</p>
           <hr />
         </Card>
       ))}

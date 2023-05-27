@@ -12,7 +12,9 @@ export const NewsItem = () => {
           <h2>{item.title}</h2>
           <p>{item.text}</p>
           <p>{item.date}</p>
-          <a href={item.url}>Read more</a>
+          <a href={item.url} target="blank">
+            Read more
+          </a>
           <hr />
         </Card>
       ))}

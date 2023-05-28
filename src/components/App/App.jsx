@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { RestrictedRoute } from '../RestrictedRoute/RestrictedRoute';
 
@@ -15,9 +15,22 @@ import { HomePage } from '../../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
 import { Container } from './App.styled';
+import { useDispatch } from 'react-redux';
+import { useAuth } from 'hooks/useAutn';
+import { refreshUser } from 'redux/auth/auth-operations';
+import Loader from '../Loader/Loader';
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+
+  const { isRefreshing } = useAuth();
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <Container>
       <Routes>
         <Route path="/" element={<SharedLayout />}>

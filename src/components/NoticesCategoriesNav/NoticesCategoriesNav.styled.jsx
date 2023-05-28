@@ -1,8 +1,25 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const Container = styled.div`
+  margin: 0 auto;
+  padding: 20px;
+
+  width: 320px;
+
+  @media (min-width: 768px) {
+    width: 768px;
+    padding: 32px;
+    padding: 40px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1280px;
+    padding: 40px;
+  }
+`;
+
 export const List = styled('ul')`
-  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;

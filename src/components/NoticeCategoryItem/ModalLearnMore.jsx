@@ -41,8 +41,8 @@ export const ModalLearMore = ({ handler, data }) => {
           </svg>
         </CloseButton>
         <Info>
-          <Image img={data.image}>
-            <Category> {data.category}</Category>
+          <Image img={data.avatarURL}>
+            <Category> {data.title}</Category>
           </Image>
           <ContactInfo>
             <Description>Cute dog looking for a home</Description>

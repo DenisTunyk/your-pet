@@ -1,4 +1,4 @@
-import { List, Link, Item } from './NoticesCategoriesNav.styled';
+import { List, Link, Item, Container } from './NoticesCategoriesNav.styled';
 
 import { useDispatch } from 'react-redux';
 import { updateCategory } from 'redux/pets/pets-slice';
@@ -10,65 +10,67 @@ export const NoticesCategoriesNav = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <List>
-      <Item>
-        <Link
-          to="/notices/sell"
-          onClick={() => {
-            dispatch(updateCategory('sell'));
-          }}
-        >
-          sell
-        </Link>
-      </Item>
-
-      <Item>
-        <Link
-          to="/notices/lost-found"
-          onClick={() => {
-            dispatch(updateCategory('lostFound'));
-          }}
-        >
-          lost/found
-        </Link>
-      </Item>
-
-      <Item>
-        <Link
-          to="/notices/for-free"
-          onClick={() => {
-            dispatch(updateCategory('inGoodHands'));
-          }}
-        >
-          in good hands
-        </Link>
-      </Item>
-
-      {isLoggedIn && (
+    <Container>
+      <List>
         <Item>
           <Link
-            to="/notices/favorite"
+            to="/notices/sell"
             onClick={() => {
-              dispatch(updateCategory('favoriteAdds'));
+              dispatch(updateCategory('sell'));
             }}
           >
-            favorite ads
+            sell
           </Link>
         </Item>
-      )}
 
-      {isLoggedIn && (
         <Item>
           <Link
-            to="/notices/own"
+            to="/notices/lost-found"
             onClick={() => {
-              dispatch(updateCategory('myAds'));
+              dispatch(updateCategory('lostFound'));
             }}
           >
-            my ads
+            lost/found
           </Link>
         </Item>
-      )}
-    </List>
+
+        <Item>
+          <Link
+            to="/notices/for-free"
+            onClick={() => {
+              dispatch(updateCategory('inGoodHands'));
+            }}
+          >
+            in good hands
+          </Link>
+        </Item>
+
+        {isLoggedIn && (
+          <Item>
+            <Link
+              to="/notices/favorite"
+              onClick={() => {
+                dispatch(updateCategory('favoriteAdds'));
+              }}
+            >
+              favorite ads
+            </Link>
+          </Item>
+        )}
+
+        {isLoggedIn && (
+          <Item>
+            <Link
+              to="/notices/own"
+              onClick={() => {
+                dispatch(updateCategory('myAds'));
+              }}
+            >
+              my ads
+            </Link>
+          </Item>
+        )}
+      </List>
+    </Container>
   );
 };

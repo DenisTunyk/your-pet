@@ -164,6 +164,7 @@ export const Image = styled.div`
   border-radius: 0 0 40px 40px;
   background-color: rgba(0.1, 0.1, 0.1, 0.05);
   background-image: url(${({ img }) => img});
+  background-size: cover;
 
   @media (max-width: 767px) {
     width: 240px;

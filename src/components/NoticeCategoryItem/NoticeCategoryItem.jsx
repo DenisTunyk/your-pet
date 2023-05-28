@@ -15,11 +15,13 @@ import { useAuth } from '../../hooks/useAutn';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Icons from '../../images/icons/notices-category-icon.svg';
+import { useDispatch } from 'react-redux';
+import { addFavoriteNotice } from 'redux/notices/operations';
 
 export const NoticeCategiriesItem = data => {
-  const { avatarURL, name, age, location, sex, category } = data;
-  const [fill, setFill] = useState(false);
+  let { avatarURL, name, age, location, sex, category, favorite } = data;
   const [showLearMore, setShowLearMore] = useState(false);
+  const dispatch = useDispatch();
   const { isLoggedIn } = useAuth();
 
   useEffect(() => {
@@ -31,6 +33,8 @@ export const NoticeCategiriesItem = data => {
   const handleAdd = () => {
     if (!isLoggedIn) {
       toast("You're not logged in", { type: 'warning' });
+    } else {
+      dispatch(addFavoriteNotice(data));
     }
   };
 
@@ -40,12 +44,12 @@ export const NoticeCategiriesItem = data => {
         <ToastContainer />
         <Image img={avatarURL}>
           <Category>{category}</Category>
-          <AddToFaivoriteButton filled={fill} onClick={handleAdd}>
+          <AddToFaivoriteButton filled={favorite} onClick={handleAdd}>
             <svg width="20" height="18">
               <use className="icon" href={`${Icons}#like`} />
             </svg>
           </AddToFaivoriteButton>
-          <RemoveFaivoriteButton onClick={() => setFill(false)}>
+          <RemoveFaivoriteButton onClick={handleAdd}>
             <svg width="20" height="18">
               <use className="icon" href={`${Icons}#trash`} />
             </svg>

@@ -14,44 +14,49 @@ import SharedLayout from '../SharedLayout/SharedLayout';
 import { HomePage } from '../../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
+import { FriendList } from '../FriendsList/FriendsList';
+import Theme from '../Theme';
 import { Container } from './App.styled';
 
 export const App = () => {
   return (
-    <Container>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/add-pet" element={<AddPetPage />} />
-          <Route path="/main" element={<HomePage />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/friends" element={<OurFriend />} />
-          <Route
-            path="login"
-            element={
-              <RestrictedRoute
-                redirectTo="/profile"
-                component={<LoginPage />}
-              />
-            }
-          />
-          <Route
-            path="registration"
-            element={
-              <RestrictedRoute
-                redirectTo="/profile"
-                component={<RegisterPage />}
-              />
-            }
-          />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/notices/">
-            <Route index element={<Navigate to="/notices/sell" />} />
-            <Route path=":categoryName" element={<NoticesPage />} />
+    <Theme>
+      <Container>
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/add-pet" element={<AddPetPage />} />
+            <Route path="/main" element={<HomePage />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/friends" element={<OurFriend />} />
+            <Route
+              path="login"
+              element={
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<LoginPage />}
+                />
+              }
+            />
+            <Route
+              path="registration"
+              element={
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<RegisterPage />}
+                />
+              }
+            />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/notices/">
+              <Route index element={<Navigate to="/notices/sell" />} />
+              <Route path=":categoryName" element={<NoticesPage />} />
+            </Route>
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </Container>
+        </Routes>
+        <FriendList />
+      </Container>
+    </Theme>
   );
 };

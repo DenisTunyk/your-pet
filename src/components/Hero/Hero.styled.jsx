@@ -32,6 +32,7 @@ import ImgGif from '../../images/background/dog.gif';
 export const Backgraund = styled.section`
   display: flex;
   height: 100%;
+  width: 320px;
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat;
@@ -47,6 +48,7 @@ export const Backgraund = styled.section`
   @media screen and (min-width: 768px) {
     display: inherit;
     background-image: url(${BgT});
+    width: 768px;
   }
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -57,6 +59,7 @@ export const Backgraund = styled.section`
   @media screen and (min-width: 1280px) {
     background-image: url(${BgD});
     display: inherit;
+    width: 1280px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),

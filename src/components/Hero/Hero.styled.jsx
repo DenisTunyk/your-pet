@@ -85,11 +85,12 @@ export const Page = styled.section`
   }
   @media screen and (min-width: 768px) {
     height: 100vh;
+    width: 768px;
     background-image: url(${Img1T}), url(${Img2T}), url(${ImgCatT});
     background-repeat: no-repeat;
-    background-position: top 500px right 335px, top 325px right -30px,
-      top 635px right 0px;
-    background-size: 300px auto, 350px auto, 300px auto;
+    background-position: top 315px right 416px, top 20px right -128px,
+      top 510px right 0px;
+    background-size: 426px auto, 532px auto, 362px auto;
   }
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -132,7 +133,7 @@ export const Title = styled.h1`
   @media screen and (min-width: 768px) {
     font-size: 68px;
     line-height: 100px;
-    padding-top: 88px;
+    padding-top: 80px;
     width: 588px;
     margin-left: 32px;
   }

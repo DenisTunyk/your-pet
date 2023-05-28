@@ -15,9 +15,23 @@ import { HomePage } from '../../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
 import { Container } from './App.styled';
+import { useAuth } from 'hooks/useAutn';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import Loader from 'components/Loader/Loader';
+import { refreshUser } from 'redux/auth/auth-operations';
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <Loader marginTop="30px" />
+  ) : (
     <Container>
       <Routes>
         <Route path="/" element={<SharedLayout />}>

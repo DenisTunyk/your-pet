@@ -14,10 +14,13 @@ export const Titel = styled.h1`
   line-height: 33px;
   text-align: center;
   color: #000000;
+  margin-top: 40px;
+  margin-bottom: 24px;
 
   @media screen and (min-width: 768px) {
     font-size: 48px;
     line-height: 66px;
+    margin-top: 80px;
     margin-bottom: 40px;
   }
 

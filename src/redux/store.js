@@ -29,7 +29,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     pets: persistReducer(categoryPersistConfig, petsReducer),
-    notices: noticesReducer
+    notices: noticesReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

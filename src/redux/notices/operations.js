@@ -1,31 +1,30 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import createSearchParams  from '../../helpers/createSearchParams';
+import createSearchParams from '../../helpers/createSearchParams';
+axios.defaults.baseURL = 'https://project-7-backend.onrender.com';
 
 export const getNotices = createAsyncThunk(
   'notices/getNotices',
   async (credentials, { rejectWithValue }) => {
-    const { category, ...params } = credentials;
-    try {
-      const { data } = await axios.get(
-        `/api/notices/${category}?${createSearchParams(params)}`
-      );
+    const { category } = credentials;
 
-      return data;
+    try {
+      const result = await axios.get(`/api/notices/category/${category}`);
+      return result.data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
   }
 );
 
-export const getUsersNotices = createAsyncThunk(
-  'notices/getUsersNotices',
-  async (params, { rejectWithValue }) => {
+export const getNoticesByQuery = createAsyncThunk(
+  'notices/getNoticesByQuery',
+  async (credentials, { rejectWithValue }) => {
+    const { category, search } = credentials;
     try {
       const { data } = await axios.get(
-        `/api/notices?${createSearchParams(params)}`
+        `/api/notices/search/${category}?title=${search}`
       );
-
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -48,13 +47,12 @@ export const getFavoriteNotices = createAsyncThunk(
   }
 );
 
-export const getNoticesByQuery = createAsyncThunk(
-  'notices/getNoticesByQuery',
-  async (credentials, { rejectWithValue }) => {
-    const { category, ...params } = credentials;
+export const getUsersNotices = createAsyncThunk(
+  'notices/getUsersNotices',
+  async (params, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `/api/notices/search/${category}?${createSearchParams(params)}`
+        `/api/notices?${createSearchParams(params)}`
       );
 
       return data;

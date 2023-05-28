@@ -6,17 +6,19 @@ import { updateCategory } from 'redux/pets/pets-slice';
 import { ReactComponent as PlusIcon } from '../../assets/icon/plus.svg';
 import { AddButton } from '../PetsData/PetsData.styled';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from 'hooks/useAutn';
 
 export const NoticesCategoriesNav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isLoggedIn } = useAuth();
+
   return (
     <List>
       <Item>
         <Link
           to="/notices/sell"
           onClick={() => {
-            // petsSlice.actions = lost-found
             dispatch(updateCategory('sell'));
           }}
         >
@@ -28,7 +30,7 @@ export const NoticesCategoriesNav = () => {
         <Link
           to="/notices/lost-found"
           onClick={() => {
-            dispatch(updateCategory('lost/found'));
+            dispatch(updateCategory('lostFound'));
           }}
         >
           lost/found
@@ -39,23 +41,25 @@ export const NoticesCategoriesNav = () => {
         <Link
           to="/notices/for-free"
           onClick={() => {
-            dispatch(updateCategory('in good hands'));
+            dispatch(updateCategory('inGoodHands'));
           }}
         >
           in good hands
         </Link>
       </Item>
 
-      <Item>
-        <Link
-          to="/notices/favorite"
-          onClick={() => {
-            dispatch(updateCategory('favorite ads'));
-          }}
-        >
-          favorite ads
-        </Link>
-      </Item>
+      {isLoggedIn && (
+        <Item>
+          <Link
+            to="/notices/favorite"
+            onClick={() => {
+              dispatch(updateCategory('favoriteAdds'));
+            }}
+          >
+            favorite ads
+          </Link>
+        </Item>
+      )}
 
       <Item>
         <Link
@@ -70,6 +74,18 @@ export const NoticesCategoriesNav = () => {
       <AddButton onClick={() => navigate('/add-pet')}>
         Add pet <PlusIcon stroke="white" />
       </AddButton>
+      {isLoggedIn && (
+        <Item>
+          <Link
+            to="/notices/own"
+            onClick={() => {
+              dispatch(updateCategory('myAds'));
+            }}
+          >
+            my ads
+          </Link>
+        </Item>
+      )}
     </List>
   );
 };

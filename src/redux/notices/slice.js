@@ -17,8 +17,6 @@ const initialState = {
   items: [],
 
   currentNotice: null,
-  hits: 0,
-  totalHits: 0,
   newNotice: {},
   isLoading: false,
   error: null,
@@ -49,9 +47,7 @@ const noticesSlice = createSlice({
           getFavoriteNotices.fulfilled
         ),
         (state, { payload }) => {
-          state.items = payload.result;
-          state.hits = payload.hits;
-          state.totalHits = payload.totalHits;
+          state.items = payload;
         }
       )
       .addMatcher(

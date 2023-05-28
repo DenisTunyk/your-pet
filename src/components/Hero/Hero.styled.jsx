@@ -100,11 +100,12 @@ export const Page = styled.section`
 
   @media screen and (min-width: 1280px) {
     height: 100vh;
+    width: 1280px;
     background-image: url(${Img1D}), url(${Img2D}), url(${ImgCatD});
     background-repeat: no-repeat;
-    background-position: top 259px right 555px, top 59px right 18px,
-      top 560px right 170px;
-    background-size: 450px auto, 524px auto, 350px auto, 425px auto;
+    background-position: top 333px right 545px, top 30px right 0px,
+      top 505px right 100px;
+    background-size: 426px auto, 532px auto, 362px auto;
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
@@ -138,10 +139,12 @@ export const Title = styled.h1`
     margin-left: 32px;
   }
   @media screen and (min-width: 1280px) {
+    position: absolute;
     width: 501px;
+    height: 264px;
     font-weight: 800;
     margin-left: 32px;
-    padding-top: 92px;
+    padding-top: 188px;
     line-height: 88.4px;
   }
 `;
@@ -158,7 +161,8 @@ export const Gif = styled.iframe`
     height: 400px;
   }
   @media screen and (min-width: 1280px) {
-    margin-top: 250px;
+    position: absolute;
+    bottom: 0px;
     background-size: 450px auto;
     height: 300px;
   }

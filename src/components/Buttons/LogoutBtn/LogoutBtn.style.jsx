@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ButtonLogout = styled.button`
-  cursor: pointer;
   display: flex;
   align-items: center;
   padding: 0;
@@ -9,6 +8,7 @@ export const ButtonLogout = styled.button`
   background-color: transparent;
   color: #888888;
   width: fit-content;
+  margin-top: 13px;
 
   &:hover,
   &:focus {

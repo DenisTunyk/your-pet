@@ -112,6 +112,7 @@ export const WrapperUser = styled.div`
   flex-direction: column;
   @media screen and (min-width: 768px) {
     flex-direction: column;
+    padding: 20px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -136,20 +137,40 @@ export const Title = styled.h3`
   }
 `;
 
+export const UserItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 21px 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 25px;
+  }
+`;
+
 export const Wrapper = styled.div`
   background: #ffffff;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 40px;
   padding: 20px 8px;
-  min-width: 395px;
+  min-width: 280px;
   height: fit-content;
   margin-top: 18px;
 
   @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding: 20px 76px 21px 20px;
   }
 
   @media screen and (min-width: 1280px) {
     padding: 20px 12px;
+    flex-direction: column;
+    width: 395px;
   }
 `;
 
@@ -206,10 +227,4 @@ export const EditImageBtn = styled.button`
 
 export const CameraIcon = styled.img`
   margin-right: 8px;
-`;
-
-export const UserItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 21px 0;
 `;

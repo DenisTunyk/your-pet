@@ -13,8 +13,10 @@ import {
   StyledWrapper,
 } from './PetsData.styled';
 import { Title } from 'components/UserData/UserData.styled';
+import { useNavigate } from 'react-router-dom';
 
 export const PetsData = () => {
+  const navigate = useNavigate();
   //   const [openModal, setOpenModal] = useState(false);
 
   //   const { data, isFetching: isLoading } = useGetUserPetsQuery();
@@ -38,7 +40,7 @@ export const PetsData = () => {
       <StyledWrapper>
         <Title>My pets:</Title>
         {/* <AddButton onClick={() => setOpenModal(!openModal)}> */}
-        <AddButton>
+        <AddButton onClick={()=> navigate('/add-pet')}>
           Add pet <PlusIcon stroke="white" />
         </AddButton>
       </StyledWrapper>

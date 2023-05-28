@@ -3,10 +3,14 @@ import { List, Link, Item } from './NoticesCategoriesNav.styled';
 import { useDispatch } from 'react-redux';
 import { updateCategory } from 'redux/pets/pets-slice';
 
+import { ReactComponent as PlusIcon } from '../../assets/icon/plus.svg';
+import { AddButton } from '../PetsData/PetsData.styled';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from 'hooks/useAutn';
 
 export const NoticesCategoriesNav = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isLoggedIn } = useAuth();
 
   return (
@@ -69,6 +73,10 @@ export const NoticesCategoriesNav = () => {
           </Link>
         </Item>
       )}
+
+      <AddButton onClick={() => navigate('/add-pet')}>
+        Add pet <PlusIcon stroke="white" />
+      </AddButton>
     </List>
   );
 };

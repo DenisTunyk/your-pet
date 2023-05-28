@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { addNotice } from 'redux/notices/operations';
-import  { addMyPet } from 'redux/auth/auth-operations';
+import { addMyPet } from 'redux/auth/auth-operations';
 import { validatePetSchema } from '../validatePet';
 
 import MoreInfo from '../MoreInfoForm/MoreInfoForm';
@@ -24,6 +24,7 @@ import {
   AddFormItem,
   AddFormStepName,
   AddFormWrapper,
+  Container,
 } from './PetPageForm.styled';
 
 const AddPetPageForm = () => {
@@ -132,56 +133,58 @@ const AddPetPageForm = () => {
   };
 
   return (
-    <AddFormWrapper step={step} category={formData.category}>
-      <AddFormTitle>{title}</AddFormTitle>
-      <AddFormList>
-        {steps.map((stepName, index) => (
-          <AddFormItem key={index} className={setClassName(index)}>
-            <AddFormStepName>{stepName}</AddFormStepName>
-          </AddFormItem>
-        ))}
-      </AddFormList>
-      <Formik
-        initialValues={formData}
-        validationSchema={validatePetSchema}
-        onSubmit={handleSubmit}
-        validateOnChange={false}
-      >
-        {() => (
-          <AddForm autoComplete="on">
-            {step === 0 && (
-              <ChooseForm
-                formData={formData}
-                setFormData={setFormData}
-                nextStep={handleNextClick}
-                cancel={backLink}
-              />
-            )}
-            {step === 1 && (
-              <PersonalForm
-                formData={formData}
-                setFormData={setFormData}
-                nextStep={handleNextClick}
-                backStep={handlePrevClick}
-              />
-            )}
-            {step === 2 && (
-              <MoreInfo
-                formData={formData}
-                setFormData={setFormData}
-                backStep={handlePrevClick}
-                submit={handleSubmit}
-              />
-            )}
-          </AddForm>
+    <Container>
+      <AddFormWrapper step={step} category={formData.category}>
+        <AddFormTitle>{title}</AddFormTitle>
+        <AddFormList>
+          {steps.map((stepName, index) => (
+            <AddFormItem key={index} className={setClassName(index)}>
+              <AddFormStepName>{stepName}</AddFormStepName>
+            </AddFormItem>
+          ))}
+        </AddFormList>
+        <Formik
+          initialValues={formData}
+          validationSchema={validatePetSchema}
+          onSubmit={handleSubmit}
+          validateOnChange={false}
+        >
+          {() => (
+            <AddForm autoComplete="on">
+              {step === 0 && (
+                <ChooseForm
+                  formData={formData}
+                  setFormData={setFormData}
+                  nextStep={handleNextClick}
+                  cancel={backLink}
+                />
+              )}
+              {step === 1 && (
+                <PersonalForm
+                  formData={formData}
+                  setFormData={setFormData}
+                  nextStep={handleNextClick}
+                  backStep={handlePrevClick}
+                />
+              )}
+              {step === 2 && (
+                <MoreInfo
+                  formData={formData}
+                  setFormData={setFormData}
+                  backStep={handlePrevClick}
+                  submit={handleSubmit}
+                />
+              )}
+            </AddForm>
+          )}
+        </Formik>
+        {isModalOpen && !isLoading && (
+          <Modal toggleModal={() => navigate(backLink)}>
+            <AddPetModal backLink={backLink} />
+          </Modal>
         )}
-      </Formik>
-      {isModalOpen && !isLoading && (
-        <Modal toggleModal={() => navigate(backLink)}>
-          <AddPetModal backLink={backLink} />
-        </Modal>
-      )}
-    </AddFormWrapper>
+      </AddFormWrapper>
+    </Container>
   );
 };
 

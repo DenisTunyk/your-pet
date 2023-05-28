@@ -7,18 +7,29 @@ import {
 import './ModalDelete.css'
 import Icons from '../../images/icons/notices-category-icon.svg'
 
-async function deleteMyAds(noticeId, credentials, token) {
-  const url = `https://project-7-backend.onrender.com/api/myads/${noticeId}`;
+async function deleteFavorite(noticeId, token) {
+  const url = `https://project-7-backend.onrender.com/api/notices/favorite/${noticeId}`;
   return fetch(url, {
-    method: "DELETE",
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-    // body: JSON.stringify(credentials),
   }).then((data) => data.json());
 }
+
+// async function testListFavorite(token) {
+//   const url = `https://project-7-backend.onrender.com/api/notices/favorites`;
+//   return fetch(url, {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json",
+//       Authorization: `Bearer ${token}`,
+//     },
+//   }).then((data) => data.json());
+// }
 
 export const ModalDelete = ({ handler, data }) => {
   useEffect(() => {
@@ -38,18 +49,18 @@ export const ModalDelete = ({ handler, data }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => document.body.style.overflow = 'unset';
- }, []);
+  }, []);
 
   const handleAnswer = () => {
-    const noticeId = data.id;
-    const deleteId = data.id;
+    const noticeId = "64727bd006bf8d15d8fdeb05";
     const auth = JSON.parse(localStorage.getItem("persist:auth"));
-    deleteMyAds(noticeId, deleteId, auth?.token);
+    const token = auth.token.replace(/['"]+/g, '');
+    deleteFavorite(noticeId, token);
     handler();
   };
 
   return (
-    <ModalContainer onClick={() => handler(false)}>
+    <ModalContainer>
       <ModalWindow>
         <CloseButton onClick={() => handler(false)}>
           <svg width="20" height="18">

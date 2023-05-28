@@ -18,6 +18,18 @@ import {
 } from './ModalLearnMore.styled';
 import Icons from '../../images/icons/notices-category-icon.svg'
 
+async function addToFavorite(noticeId, token) {
+  const url = `https://project-7-backend.onrender.com/api/notices/favorite/${noticeId}`;
+  return fetch(url, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((data) => data.json());
+}
+
 export const ModalLearMore = ({ handler, data }) => {
   console.log("data", data);
   useEffect(() => {
@@ -32,6 +44,11 @@ export const ModalLearMore = ({ handler, data }) => {
       window.removeEventListener('keydown', handleEsc);
     };
   }, [handler]);
+
+
+  const handleAddToFavorite = (noticeId) => {
+      addToFavorite(noticeId)
+  }
 
   return (
     <ModalContainer onClick={() => handler(false)}>
@@ -75,7 +92,7 @@ export const ModalLearMore = ({ handler, data }) => {
           a doggy playmate too!
         </Comment>
         <ContactButtons>
-          <ContactButtonAdd>
+          <ContactButtonAdd onClick={() => handleAddToFavorite(data.id)}>
             <span>Add to</span>
             <svg width="20" height="18">
               <use className="icon" href={`${Icons}#like`} />

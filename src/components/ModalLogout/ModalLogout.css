@@ -3,13 +3,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .questionTitle {
     font-family: 'Manrope';
     font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
+    font-weight: 500;
+    font-size: 36px;
     color: #000000;
 }
 
@@ -32,6 +33,12 @@
 
 .questionController {
     margin-top: 48px;
+    width: 280px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 .answerNegative {
@@ -46,11 +53,9 @@
     padding: 8px 20px;
     gap: 8px;
     
-    position: absolute;
+    position: inherit;
     width: 129px;
     height: 40px;
-    left: 160px;
-    top: 252px;
     
     /* Голубой (ссылки) */
     
@@ -73,17 +78,56 @@
     padding: 8px 20px;
     gap: 8px;
     
-    position: absolute;
+    position: inherit;
     width: 129px;
     height: 40px;
-    left: 306px;
-    top: 252px;
     
     /* Голубой (ссылки) */
     
     background: #54ADFF;
     border-radius: 40px;
 
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FEF9F9;
+    border: none;
+}
+
+.logoutAnswerNegative {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 8px;
+    position: inherit;
+    width: 129px;
+    height: 40px;
+    border: 2px solid #54ADFF;
+    border-radius: 40px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #54ADFF;
+    background-color: #FFFFFF;
+}
+
+.logoutAnswerPositive {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 8px;
+    position: inherit;
+    width: 129px;
+    height: 40px;
+    background: #54ADFF;
+    border-radius: 40px;
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;

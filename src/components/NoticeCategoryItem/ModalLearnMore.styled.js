@@ -73,6 +73,8 @@ export const Description = styled.div`
   letter-spacing: -0.01em;
 
   color: #000000;
+
+  
 `;
 
 export const ContactInfo = styled.div`

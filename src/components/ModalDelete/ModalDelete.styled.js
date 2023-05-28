@@ -32,7 +32,6 @@ export const ModalWindow = styled.div`
     heigth: 287px;
     padding: 20px;
     border-radius: 20px;
-    height: auto;
   }
 `;
 

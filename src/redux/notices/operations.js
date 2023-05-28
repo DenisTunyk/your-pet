@@ -40,7 +40,6 @@ export const getFavoriteNotices = createAsyncThunk(
 
       return res;
     } catch (error) {
-      console.log('dfsdfsdf');
       return rejectWithValue(error);
     }
   }

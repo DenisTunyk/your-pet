@@ -1,0 +1,130 @@
+.questionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.questionTitle {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000000;
+}
+
+.questionBody {
+    margin-top: 40px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #000000;    
+    width: 393px;
+}
+
+.itemTitle {
+
+}
+
+.questionController {
+    margin-top: 48px;
+}
+
+.answerNegative {
+    box-sizing: border-box;
+
+    /* Auto layout */
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 8px;
+    
+    position: absolute;
+    width: 129px;
+    height: 40px;
+    left: 160px;
+    top: 252px;
+    
+    /* Голубой (ссылки) */
+    
+    border: 2px solid #54ADFF;
+    border-radius: 40px;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #54ADFF;
+    background-color: #FFFFFF;
+}
+
+.answerPositive {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 8px;
+    
+    position: absolute;
+    width: 129px;
+    height: 40px;
+    left: 306px;
+    top: 252px;
+    
+    /* Голубой (ссылки) */
+    
+    background: #54ADFF;
+    border-radius: 40px;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FEF9F9;
+    border: none;
+}
+
+
+@media (max-width: 768px) {
+    .questionController {
+        margin-top: 48px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 230px;
+        height: auto;
+    }
+
+    .answerNegative {
+        position: inherit;
+        width: 110px;
+    }
+
+    .answerNegative {
+        position: inherit;
+        width: 110px;
+    }
+
+    .answerPositive {
+        position: inherit;
+        width: 110px;
+    }
+
+    .questionBody {
+        width: auto;
+    }
+
+    .questionTitle {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+}

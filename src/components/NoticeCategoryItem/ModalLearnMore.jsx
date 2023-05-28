@@ -18,7 +18,20 @@ import {
 } from './ModalLearnMore.styled';
 import Icons from '../../images/icons/notices-category-icon.svg'
 
+async function addToFavorite(noticeId, token) {
+  const url = `https://project-7-backend.onrender.com/api/notices/favorite/${noticeId}`;
+  return fetch(url, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((data) => data.json());
+}
+
 export const ModalLearMore = ({ handler, data }) => {
+  console.log("data", data);
   useEffect(() => {
     const handleEsc = event => {
       if (event.keyCode === 27) {
@@ -32,8 +45,13 @@ export const ModalLearMore = ({ handler, data }) => {
     };
   }, [handler]);
 
+
+  const handleAddToFavorite = (noticeId) => {
+      addToFavorite(noticeId)
+  }
+
   return (
-    <ModalContainer>
+    <ModalContainer onClick={() => handler(false)}>
       <ModalWindow>
         <CloseButton onClick={() => handler(false)}>
           <svg width="20" height="18">
@@ -45,7 +63,7 @@ export const ModalLearMore = ({ handler, data }) => {
             <Category> {data.category}</Category>
           </Image>
           <ContactInfo>
-            <Description>Cute dog looking for a home</Description>
+            <Description>{data.description}</Description>
             <Contact>
               <Contactheader>
                 <div>Name:</div>
@@ -57,13 +75,13 @@ export const ModalLearMore = ({ handler, data }) => {
                 <div>Phone:</div>
               </Contactheader>
               <ContactContent>
-                <div>Name:</div>
-                <div>Birthday:</div>
-                <div>Breed:</div>
-                <div>Place:</div>
-                <div>The sex:</div>
-                <div>Email:</div>
-                <div>Phone:</div>
+                <div>{data.name}</div>
+                <div>{data.age}</div>
+                <div>{data.breed}</div>
+                <div>{data.location}</div>
+                <div>{data.sex}</div>
+                <div>{data.name}</div>
+                <div>{data.name}</div>
               </ContactContent>
             </Contact>
           </ContactInfo>
@@ -74,7 +92,7 @@ export const ModalLearMore = ({ handler, data }) => {
           a doggy playmate too!
         </Comment>
         <ContactButtons>
-          <ContactButtonAdd>
+          <ContactButtonAdd onClick={() => handleAddToFavorite(data.id)}>
             <span>Add to</span>
             <svg width="20" height="18">
               <use className="icon" href={`${Icons}#like`} />

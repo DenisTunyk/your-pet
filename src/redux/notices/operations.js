@@ -34,14 +34,13 @@ export const getNoticesByQuery = createAsyncThunk(
 
 export const getFavoriteNotices = createAsyncThunk(
   'notices/getFavoriteNotices',
-  async (params, { rejectWithValue }) => {
+  async ({ rejectWithValue }) => {
     try {
-      const { data } = await axios.get(
-        `/api/notices/favorites?${createSearchParams(params)}`
-      );
+      const res = await axios.get(`/api/notices/favorites`);
 
-      return data;
+      return res;
     } catch (error) {
+      console.log('dfsdfsdf');
       return rejectWithValue(error);
     }
   }

@@ -5,15 +5,26 @@ import { ReactComponent as BurgerSvg } from '../../images/icons/menu-hamburger.s
 import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
 import { BurgerBtn } from './Burger.styled';
 
+function showPopup() {
+  // .. логика отображения попапа
+  document.body.style.overflow = 'hidden';
+}
+
+function hidePopup() {
+  // .. логика скрытия попапа
+  document.body.style.overflow = 'auto';
+}
 export const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
     setIsOpen(true);
+    showPopup();
   };
 
   const handleClose = () => {
     setIsOpen(false);
+    hidePopup();
   };
 
   return (

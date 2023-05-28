@@ -4,7 +4,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 axios.defaults.baseURL = 'https://project-7-backend.onrender.com/';
 
 const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer${token}`;
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 const clearAuthHeader = () => {
@@ -39,7 +39,7 @@ export const logIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk('users/logOut', async (_, thunkAPI) => {
   try {
-    await axios.get('/user/logOut');
+    await axios.get('/users/logOut');
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -100,6 +100,29 @@ export const deleteUsersAvatar = createAsyncThunk(
 
       console.log(response.data);
       return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    // Reading the token from the state via getState()
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      // If there is no token, exit without performing any request
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+
+    try {
+      // If there is a token, add it to the HTTP header and perform the request
+      setAuthHeader(persistedToken);
+      const res = await axios.get('/users/current');
+      return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

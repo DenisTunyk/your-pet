@@ -49,14 +49,23 @@ export const ModalLearMore = ({ handler, data }) => {
             <Description>{data.description}</Description>
             <Contact>
               <Contactheader>
-                <div>Name:</div><div>{data.name}</div>
-                <div>Birthday:</div><div>{data.age}</div>
-                <div>Breed:</div><div>{data.breed}</div>
-                <div>Place:</div><div>{data.location}</div>
-                <div>The sex:</div><div>{data.sex}</div>
-                <div>Email:</div><div>{data.name}</div>
-                <div>Phone:</div><div>{data.name}</div>
+                <div>Name:</div>
+                <div>Birthday:</div>
+                <div>Breed:</div>
+                <div>Place:</div>
+                <div>The sex:</div>
+                <div>Email:</div>
+                <div>Phone:</div>
               </Contactheader>
+              <ContactContent>
+                <div>{data.name}</div>
+                <div>{data.age}</div>
+                <div>{data.breed}</div>
+                <div>{data.location}</div>
+                <div>{data.sex}</div>
+                <div>{data.name}</div>
+                <div>{data.name}</div>
+              </ContactContent>
             </Contact>
           </ContactInfo>
         </Info>

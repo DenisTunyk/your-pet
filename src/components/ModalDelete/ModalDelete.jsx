@@ -16,11 +16,9 @@ async function deleteMyAds(noticeId, credentials, token) {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(credentials),
+    // body: JSON.stringify(credentials),
   }).then((data) => data.json());
 }
-
-
 
 export const ModalDelete = ({ handler, data }) => {
   useEffect(() => {
@@ -36,16 +34,10 @@ export const ModalDelete = ({ handler, data }) => {
     };
   }, [handler]);
 
-  // const onModalOpen = event => {
-  //   if (event.target === event.currentTarget) {
-  //     handler();
-  //   }
-  // };
-
   // щоб не їздив задній фон
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    return ()=> document.body.style.overflow = 'unset';
+    return () => document.body.style.overflow = 'unset';
  }, []);
 
   const handleAnswer = () => {

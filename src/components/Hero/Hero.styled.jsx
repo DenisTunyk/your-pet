@@ -30,7 +30,7 @@ import ImgCatM2x from '../../images/main_img/mobile/3mobile2x.png';
 import ImgGif from '../../images/background/dog.gif';
 
 export const Backgraund = styled.section`
-  display: flex;
+  /* display: flex; */
   height: 100%;
   width: 320px;
   margin-left: auto;
@@ -71,13 +71,13 @@ export const Backgraund = styled.section`
 
 export const Page = styled.section`
   height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
+  width: 320px;
+
   background-image: url(${Img1M}), url(${Img2M}), url(${ImgCatM});
   background-repeat: no-repeat;
-  background-position: top 300px right 155px, top 180px right -55px,
-    top 375px right 0px;
-  background-size: 150px auto, 200px auto, 150px auto, 200px auto;
+  background-position: top 150px right 185px, top 20px right -75px,
+    top 263px right 0px;
+  background-size: 205px auto, 256px auto, 175px auto;
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
@@ -125,8 +125,9 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: 44px;
   font-size: 32px;
-  color: black;
+  color: #000000;
   padding-top: 60px;
+  padding-bottom: 20px;
 
   @media screen and (min-width: 768px) {
     font-size: 68px;
@@ -148,6 +149,7 @@ export const Gif = styled.iframe`
   background-repeat: no-repeat;
   background-size: 200px auto;
   width: 250px;
+  position: absolute;
   height: 150px;
   @media screen and (min-width: 768px) {
     background-size: 350px auto;
@@ -159,4 +161,8 @@ export const Gif = styled.iframe`
     background-size: 450px auto;
     height: 300px;
   }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
 `;

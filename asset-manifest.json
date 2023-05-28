@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/your-pet/static/css/main.8c54fabe.css",
-    "main.js": "/your-pet/static/js/main.30b32cfb.js",
+    "main.js": "/your-pet/static/js/main.816c17da.js",
     "static/media/notFound-desktop@2x.png": "/your-pet/static/media/notFound-desktop@2x.979ed45eae2668dc25c0.png",
     "static/media/notFound-tablet@2x.png": "/your-pet/static/media/notFound-tablet@2x.5c90e53b2b390ab1691a.png",
     "static/media/2tablet2x.png": "/your-pet/static/media/2tablet2x.47f06a7c4df0356ad25d.png",
@@ -33,6 +33,8 @@
     "static/media/bg_mobile2x.png": "/your-pet/static/media/bg_mobile2x.678a492847b0e788bf16.png",
     "static/media/pawprint.svg": "/your-pet/static/media/pawprint.1d85490412e256c453b6d4423f12bbec.svg",
     "static/media/notices-category-icon.svg": "/your-pet/static/media/notices-category-icon.9d2e182bad1f96fe7c0053b76a0ea4f8.svg",
+    "static/media/backgraund-pawprint-blue.svg": "/your-pet/static/media/backgraund-pawprint-blue.eb8b03de2fd077469e55e1fe689618ea.svg",
+    "static/media/backgraund-pawprint-yellow.svg": "/your-pet/static/media/backgraund-pawprint-yellow.c3e3c66a2f35661a16d74ae04102b4c5.svg",
     "index.html": "/your-pet/index.html",
     "static/media/edit-2.svg": "/your-pet/static/media/edit-2.d42e538238954ca1306e4b97a5f226f3.svg",
     "static/media/search.svg": "/your-pet/static/media/search.9894887dd03b6234526a4ad80ff98682.svg",
@@ -61,10 +63,10 @@
     "static/media/chevron-up.svg": "/your-pet/static/media/chevron-up.8b1ae116e1912ee79d301b6e7f32426a.svg",
     "static/media/chevron-down.svg": "/your-pet/static/media/chevron-down.1a212c1c13748ebea659b0fd342f0062.svg",
     "main.8c54fabe.css.map": "/your-pet/static/css/main.8c54fabe.css.map",
-    "main.30b32cfb.js.map": "/your-pet/static/js/main.30b32cfb.js.map"
+    "main.816c17da.js.map": "/your-pet/static/js/main.816c17da.js.map"
   },
   "entrypoints": [
     "static/css/main.8c54fabe.css",
-    "static/js/main.30b32cfb.js"
+    "static/js/main.816c17da.js"
   ]
 }

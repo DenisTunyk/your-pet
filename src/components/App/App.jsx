@@ -14,8 +14,8 @@ import SharedLayout from '../SharedLayout/SharedLayout';
 import { HomePage } from '../../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
-import { FriendList } from './FriendsList/FriendsList';
-import Theme from './Theme';
+import { FriendList } from '../FriendsList/FriendsList';
+import Theme from '../Theme';
 import { Container } from './App.styled';
 
 export const App = () => {

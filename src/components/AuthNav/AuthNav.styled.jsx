@@ -52,6 +52,7 @@ export const Box = styled.div`
 
   @media screen and (max-width: 767px) {
     width: 100%;
+    gap: 12px;
   }
 
   @media screen and (min-width: 768px) {

@@ -24,15 +24,16 @@ const Mobile = ({ children }) => {
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
-  const { user } = useAuth();
+  const { name } = useAuth();
+  const check = name ?? 'User';
   return (
     <>
       <Desktop>
         <Nav />
-        {isLoggedIn ? <UserNav userName={'Anna'} /> : <AuthNav />}
+        {isLoggedIn ? <UserNav userName={check} /> : <AuthNav />}
       </Desktop>
       <Tablet>
-        <Box>{isLoggedIn ? <UserNav userName={user.name} /> : <AuthNav />}</Box>
+        <Box>{isLoggedIn ? <UserNav userName={check} /> : <AuthNav />}</Box>
 
         <Burger />
       </Tablet>

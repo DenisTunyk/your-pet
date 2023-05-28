@@ -112,6 +112,10 @@ export const Button = styled.button`
   margin-top: 16px;
   margin-bottom: 24px;
 
+  &:focus {
+    outline: none;
+  }
+
   &:disabled {
     background: #83c2fd;
     border: none;
@@ -135,7 +139,7 @@ export const IconShow = styled.span`
   height: 24px;
   top: 50%;
   transform: translateY(-50%);
-  right: 10px;
+  right: 15px;
   color: grey;
   cursor: pointer;
 `;

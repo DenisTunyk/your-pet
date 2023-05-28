@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 import { Form } from 'formik';
 
+export const Container = styled.div`
+  margin: 0 auto;
+
+  width: 280px;
+  height: 496px;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 458px;
+    height: 542px;
+  }
+`;
+
 export const AddFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,6 +33,7 @@ export const AddFormWrapper = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     padding: ${({ step, category }) =>
       step === 2 && category !== 'my-pet' ? '20px 74px' : '20px 32px'};
+    width: 542px;
   }
 `;
 

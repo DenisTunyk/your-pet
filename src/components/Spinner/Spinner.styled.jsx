@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
 export const SpinnerWrapper = styled.div`
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

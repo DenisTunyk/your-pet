@@ -1,114 +1,71 @@
 import { NoticeCategiriesItem } from '../NoticeCategoryItem/NoticeCategoryItem';
 import { CardContainer } from './NoticesCategoriesList.styled';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCategories } from '../../redux/pets/pets-selectors';
+import { useEffect } from 'react';
+import { getNotices, getNoticesByQuery } from 'redux/notices/operations';
+import { selectNotices } from 'redux/notices/selectors';
 
-export const NoticeCategiriesList = () => {
-  const list = [
-    {
-      id: 1,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'female',
-      description: 'Cute cat looking for a home',
-      category: 'in good hands',
-    },
-    {
-      id: 2,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'in good hands',
-    },
-    {
-      id: 3,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'sell',
-    },
-    {
-      id: 4,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'sell',
-    },
-    {
-      id: 5,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'lost/found',
-    },
-    {
-      id: 6,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'sell',
-    },
-    {
-      id: 7,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'in good hands',
-    },
-    {
-      id: 8,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'sell',
-    },
-    {
-      id: 9,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'lost/found',
-    },
-    {
-      id: 10,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'sell',
-    },
-    {
-      id: 11,
-      image: 'Rectangle214.jpg',
-      city: 'Lviv',
-      age: '1 year',
-      sex: 'male',
-      description: 'Cute cat looking for a home',
-      category: 'lost/found',
-    },
-  ];
+import { selectNoticesIsLoading } from 'redux/notices/selectors';
+
+import { Spinner } from 'components/Spinner/Spinner';
+import { DefaultText } from 'components/DefaultText/DefaultText';
+
+export const NoticeCategiriesList = ({ search }) => {
+  const dispatch = useDispatch();
+  const category = useSelector(getCategories);
+  const notices = useSelector(selectNotices);
+
+  const isLoading = useSelector(selectNoticesIsLoading);
+
+  useEffect(() => {
+    const fetchNotices = async () => {
+      if (search) {
+        switch (category) {
+          case 'favoriteAdds':
+            // await dispatch(searchFavorite(search));
+            break;
+          case 'myAds':
+            // await dispatch(searchMyPets(search));
+            break;
+          default:
+            await dispatch(getNoticesByQuery({ category, search }));
+            break;
+        }
+      }
+
+      if (!search) {
+        switch (category) {
+          case 'favoriteAdds':
+            // await dispatch(getFavoriteNotices({}));
+            break;
+          case 'myAds':
+            // await dispatch(getMyNotices());
+            break;
+          default:
+            await dispatch(getNotices({ category }));
+
+            break;
+        }
+      }
+    };
+
+    fetchNotices();
+  }, [category, dispatch, search]);
 
   return (
-    <CardContainer>
-      {list.map(pet => (
-        <NoticeCategiriesItem key={pet.id} {...pet} />
-      ))}
-    </CardContainer>
+    <>
+      {isLoading ? (
+        <Spinner />
+      ) : notices.length > 0 ? (
+        <CardContainer>
+          {notices.map(notice => (
+            <NoticeCategiriesItem key={notice._id} {...notice} />
+          ))}
+        </CardContainer>
+      ) : (
+        <DefaultText>Ads not found</DefaultText>
+      )}
+    </>
   );
 };

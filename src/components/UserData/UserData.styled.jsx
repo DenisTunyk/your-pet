@@ -100,24 +100,57 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  margin-top: 60px;
+  margin-top: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+  }
+`;
+
+export const WrapperUser = styled.div`
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+  }
+`;
+
+export const StyledWrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 32px;
+  }
 `;
 
 export const Title = styled.h3`
-  margin-bottom: 24px;
-  font-weight: 500;
-  font-size: 28px;
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 28px;
+  }
 `;
 
 export const Wrapper = styled.div`
   background: #ffffff;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 40px;
-  padding: 20px 12px;
-  width: 395px;
-  height: 520px;
+  padding: 20px 8px;
+  min-width: 395px;
+  height: fit-content;
+  margin-top: 18px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 20px 12px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -178,5 +211,5 @@ export const CameraIcon = styled.img`
 export const UserItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 25px 0 21px 0;
+  margin: 21px 0;
 `;

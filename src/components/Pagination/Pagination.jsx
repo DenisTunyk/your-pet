@@ -4,10 +4,11 @@ import {
   PaginationContainer,
   PaginationButton,
   PaginationNumbers,
+  Wrapper,
 } from './Pagination.styled';
 
 export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const [displayedPages, setDisplayedPages] = useState([1, 2, 3,4,5]);
+  const [displayedPages, setDisplayedPages] = useState([1, 2, 3, 4, 5]);
 
   const handlePageClick = page => {
     onPageChange(page);
@@ -48,31 +49,32 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   const handleNextClick = () => {
     if (currentPage < totalPages) {
-    onPageChange(currentPage + 1);
-    updatePages(currentPage + 1);
+      onPageChange(currentPage + 1);
+      updatePages(currentPage + 1);
     }
   };
 
-
   return (
-    <PaginationContainer>
-      <PaginationButton onClick={handlePrevClick}>
-        <BsArrowLeft />
-      </PaginationButton>
-      <PaginationNumbers>
-        {displayedPages.map(page => (
-          <PaginationButton
-            key={page}
-            onClick={() => handlePageClick(page)}
-            active={currentPage === page}
-          >
-            {page}
-          </PaginationButton>
-        ))}
-      </PaginationNumbers>
-      <PaginationButton onClick={handleNextClick}>
-        <BsArrowRight />
-      </PaginationButton>
-    </PaginationContainer>
+    <Wrapper>
+      <PaginationContainer>
+        <PaginationButton onClick={handlePrevClick}>
+          <BsArrowLeft />
+        </PaginationButton>
+        <PaginationNumbers>
+          {displayedPages.map(page => (
+            <PaginationButton
+              key={page}
+              onClick={() => handlePageClick(page)}
+              active={currentPage === page}
+            >
+              {page}
+            </PaginationButton>
+          ))}
+        </PaginationNumbers>
+        <PaginationButton onClick={handleNextClick}>
+          <BsArrowRight />
+        </PaginationButton>
+      </PaginationContainer>
+    </Wrapper>
   );
 };

@@ -5,10 +5,10 @@ export const Spinner = () => {
   return (
     <SpinnerWrapper>
       <Rings
-        height="80"
-        width="80"
+        height="150"
+        width="150"
         color="#54ADFF"
-        radius="6"
+        radius="10"
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}

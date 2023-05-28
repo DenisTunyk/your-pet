@@ -15,9 +15,11 @@ export const Form = styled.form`
   padding-left: 20px;
   margin: 0 auto;
   margin-top: 24px;
+  padding-right: 10px;
 
   @media screen and (min-width: 768px) {
     width: 608px;
+    margin-top: 41px;
   }
 `;
 
@@ -41,4 +43,5 @@ export const Button = styled.button`
   padding: 0, 5px;
   background-color: transparent;
   cursor: pointer;
+  margin-left: auto;
 `;

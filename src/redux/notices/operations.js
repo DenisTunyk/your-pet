@@ -1,19 +1,46 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import createSearchParams  from '../../helpers/createSearchParams';
+import createSearchParams from '../../helpers/createSearchParams';
+axios.defaults.baseURL = 'https://project-7-backend.onrender.com';
 
 export const getNotices = createAsyncThunk(
   'notices/getNotices',
   async (credentials, { rejectWithValue }) => {
-    const { category, ...params } = credentials;
+    const { category } = credentials;
+
+    try {
+      const result = await axios.get(`/api/notices/category/${category}`);
+      return result.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getNoticesByQuery = createAsyncThunk(
+  'notices/getNoticesByQuery',
+  async (credentials, { rejectWithValue }) => {
+    const { category, search } = credentials;
     try {
       const { data } = await axios.get(
-        `/api/notices/${category}?${createSearchParams(params)}`
+        `/api/notices/search/${category}?title=${search}`
       );
-
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getFavoriteNotices = createAsyncThunk(
+  'notices/getFavoriteNotices',
+  async ({ rejectWithValue }) => {
+    try {
+      const res = await axios.get(`/api/notices/favorites`);
+
+      return res;
+    } catch (error) {
+      return rejectWithValue(error);
     }
   }
 );
@@ -24,37 +51,6 @@ export const getUsersNotices = createAsyncThunk(
     try {
       const { data } = await axios.get(
         `/api/notices?${createSearchParams(params)}`
-      );
-
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
-export const getFavoriteNotices = createAsyncThunk(
-  'notices/getFavoriteNotices',
-  async (params, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.get(
-        `/api/notices/favorites?${createSearchParams(params)}`
-      );
-
-      return data;
-    } catch (error) {
-      return rejectWithValue(error);
-    }
-  }
-);
-
-export const getNoticesByQuery = createAsyncThunk(
-  'notices/getNoticesByQuery',
-  async (credentials, { rejectWithValue }) => {
-    const { category, ...params } = credentials;
-    try {
-      const { data } = await axios.get(
-        `/api/notices/search/${category}?${createSearchParams(params)}`
       );
 
       return data;

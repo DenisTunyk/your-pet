@@ -9,25 +9,25 @@ export const Wrapper = styled(Link)`
 
   padding: 12px 0;
 
-  font-family: 'Manrope-SemiBold';
+  font-family: 'Manrope';
   font-size: 16px;
   color: #ffc107;
-
-  transition: color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 1s;
 
   &:hover,
   &:focus {
-    color: #fafa5e;
+    color: #ffc107;
+    transform: scale(1.2);
   }
 
   & svg {
     stroke: #ffc107;
-
-    transition: stroke 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 1s;
   }
 
   &:hover svg,
   &:focus svg {
-    stroke: #fafa5e;
+    stroke: #ffc107;
+    transform: scale(1.2);
   }
 `;

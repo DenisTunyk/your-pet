@@ -18,8 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Icons from '../../images/icons/notices-category-icon.svg';
 
 export const NoticeCategiriesItem = data => {
-  const { image, description, age, city, sex, category } = data;
-  const [fill, setFill] = useState(false);
+  const { avatarURL, name, age, location, sex, category, favorite } = data;
   const [modalDelete, setModelDelete] = useState(false);
   const [showLearMore, setShowLearMore] = useState(false);
   const { isLoggedIn } = useAuth();
@@ -37,17 +36,17 @@ export const NoticeCategiriesItem = data => {
   };
 
   const handleDelete = () => {
-    console.log("Delete");
+    console.log('Delete');
     setModelDelete(true);
-  }
+  };
 
   return (
     <>
       <Card>
         <ToastContainer />
-        <Image img={image}>
+        <Image img={avatarURL}>
           <Category>{category}</Category>
-          <AddToFaivoriteButton filled={fill} onClick={handleAdd}>
+          <AddToFaivoriteButton filled={favorite} onClick={handleAdd}>
             <svg width="20" height="18">
               <use className="icon" href={`${Icons}#like`} />
             </svg>
@@ -62,7 +61,7 @@ export const NoticeCategiriesItem = data => {
               <svg width="18" height="18">
                 <use className="icon" href={`${Icons}#location`} />
               </svg>
-              {city}
+              {location}
             </Content>
             <Content>
               <svg width="18" height="18">
@@ -78,13 +77,13 @@ export const NoticeCategiriesItem = data => {
             </Content>
           </ContentContainer>
         </Image>
-        <Description>{description}</Description>
+        <Description>{name}</Description>
         <LearMoreButton onClick={() => setShowLearMore(true)}>
           Lear more
         </LearMoreButton>
       </Card>
       {showLearMore && <ModalLearMore handler={setShowLearMore} data={data} />}
-      {modalDelete && <ModalDelete handler={setModelDelete} data={data} /> }
+      {modalDelete && <ModalDelete handler={setModelDelete} data={data} />}
     </>
   );
 };

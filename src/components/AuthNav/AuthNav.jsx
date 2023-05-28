@@ -3,7 +3,8 @@ import { AuthNavBts, Box, PawIcon } from './AuthNav.styled';
 import { useAuth } from '../../hooks/useAutn';
 export const AuthNav = ({ handleLinkClick }) => {
   const { isLoggedIn } = useAuth();
-  const { user } = useAuth();
+  const { name } = useAuth();
+  const check = name ?? 'User';
   const handleClick = () => {
     if (handleLinkClick) {
       handleLinkClick();
@@ -12,7 +13,7 @@ export const AuthNav = ({ handleLinkClick }) => {
   return (
     <>
       {isLoggedIn ? (
-        <UserNav userName={user.name} handleLinkClick={handleLinkClick} />
+        <UserNav userName={check} handleLinkClick={handleLinkClick} />
       ) : (
         <Box>
           <AuthNavBts to="/login" onClick={handleClick}>

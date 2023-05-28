@@ -6,10 +6,17 @@ import { useEffect } from 'react';
 import { getNotices, getNoticesByQuery } from 'redux/notices/operations';
 import { selectNotices } from 'redux/notices/selectors';
 
+import { selectNoticesIsLoading } from 'redux/notices/selectors';
+
+import { Spinner } from 'components/Spinner/Spinner';
+import { DefaultText } from 'components/DefaultText/DefaultText';
+
 export const NoticeCategiriesList = ({ search }) => {
   const dispatch = useDispatch();
   const category = useSelector(getCategories);
   const notices = useSelector(selectNotices);
+
+  const isLoading = useSelector(selectNoticesIsLoading);
 
   useEffect(() => {
     const fetchNotices = async () => {
@@ -30,7 +37,7 @@ export const NoticeCategiriesList = ({ search }) => {
       if (!search) {
         switch (category) {
           case 'favoriteAdds':
-            // await dispatch(getFavoritesNotices());
+            // await dispatch(getFavoriteNotices({}));
             break;
           case 'myAds':
             // await dispatch(getMyNotices());
@@ -47,10 +54,18 @@ export const NoticeCategiriesList = ({ search }) => {
   }, [category, dispatch, search]);
 
   return (
-    <CardContainer>
-      {notices.map(notice => (
-        <NoticeCategiriesItem key={notice._id} {...notice} />
-      ))}
-    </CardContainer>
+    <>
+      {isLoading ? (
+        <Spinner />
+      ) : notices.length > 0 ? (
+        <CardContainer>
+          {notices.map(notice => (
+            <NoticeCategiriesItem key={notice._id} {...notice} />
+          ))}
+        </CardContainer>
+      ) : (
+        <DefaultText>Ads not found</DefaultText>
+      )}
+    </>
   );
 };

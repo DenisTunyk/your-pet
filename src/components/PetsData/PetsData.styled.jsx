@@ -62,6 +62,7 @@ export const AddButton = styled.button`
 
   width: 129px;
   height: 40px;
+  margin-left: auto;
 
   border: none;
 

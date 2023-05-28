@@ -61,19 +61,6 @@ export const NoticesCategoriesNav = () => {
         </Item>
       )}
 
-      <Item>
-        <Link
-          to="/notices/own"
-          onClick={() => {
-            dispatch(updateCategory('my ads'));
-          }}
-        >
-          my ads
-        </Link>
-      </Item>
-      <AddButton onClick={() => navigate('/add-pet')}>
-        Add pet <PlusIcon stroke="white" />
-      </AddButton>
       {isLoggedIn && (
         <Item>
           <Link
@@ -86,6 +73,10 @@ export const NoticesCategoriesNav = () => {
           </Link>
         </Item>
       )}
+
+      <AddButton onClick={() => navigate('/add-pet')}>
+        Add pet <PlusIcon stroke="white" />
+      </AddButton>
     </List>
   );
 };

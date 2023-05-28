@@ -55,7 +55,6 @@ export const App = () => {
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
-        <FriendList />
       </Container>
     </Theme>
   );

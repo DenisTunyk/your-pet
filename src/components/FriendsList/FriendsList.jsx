@@ -1,5 +1,5 @@
 import { FriendListItem } from 'components/FriendsListItem/FriendsListItem';
-import { List, ListItem, Titel } from './FriendsList.styled';
+import { List, ListItem, Titel, Wrapper } from './FriendsList.styled';
 
 export const FriendList = () => {
   const friends = [
@@ -156,7 +156,7 @@ export const FriendList = () => {
   ];
 
   return (
-    <div>
+    <Wrapper>
       <Titel>Our friends</Titel>
       <List>
         {friends.map(friend => (
@@ -165,6 +165,6 @@ export const FriendList = () => {
           </ListItem>
         ))}
       </List>
-    </div>
+    </Wrapper>
   );
 };

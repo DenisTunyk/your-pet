@@ -1,17 +1,14 @@
 import { Container } from './FriendsListItem.styled';
 
 export const FriendListItem = ({
-  friend: {
-    id,
-    title,
-    url,
-    imageUrl,
-    addressUrl,
-    address,
-    workDays,
-    phone,
-    email,
-  },
+  email,
+  address,
+  url,
+  addressUrl,
+  imageUrl,
+  phone,
+  title,
+  workDays,
 }) => {
   return (
     <Container>

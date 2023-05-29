@@ -7,6 +7,8 @@ import { useMediaQuery } from 'react-responsive';
 import { useAuth } from '../../hooks/useAutn';
 import { UserNav } from 'components/UserNav/UserNav';
 import { Box } from './Navigation.styled';
+import { useSelector } from 'react-redux';
+import { selectUser } from 'redux/auth/auth-selectors';
 // =================
 
 const Desktop = ({ children }) => {
@@ -24,8 +26,15 @@ const Mobile = ({ children }) => {
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
-  const { name } = useAuth();
-  const check = name ?? 'User';
+
+  const { name } = useSelector(selectUser);
+  const { email } = useSelector(selectUser);
+  function splitResult() {
+    if (email) {
+      return email.split('@')[0];
+    }
+  }
+  const check = name ?? splitResult();
   return (
     <>
       <Desktop>

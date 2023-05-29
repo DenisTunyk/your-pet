@@ -1,10 +1,18 @@
 import { UserNav } from 'components/UserNav/UserNav';
 import { AuthNavBts, Box, PawIcon } from './AuthNav.styled';
 import { useAuth } from '../../hooks/useAutn';
+import { selectUser } from 'redux/auth/auth-selectors';
+import { useSelector } from 'react-redux';
 export const AuthNav = ({ handleLinkClick }) => {
   const { isLoggedIn } = useAuth();
-  const { name } = useAuth();
-  const check = name ?? 'User';
+  const { name } = useSelector(selectUser);
+  const { email } = useSelector(selectUser);
+  function splitResult() {
+    if (email) {
+      return email.split('@')[0];
+    }
+  }
+  const check = name ?? splitResult();
   const handleClick = () => {
     if (handleLinkClick) {
       handleLinkClick();

@@ -14,14 +14,18 @@ import Pagination from '../Pagination/Pagination';
 
 const ITEMS_PER_PAGE = 6;
 
-export const NewsItem = () => {
+const NewsItem = ({ searchQuery }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const sortedNews = newsData.news.sort(
     (a, b) => new Date(b.date) - new Date(a.date)
   );
 
-  const filteredNews = sortedNews;
+  const filteredNews = searchQuery
+    ? sortedNews.filter(item =>
+        item.title.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : sortedNews;
 
   const totalPages = Math.ceil(filteredNews.length / ITEMS_PER_PAGE);
 

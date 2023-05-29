@@ -5,8 +5,11 @@ import ButtonSearch from '../../components/Buttons/ButtonSearch/ButtonSearch';
 
 export const NewsList = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [showAllNews, setShowAllNews] = useState(true);
+
   const handleSearch = event => {
     setSearchQuery(event.target.value);
+    setShowAllNews(event.target.value === '');
   };
 
   return (
@@ -23,10 +26,11 @@ export const NewsList = () => {
           <ButtonSearch />
         </Form>
         <List>
-          <NewsItem />
+          <NewsItem searchQuery={searchQuery} showAllNews={showAllNews} />
         </List>
       </Wrapper>
     </>
   );
 };
+
 export default NewsList;

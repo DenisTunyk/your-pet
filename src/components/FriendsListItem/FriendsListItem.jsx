@@ -86,9 +86,7 @@ export const FriendsListItem = ({
         {title}
       </ItemTitle>
       <Content>
-        <Logo src={imageUrl} alt={title}>
-          {/* <Logotip src={imageUrl} alt={title}></Logotip> */}
-        </Logo>
+        <Logo src={imageUrl} alt={title}></Logo>
         <TextContent>
           <ScheduleWrapper>
             <ScheduleBtn

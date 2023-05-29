@@ -1,19 +1,19 @@
 import { FriendListItem } from 'components/FriendsListItem/FriendsListItem';
-import { List, ListItem, Titel } from './FriendsList.styled';
+import { Item, List } from './FriendsList.styled';
 import { useState } from 'react';
 import { getFriends } from 'api/friends';
 import { useEffect } from 'react';
 
 export const FriendList = () => {
-  const [data, setData] = useState([]);
+  const [friends, setFriends] = useState([]);
 
   useEffect(() => {
     const fetchFriends = async () => {
       try {
         const result = await getFriends();
-        setData([...result.data]);
+        setFriends([...result.data]);
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
       }
     };
     fetchFriends();
@@ -22,33 +22,11 @@ export const FriendList = () => {
   return (
     <div>
       <List>
-        {data.map(friend => {
-          const {
-            _id: id,
-            email,
-            address,
-            url,
-            addressUrl,
-            imageUrl,
-            phone,
-            title,
-            workDays,
-          } = friend;
-
-          return (
-            <FriendListItem
-              key={id}
-              email={email}
-              address={address}
-              url={url}
-              addressUrl={addressUrl}
-              imageUrl={imageUrl}
-              phone={phone}
-              title={title}
-              workDays={workDays}
-            />
-          );
-        })}
+        {friends.map(item => (
+          <Item key={item._id}>
+            <FriendListItem {...item} />
+          </Item>
+        ))}
       </List>
     </div>
   );

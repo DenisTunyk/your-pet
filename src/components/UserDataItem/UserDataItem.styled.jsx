@@ -1,47 +1,72 @@
 import styled from 'styled-components';
+// import { Field } from 'formik';
 
-export const Container = styled.div``;
-
-export const Form = styled.form``;
-
-export const List = styled.ul`
+export const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  margin: 25px 0 21px 0;
-`;
-
-export const ListItem = styled.li`
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
+  justify-content: space-between;
+  position: relative;
 
-  flex-direction: row;
-  padding: 4px 0;
+  @media screen and (min-width: 768px) {
+    width: 355px;
+    height: 32px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+  }
 `;
-
-export const Label = styled.label`
+export const StyledValue = styled.p`
+  display: flex;
+  width: 56px;
+  font-family: 'Manrope';
+  font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
   letter-spacing: 0.04em;
 `;
-
-export const Edit = styled.span``;
 
 export const Input = styled.input`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 12px;
+  padding: 6px 14px;
   height: 32px;
-  width: 255px;
   border: 1px solid #54adff;
   border-radius: 20px;
+  min-width:190px;
+
+    @media screen and (min-width: 768px) {  min-width: 255px;}
   
   &:focus,
   &:hover {
   box-shadow: 2px 2px 4px #456a8e84;
 `;
 
-export const Button = styled.button``;
+export const Label = styled.label`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19.2px;
+  letter-spacing: 4%;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: calc(25 / 18);
+  }
+`;
+
+export const Button = styled.span`
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 12px;
+`;

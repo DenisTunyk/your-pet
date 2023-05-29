@@ -31,7 +31,7 @@ export const Card = styled.li`
 `;
 
 export const TitleCard = styled.h2`
-  color: black;
+  color: rgba(17, 17, 17, 1);
   font-weight: 700;
   font-size: 24px;
   line-height: 36px;
@@ -41,7 +41,7 @@ export const TitleCard = styled.h2`
   height: 100px;
 `;
 export const Content = styled.div`
-  color: black;
+  color: rgba(17, 17, 17, 1);
   font-weight: 400;
   height: 110px;
   font-size: 16px;

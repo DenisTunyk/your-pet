@@ -22,14 +22,14 @@ export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   background-color: #fef9f9;
   border-radius: 45px;
   padding: 5px;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
 
   @media screen and (min-width: 768px) {
-    margin-top: 60px;
+    /* margin-top: 60px; */
   }
 `;
 

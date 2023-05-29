@@ -3,9 +3,15 @@ import { CardContainer } from './NoticesCategoriesList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCategories } from '../../redux/pets/pets-selectors';
 import { useEffect } from 'react';
-import { getNotices, getNoticesByQuery } from 'redux/notices/operations';
+import {
+  getFavoriteNoticesByQuery,
+  getNotices,
+  getNoticesByQuery,
+  getUsersNotices,
+  getMyAdsNoticesByQuery,
+} from 'redux/notices/operations';
 import { selectNotices } from 'redux/notices/selectors';
-
+import { getFavoriteNotices } from 'redux/notices/operations';
 import { selectNoticesIsLoading } from 'redux/notices/selectors';
 
 import { Spinner } from 'components/Spinner/Spinner';
@@ -23,10 +29,10 @@ export const NoticeCategiriesList = ({ search }) => {
       if (search) {
         switch (category) {
           case 'favoriteAdds':
-            // await dispatch(searchFavorite(search));
+            await dispatch(getFavoriteNoticesByQuery(search));
             break;
           case 'myAds':
-            // await dispatch(searchMyPets(search));
+            await dispatch(getMyAdsNoticesByQuery(search));
             break;
           default:
             await dispatch(getNoticesByQuery({ category, search }));
@@ -37,13 +43,13 @@ export const NoticeCategiriesList = ({ search }) => {
       if (!search) {
         switch (category) {
           case 'favoriteAdds':
-            // await dispatch(getFavoriteNotices({}));
+            await dispatch(getFavoriteNotices({}));
             break;
           case 'myAds':
-            // await dispatch(getMyNotices());
+            await dispatch(getUsersNotices({}));
             break;
           default:
-            await dispatch(getNotices({ category }));
+            await dispatch(getNotices(category));
 
             break;
         }

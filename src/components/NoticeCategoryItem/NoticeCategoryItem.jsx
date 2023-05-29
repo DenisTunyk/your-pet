@@ -20,7 +20,16 @@ import { useDispatch } from 'react-redux';
 import { addFavoriteNotice } from 'redux/notices/operations';
 
 export const NoticeCategiriesItem = data => {
-  const { _id, avatarURL, name, age, location, sex, category, favorites = [] } = data;
+  const {
+    _id,
+    avatarURL,
+    age,
+    location,
+    sex,
+    category,
+    favorites = [],
+    title,
+  } = data;
   const [modalDelete, setModelDelete] = useState(false);
   const [showLearMore, setShowLearMore] = useState(false);
   const { isLoggedIn } = useAuth();
@@ -37,7 +46,7 @@ export const NoticeCategiriesItem = data => {
     if (!isLoggedIn) {
       toast("You're not logged in", { type: 'warning' });
     } else {
-      dispatch(addFavoriteNotice({_id}))
+      dispatch(addFavoriteNotice({ _id }));
     }
   };
 
@@ -83,7 +92,7 @@ export const NoticeCategiriesItem = data => {
             </Content>
           </ContentContainer>
         </Image>
-        <Description>{name}</Description>
+        <Description>{title}</Description>
         <LearMoreButton onClick={() => setShowLearMore(true)}>
           Lear more
         </LearMoreButton>

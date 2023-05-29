@@ -1,11 +1,15 @@
-// import { nanoid } from 'nanoid';
-// import { List } from './NewsList.styled';
+import { List, Title, Wrapper } from './NewsList.styled';
 import NewsItem from '../NewsItem/NewsItem';
 
 export const NewsList = () => {
   return (
     <>
-      <NewsItem />
+      <Title>News</Title>
+      <Wrapper>
+        <List>
+          <NewsItem />
+        </List>
+      </Wrapper>
     </>
   );
 };

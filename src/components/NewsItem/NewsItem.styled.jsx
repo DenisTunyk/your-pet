@@ -1,17 +1,15 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  display: grid;
-  /* grid-template-columns: repeat(1, 320px); */
-  /* margin-top: 50px; */
-`;
-
-export const Card = styled.div`
+export const Card = styled.li`
   width: 280px;
-  height: 578px;
+  /* height: 578px; */
   margin-right: auto;
   margin-left: auto;
   position: relative;
+  background-color: rgb(253, 247, 242);
+  box-shadow: rgba(136, 198, 253, 0.19) 3px 8px 14px;
+  border-radius: 20px;
+  gap: 16px;
   &::before {
     content: '';
     position: absolute;
@@ -25,20 +23,14 @@ export const Card = styled.div`
   }
 `;
 
-export const Title = styled.h1`
-  color: #111111;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
-  text-align: center;
-  margin: 40px 0px 24px 0px;
-`;
-
-export const TitleCard = styled.p`
+export const TitleCard = styled.h2`
   color: black;
   font-weight: 700;
   font-size: 24px;
   line-height: 36px;
+  margin-bottom: 16px;
+  padding-right: 12px;
+  padding-left: 12px;
 `;
 export const Content = styled.p`
   color: black;
@@ -46,6 +38,8 @@ export const Content = styled.p`
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 40px;
+  padding-right: 12px;
+  padding-left: 12px;
 `;
 
 export const Link = styled.a`
@@ -61,6 +55,7 @@ export const WrapImg = styled.div`
   object-fit: cover;
   width: 100%;
   height: 252px;
+  margin-bottom: 16px;
 `;
 
 export const Img = styled.img`
@@ -80,11 +75,25 @@ export const Input = styled.input`
   padding: 8px 20px;
   box-sizing: border-box;
   outline: none;
-  margin-bottom: 44px;
+
   &::placeholder {
     font-size: 14px;
     color: rgba(136, 136, 136, 1);
   }
+`;
+
+export const Data = styled.p`
+  height: 22px;
+  font-weight: 400;
+  line-height: 22px;
+  color: rgba(136, 136, 136, 1);
+`;
+export const WrapperFuterCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  padding-right: 12px;
+  padding-left: 12px;
 `;
 
 export default Card;

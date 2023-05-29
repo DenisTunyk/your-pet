@@ -5,7 +5,7 @@ import React from 'react';
 export const OurFriend = () => {
   return (
     <div>
-      <Friends />
+      <Friends
     </div>
   );
 };

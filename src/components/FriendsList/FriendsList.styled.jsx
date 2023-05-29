@@ -6,6 +6,16 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 16px 12px;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: 0 auto;
+    width: 1280px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -41,6 +51,7 @@ export const List = styled.ul`
   }
 
   @media screen and (min-width: 1280px) {
+    width: 1280px;
     row-gap: 20px;
   }
 `;

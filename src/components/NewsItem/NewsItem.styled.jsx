@@ -26,7 +26,7 @@ export const Card = styled.li`
     gap: 16px;
   }
   @media (min-width: 1280px) {
-    /* width: 336px; */
+    width: 395px;
   }
 `;
 

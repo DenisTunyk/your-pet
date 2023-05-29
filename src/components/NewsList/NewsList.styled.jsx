@@ -10,14 +10,12 @@ export const List = styled.ul`
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 384px);
-    /* column-gap: 46px; */
     margin-top: 80px;
   }
 
   @media (min-width: 1280px) {
     display: grid;
-    grid-template-columns: repeat(3, 384px);
-    /* column-gap: 46px; */
+    grid-template-columns: repeat(3, 425px);
     margin-top: 80px;
   }
 `;

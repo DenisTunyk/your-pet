@@ -1,33 +1,56 @@
-import { FriendListItem } from 'components/FriendsListItem/FriendsListItem';
-import { Item, List } from './FriendsList.styled';
-import { useState } from 'react';
-import { getFriends } from 'api/friends';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { getFriends } from 'api/pets';
 
-export const FriendList = () => {
-  const [friends, setFriends] = useState([]);
+import { CardItem } from './CardItem/CardItem';
+import { Title, Wrapper, CardList } from './Friends.styled';
+
+export const OurFriends = () => {
+  const [data, SetData] = useState([]);
 
   useEffect(() => {
     const fetchFriends = async () => {
       try {
         const result = await getFriends();
-        setFriends([...result.data]);
+        SetData([...result.data]);
       } catch (error) {
-        console.log(error.message);
+        console.log(error);
       }
     };
     fetchFriends();
   }, []);
 
   return (
-    <div>
-      <List>
-        {friends.map(item => (
-          <Item key={item._id}>
-            <FriendListItem {...item} />
-          </Item>
-        ))}
-      </List>
-    </div>
+    <Wrapper>
+      <Title>Our friends</Title>
+      <CardList>
+        {data.map(friend => {
+          const {
+            _id: id,
+            email,
+            address,
+            url,
+            addressUrl,
+            imageUrl,
+            phone,
+            title,
+            workDays,
+          } = friend;
+
+          return (
+            <CardItem
+              key={id}
+              email={email}
+              address={address}
+              url={url}
+              addressUrl={addressUrl}
+              imageUrl={imageUrl}
+              phone={phone}
+              title={title}
+              workDays={workDays}
+            />
+          );
+        })}
+      </CardList>
+    </Wrapper>
   );
 };

@@ -1,29 +1,28 @@
 import { useState, useEffect } from 'react';
-import { getFriends } from 'api/pets';
+import { getFriends } from 'api/friends';
+import { FriendsListItem } from 'components/FriendsListItem/FriendsListItem';
+import { Container, List, Title } from './FriendsList.styled';
 
-import { CardItem } from './CardItem/CardItem';
-import { Title, Wrapper, CardList } from './Friends.styled';
-
-export const OurFriends = () => {
-  const [data, SetData] = useState([]);
+export const FriendsList = () => {
+  const [friends, setFriends] = useState([]);
 
   useEffect(() => {
     const fetchFriends = async () => {
       try {
         const result = await getFriends();
-        SetData([...result.data]);
+        setFriends([...result.data]);
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
       }
     };
     fetchFriends();
   }, []);
 
   return (
-    <Wrapper>
+    <Container>
       <Title>Our friends</Title>
-      <CardList>
-        {data.map(friend => {
+      <List>
+        {friends.map(friend => {
           const {
             _id: id,
             email,
@@ -37,7 +36,7 @@ export const OurFriends = () => {
           } = friend;
 
           return (
-            <CardItem
+            <FriendsListItem
               key={id}
               email={email}
               address={address}
@@ -50,7 +49,7 @@ export const OurFriends = () => {
             />
           );
         })}
-      </CardList>
-    </Wrapper>
+      </List>
+    </Container>
   );
 };

@@ -38,10 +38,12 @@ export const TitleCard = styled.h2`
   margin-bottom: 16px;
   padding-right: 12px;
   padding-left: 12px;
+  height: 100px;
 `;
-export const Content = styled.p`
+export const Content = styled.div`
   color: black;
   font-weight: 400;
+  height: 110px;
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 40px;

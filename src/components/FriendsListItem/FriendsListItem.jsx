@@ -7,7 +7,7 @@ import {
   Content,
   Logo,
   ScheduleWrapper,
-  Logotip,
+  // Logotip,
   TextContent,
   Link,
   Title,

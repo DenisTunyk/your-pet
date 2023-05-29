@@ -14,11 +14,26 @@ import SharedLayout from '../SharedLayout/SharedLayout';
 import { HomePage } from '../../pages/HomePage/HomePage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
+// import { FriendList } from '../FriendsList/FriendsList';
 import Theme from '../Theme';
 import { Container } from './App.styled';
+import { useAuth } from 'hooks/useAutn';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import Loader from 'components/Loader/Loader';
+import { refreshUser } from 'redux/auth/auth-operations';
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <Loader marginTop="30px" />
+  ) : (
     <Theme>
       <Container>
         <Routes>

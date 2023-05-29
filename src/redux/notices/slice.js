@@ -48,15 +48,13 @@ const noticesSlice = createSlice({
           getFavoriteNoticesByQuery.fulfilled,
           getMyAdsNoticesByQuery.fulfilled,
           getMyAdsNotices.fulfilled,
+
           getFavoriteNotices.fulfilled
         ),
         (state, { payload }) => {
           state.items = payload;
         }
       )
-      .addMatcher(isAnyOf(getMyAdsNotices.fulfilled), (state, { payload }) => {
-        state.pets = payload;
-      })
       .addMatcher(
         isAnyOf(
           updateNotice.fulfilled,

@@ -1,12 +1,12 @@
-// import { useDeleteUserPetMutation } from 'redux/pet/userPetsApi';
-
 import { PetItem, PetImage, ListPets, Title, Content, DeleteButton } from './PetItem.styled';
 
 import { ReactComponent as Trash } from '../../assets/icon/trash-2.svg';
+import { useDispatch } from 'react-redux';
+import { deletePet } from 'redux/pets/operations';
 
 export const PetsItem = ({ _id, photo, name, birthday, breed, comments }) => {
-  //  const [deletePet] = useDeleteUserPetMutation();
-  console.log(photo);
+  const dispatch = useDispatch();
+
   return (
     <>
       <PetItem key={_id}>
@@ -18,12 +18,10 @@ export const PetsItem = ({ _id, photo, name, birthday, breed, comments }) => {
             <Title><b>Breed:</b> {breed}</Title> 
             <Title><b>Comments:</b> {comments}</Title> 
           </ListPets>
-        <DeleteButton>
+        <DeleteButton onClick={() => dispatch(deletePet(_id))}>
           <Trash />
         </DeleteButton>
         </Content>
-        {/* <DeleteBtn onClick={() => deletePet(_id)}> */}
-        {/* </DeleteBtn> */}
       </PetItem>
     </>
   );

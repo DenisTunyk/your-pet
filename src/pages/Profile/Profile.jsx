@@ -5,21 +5,21 @@ import { selectUser } from '../../redux/auth/auth-selectors';
 
 import { PetsData } from '../../components/PetsData/PetsData';
 import {
-  Section,
   WrapperUser,
   StyledWrapper,
 } from 'components/UserData/UserData.styled';
+import { Container } from './Profile.styled';
 
 export const Profile = () => {
   const user = useSelector(selectUser);
   return (
-    <Section>
+    <Container>
       <WrapperUser>
         <StyledWrapper>
           <UserData user={user} />
         </StyledWrapper>{' '}
         <PetsData />
       </WrapperUser>
-    </Section>
+    </Container>
   );
 };

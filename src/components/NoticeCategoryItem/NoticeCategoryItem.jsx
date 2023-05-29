@@ -32,8 +32,8 @@ export const NoticeCategiriesItem = data => {
   } = data;
   const [modalDelete, setModelDelete] = useState(false);
   const [showLearMore, setShowLearMore] = useState(false);
-  const { isLoggedIn } = useAuth();
-  const isFavorite = favorites.some(e => e === _id);
+  const { isLoggedIn, user } = useAuth();
+  const isFavorite = favorites.some(userId => userId === user.id);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { List, Title, Wrapper, Input } from './NewsList.styled';
+import { List, Title, Wrapper, Input, Form } from './NewsList.styled';
 import NewsItem from '../NewsItem/NewsItem';
+import ButtonSearch from '../../components/Buttons/ButtonSearch/ButtonSearch';
 
 export const NewsList = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -12,12 +13,15 @@ export const NewsList = () => {
     <>
       <Title>News</Title>
       <Wrapper>
-        <Input
-          type="text"
-          value={searchQuery}
-          onChange={handleSearch}
-          placeholder="Search"
-        />
+        <Form>
+          <Input
+            type="text"
+            value={searchQuery}
+            onChange={handleSearch}
+            placeholder="Search"
+          />
+          <ButtonSearch />
+        </Form>
         <List>
           <NewsItem />
         </List>

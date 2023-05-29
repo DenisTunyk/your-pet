@@ -10,7 +10,7 @@ import {
   Data,
   WrapperFuterCard,
 } from './NewsItem.styled';
-import ButtonSearch from '../../components/Buttons/ButtonSearch/ButtonSearch';
+// import ButtonSearch from '../../components/Buttons/ButtonSearch/ButtonSearch';
 
 export const NewsItem = () => {
   const [searchQuery] = useState('');
@@ -24,7 +24,7 @@ export const NewsItem = () => {
 
   return (
     <>
-      <ButtonSearch />
+      {/* <ButtonSearch /> */}
 
       {filteredNews.map((item, id) => (
         <Card key={id}>

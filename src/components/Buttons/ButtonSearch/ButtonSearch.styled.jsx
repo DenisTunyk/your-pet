@@ -1,15 +1,20 @@
 import styled from 'styled-components';
 
-export const Wrap = styled.div`
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  gap: 12px;
-  display: flex;
-`;
+// export const Wrap = styled.div`
+//   position: absolute;
+//   right: 18px;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   gap: 12px;
+//   display: flex;
+// `;
 
 export const ButtonIcon = styled.button`
+  position: absolute;
+  top: 0.4em;
+  right: 0.4em;
+  width: 30px;
+  height: 30px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -20,7 +25,7 @@ export const ButtonIcon = styled.button`
   cursor: pointer;
   color: '#757575';
   svg {
-    color: red;
+    fill: #757575;
   }
   transition: transform 250ms ease-in-out, border 250ms ease-in-out;
 
@@ -29,7 +34,6 @@ export const ButtonIcon = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    right: 20px;
   }
   @media screen and (min-width: 1280px) {
   }

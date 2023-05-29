@@ -21,6 +21,13 @@ export const Card = styled.li`
     background-color: blue;
     background: linear-gradient(290.46deg, #419ef1 0%, #9bd0ff 107.89%);
   }
+  @media (min-width: 768px) {
+    width: 336px;
+    gap: 16px;
+  }
+  @media (min-width: 1280px) {
+    /* width: 336px; */
+  }
 `;
 
 export const TitleCard = styled.h2`
@@ -62,24 +69,6 @@ export const Img = styled.img`
   display: block;
   height: 100%;
   width: 100%;
-`;
-export const Input = styled.input`
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  height: 44px;
-  width: 280px;
-  box-shadow: rgba(136, 198, 253, 0.19) 3px 8px 14px;
-  border-radius: 40px;
-  border: 1px solid transparent;
-  padding: 8px 20px;
-  box-sizing: border-box;
-  outline: none;
-
-  &::placeholder {
-    font-size: 14px;
-    color: rgba(136, 136, 136, 1);
-  }
 `;
 
 export const Data = styled.p`

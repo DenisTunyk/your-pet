@@ -21,13 +21,34 @@ export const FriendList = () => {
 
   return (
     <div>
-      <Titel>Our friends</Titel>
       <List>
-        {data.map(friend => (
-          <ListItem key={friend._id}>
-            <FriendListItem friend={friend} />
-          </ListItem>
-        ))}
+        {data.map(friend => {
+          const {
+            _id: id,
+            email,
+            address,
+            url,
+            addressUrl,
+            imageUrl,
+            phone,
+            title,
+            workDays,
+          } = friend;
+
+          return (
+            <FriendListItem
+              key={id}
+              email={email}
+              address={address}
+              url={url}
+              addressUrl={addressUrl}
+              imageUrl={imageUrl}
+              phone={phone}
+              title={title}
+              workDays={workDays}
+            />
+          );
+        })}
       </List>
     </div>
   );

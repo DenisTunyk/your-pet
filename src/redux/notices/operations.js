@@ -114,7 +114,6 @@ export const addFavoriteNotice = createAsyncThunk(
   async (pet, { rejectWithValue }) => {
     try {
       const response = await axios.patch(`/api/notices/favorite/${pet._id}`);
-      console.log(response.data)
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

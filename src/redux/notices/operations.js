@@ -1,13 +1,11 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import createSearchParams from '../../helpers/createSearchParams';
+
 axios.defaults.baseURL = 'https://project-7-backend.onrender.com';
 
 export const getNotices = createAsyncThunk(
   'notices/getNotices',
-  async (credentials, { rejectWithValue }) => {
-    const { category } = credentials;
-
+  async (category, { rejectWithValue }) => {
     try {
       const result = await axios.get(`/api/notices/category/${category}`);
       return result.data;
@@ -36,22 +34,46 @@ export const getFavoriteNotices = createAsyncThunk(
   'notices/getFavoriteNotices',
   async ({ rejectWithValue }) => {
     try {
-      const res = await axios.get(`/api/notices/favorites`);
+      const { data } = await axios.get(`/api/notices/favorites`);
 
-      return res;
+      return data;
     } catch (error) {
       return rejectWithValue(error);
     }
   }
 );
 
-export const getUsersNotices = createAsyncThunk(
-  'notices/getUsersNotices',
-  async (params, { rejectWithValue }) => {
+export const getFavoriteNoticesByQuery = createAsyncThunk(
+  'notices/getFavoriteNotices',
+  async (search, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `/api/notices?${createSearchParams(params)}`
+        `/api/notices/favorites/search/${search}`
       );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const getMyAdsNoticesByQuery = createAsyncThunk(
+  'notices/getMyAdsNoticesByQuery',
+  async (search, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(`/api/notices/myads/search/${search}`);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const getMyAdsNotices = createAsyncThunk(
+  'notices/getMyAdsNotices',
+  async ({ rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(`/api/notices/myAds`);
 
       return data;
     } catch (error) {
@@ -59,6 +81,7 @@ export const getUsersNotices = createAsyncThunk(
     }
   }
 );
+// -------------------------------------------
 
 export const getNoticeById = createAsyncThunk(
   'notices/getNoticeById',

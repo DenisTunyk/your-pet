@@ -21,8 +21,8 @@ export const PetsData = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPets())
-  }, [dispatch])
+    dispatch(getPets());
+  }, [dispatch]);
 
   const pets = useSelector(usePets);
   // const result = pets.length > 0 ? (<PetsList pets={pets}/>) : (<p>You don't have any pets added.</p>);
@@ -39,7 +39,7 @@ export const PetsData = () => {
         {isLoading ? (
           <ThreeDots height="100" width="100" radius="9" color="#54adff" />
         ) : (
-          <PetsList pets={pets}/>
+          <PetsList pets={pets} />
         )}
       </LoaderUser>
     </Container>

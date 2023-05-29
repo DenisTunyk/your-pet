@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   /* padding-bottom: 100px; */
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    padding-bottom: 194px;
+    /* padding-bottom: 194px; */
   }
 `;
 
@@ -45,6 +45,7 @@ export const PaginationButton = styled.button`
   background-color: ${({ active }) => (active ? '#54ADFF' : 'transparent')};
   color: ${({ active }) => (active ? '#FEF9F9;' : '#CCE4FB')};
   cursor: pointer;
+  outline: none;
 
   &:hover:not(:disabled) {
     background-color: ${() => '#54ADFF'};
@@ -54,6 +55,7 @@ export const PaginationButton = styled.button`
   &:hover,
   &:focus {
     border: 1px solid #cce4fb;
+    outline: none;
   }
 
   &:disabled {

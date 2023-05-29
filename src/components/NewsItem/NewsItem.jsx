@@ -10,27 +10,36 @@ import {
   Data,
   WrapperFuterCard,
 } from './NewsItem.styled';
-// import ButtonSearch from '../../components/Buttons/ButtonSearch/ButtonSearch';
+import Pagination from '../Pagination/Pagination';
+
+const ITEMS_PER_PAGE = 6;
 
 export const NewsItem = () => {
-  const [searchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const filteredNews = newsData.news.filter(item =>
-    item.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-  const sortedNews = filteredNews.sort(
+  const sortedNews = newsData.news.sort(
     (a, b) => new Date(b.date) - new Date(a.date)
   );
+
+  const filteredNews = sortedNews;
+
+  const totalPages = Math.ceil(filteredNews.length / ITEMS_PER_PAGE);
+
+  const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+  const currentNews = filteredNews.slice(indexOfFirstItem, indexOfLastItem);
 
   const transformDate = date => {
     return date.split('T')[0].split('-').reverse().join('/');
   };
 
+  const handlePageChange = pageNumber => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <>
-      {/* <ButtonSearch /> */}
-
-      {sortedNews.map((item, id) => (
+      {currentNews.map((item, id) => (
         <Card key={id}>
           <WrapImg>
             <Img
@@ -44,12 +53,19 @@ export const NewsItem = () => {
           <Content>{item.text}</Content>
           <WrapperFuterCard>
             <Data>{transformDate(item.date)}</Data>
-            <Link href={item.url} target="blank">
+            <Link href={item.url} target="_blank">
               Read more
             </Link>
           </WrapperFuterCard>
         </Card>
       ))}
+      <div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </>
   );
 };

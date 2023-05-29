@@ -1,29 +1,24 @@
 import styled from 'styled-components';
-
 export const List = styled.ul`
-  display: grid;
-  max-width: calc(100vw);
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-gap: 16px;
-  margin-top: 40px;
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
-  margin-left: auto;
-  margin-right: auto;
-
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 44px;
+  margin-top: 44px;
   @media (min-width: 768px) {
-    /* max-width: calc(100vw - 96px); */
-    grid-template-columns: repeat(auto-fill, minmax(336x, 1fr));
-    grid-gap: 31px;
+    display: grid;
+    grid-template-columns: repeat(2, 384px);
+    /* column-gap: 46px; */
+    margin-top: 80px;
   }
   @media (min-width: 1280px) {
-    /* max-width: calc(100vw - 96px); */
-    grid-template-columns: repeat(auto-fill, minmax(395px, 1fr));
-    grid-gap: 31px;
+    display: grid;
+    grid-template-columns: repeat(3, 384px);
+    /* column-gap: 46px; */
+    grid-template-columns: repeat(3, 425px);
+    margin-top: 80px;
   }
 `;
-
 export const Title = styled.h1`
   color: #111111;
   font-weight: 700;
@@ -33,7 +28,10 @@ export const Title = styled.h1`
   margin: 40px 0px 24px 0px;
 `;
 export const Wrapper = styled.div`
-  overflow: hidden;
+  /* margin-left: auto; */
+  /* display: grid; */
+  /* grid-template-columns: repeat(1, 320px); */
+  /* margin-top: 50px; */
 `;
 export const Input = styled.input`
   display: block;
@@ -47,7 +45,6 @@ export const Input = styled.input`
   padding: 8px 20px;
   box-sizing: border-box;
   outline: none;
-
   &::placeholder {
     font-size: 14px;
     color: rgba(136, 136, 136, 1);
@@ -60,7 +57,6 @@ export const Form = styled.form`
   position: relative;
   margin: 0 auto;
   width: 280px;
-
   @media (min-width: 768px) {
     width: 608px;
   }

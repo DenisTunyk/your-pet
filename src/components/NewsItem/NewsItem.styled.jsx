@@ -38,7 +38,12 @@ export const TitleCard = styled.h2`
   margin-bottom: 16px;
   padding-right: 12px;
   padding-left: 12px;
-  height: 100px;
+  @media (min-width: 768px) {
+    height: 130px;
+  }
+  @media (min-width: 1280px) {
+    height: 100px;
+  }
 `;
 export const Content = styled.div`
   color: rgba(17, 17, 17, 1);

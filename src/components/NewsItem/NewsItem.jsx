@@ -11,6 +11,7 @@ import {
   Data,
   WrapperFuterCard,
 } from './NewsItem.styled';
+import ButtonSearch from '../../components/Buttons/ButtonSearch/ButtonSearch';
 
 export const NewsItem = () => {
   // const [news] = useState(newsData.news);
@@ -30,6 +31,7 @@ export const NewsItem = () => {
 
   return (
     <>
+      <ButtonSearch />
       <Input
         type="text"
         value={searchQuery}

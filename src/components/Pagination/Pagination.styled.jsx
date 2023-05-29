@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
 
-  @media screen and (min-width: 768px and max-width: 1279px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     padding-bottom: 194px;
   }
 `;

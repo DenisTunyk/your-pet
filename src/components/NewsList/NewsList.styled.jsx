@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const List = styled.ul`
   display: grid;
   max-width: calc(100vw);
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 16px;
   margin-top: 40px;
   margin-bottom: 0;
@@ -14,12 +14,12 @@ export const List = styled.ul`
 
   @media (min-width: 768px) {
     /* max-width: calc(100vw - 96px); */
-    /* grid-template-columns: repeat(auto-fill, minmax(769px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(336x, 1fr));
     grid-gap: 31px;
   }
   @media (min-width: 1280px) {
-    max-width: calc(100vw - 96px);
-    /* grid-template-columns: repeat(auto-fill, minmax(769px, 1fr)); */
+    /* max-width: calc(100vw - 96px); */
+    grid-template-columns: repeat(auto-fill, minmax(395px, 1fr));
     grid-gap: 31px;
   }
 `;

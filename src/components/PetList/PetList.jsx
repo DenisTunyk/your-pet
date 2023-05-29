@@ -1,22 +1,23 @@
-import { PetsItem } from 'components/PetsItem/PetsItem';
+import { PetsItem } from "components/PetItem/PetItem";
+import { List } from "./PetList.styled";
 
 export const PetsData = ({ pets }) => {
   return (
-    <ul>
+    <List>
       {pets &&
-        pets.map(({ _id, photo, name, birthday, breed, comment }) => {
+        pets.map(({ _id, avatarURL, title, birthday, breed, comments }) => {
           return (
             <PetsItem
               key={_id}
               _id={_id}
-              name={name}
-              photo={photo}
+              name={title}
+              photo={avatarURL}
               birthday={birthday}
               breed={breed}
-              comments={comment}
+              comments={comments}
             />
           );
         })}
-    </ul>
+    </List>
   );
 };

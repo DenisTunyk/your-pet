@@ -70,7 +70,7 @@ const birthdaySchema = yup.object({
     // })
     .typeError('Please enter a valid date: dd.MM.yyyy')
     .required()
-    .min('01.01.1950', 'Date is too early')
+    .min(new Date(1970, 1, 1), 'Date is too early')
     .max(today),
 });
 

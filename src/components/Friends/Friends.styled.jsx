@@ -13,6 +13,23 @@ export const OurFriendsWrapper = styled('div')`
   }
 `;
 
+export const Container = styled.div`
+  margin: 0 auto;
+  width: 100%;
+
+  @media screen and (min-width: 480px) {
+    max-width: 320px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
+`;
+
 export const Titel = styled.h1`
   font-weight: 700;
   font-size: 24px;

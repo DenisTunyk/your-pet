@@ -7,23 +7,16 @@ import {
   Link,
   WrapImg,
   Img,
-  Input,
   Data,
   WrapperFuterCard,
 } from './NewsItem.styled';
 import ButtonSearch from '../../components/Buttons/ButtonSearch/ButtonSearch';
 
 export const NewsItem = () => {
-  // const [news] = useState(newsData.news);
-  const [searchQuery, setSearchQuery] = useState('');
-
+  const [searchQuery] = useState('');
   const filteredNews = newsData.news.filter(item =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const handleSearch = event => {
-    setSearchQuery(event.target.value);
-  };
 
   const transformDate = date => {
     return date.split('T')[0].split('-').reverse().join('/');
@@ -32,13 +25,7 @@ export const NewsItem = () => {
   return (
     <>
       <ButtonSearch />
-      <Input
-        type="text"
-        value={searchQuery}
-        onChange={handleSearch}
-        placeholder="Search"
-      />
-      {/* <Wrapper> */}
+
       {filteredNews.map((item, id) => (
         <Card key={id}>
           <WrapImg>
@@ -59,7 +46,6 @@ export const NewsItem = () => {
           </WrapperFuterCard>
         </Card>
       ))}
-      {/* </Wrapper> */}
     </>
   );
 };

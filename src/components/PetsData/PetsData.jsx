@@ -10,10 +10,6 @@ import {
 import { Title } from 'components/UserData/UserData.styled';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-<<<<<<< HEAD
-import { getMyAdsNotices } from 'redux/notices/operations';
-=======
->>>>>>> main
 import { useEffect } from 'react';
 import { PetsData as PetsList } from 'components/PetList/PetList';
 import { getPets } from 'redux/pets/operations';
@@ -25,8 +21,8 @@ export const PetsData = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPets())
-  }, [dispatch])
+    dispatch(getPets());
+  }, [dispatch]);
 
   const pets = useSelector(usePets);
   // const result = pets.length > 0 ? (<PetsList pets={pets}/>) : (<p>You don't have any pets added.</p>);

@@ -41,14 +41,14 @@ export const DayWrapper = styled.div`
   padding: 2px 3px;
   border-radius: 5px;
   gap: 12px;
-  /* background-color: ${props => {
+  background-color: ${props => {
     if (props['data-time'][0] === props['data-day']) {
       return props.theme.colors.blueLight;
     } else {
       return props.theme.colors.transparent;
     }
-  }}; */
-  /* color: ${props => {
+  }};
+  color: ${props => {
     const min = props.children[1].props.children[0].props.children;
     const minHour =
       min === 'closed'
@@ -75,27 +75,27 @@ export const DayWrapper = styled.div`
     } else if (!isThisDay) {
       return props.theme.colors.black;
     }
-  }}; */
+  }};
 `;
 
 export const Day = styled.span`
   font-size: 12px;
   line-height: 16px;
-  /* font-weight: ${props => props.theme.fontWeights.medium}; */
+  font-weight: 500;
 `;
 export const DayTime = styled.span`
   display: flex;
   justify-content: right;
   font-size: 12px;
   line-height: 16px;
-  /* font-weight: ${props => props.theme.fontWeights.medium}; */
+  font-weight: 500;
 `;
 
 export const MaxTime = styled.span``;
 
 export const MinTime = styled.span``;
 
-export const Logo = styled.div`
+export const Logotip = styled.div`
   width: 100px;
   height: 68px;
 
@@ -125,12 +125,12 @@ export const Schedule = styled.div`
   width: 155px;
   height: 160px;
 
-  /* background: ${props => props.theme.colors.clearWhite};
-  border: 1px solid ${props => props.theme.colors.blue};
-  box-shadow: ${props => props.theme.shadows.mainShadow}; */
+  background: #ffffff;
+  border: 1px solid #54adff;
+  box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 8px;
 `;
-export const LogoContent = styled.img`
+export const Logo = styled.img`
   object-fit: cover;
 `;
 
@@ -143,36 +143,36 @@ export const ItemTitle = styled.a`
 
   height: 54px;
 
-  /* font-weight: ${props => props.theme.fontWeights.bold}; */
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.35;
-  /* color: ${props => props.theme.colors.blue}; */
+  color: #54adff;
   margin-bottom: 16px;
 
-  /* @media screen and (${props => props.theme.media.md}) {
+  @media screen and (min-width: 768px) {
     width: 80%;
-  } */
+  }
 `;
 
 export const ScheduleBtn = styled.button`
-  /* outline: ${props => props.theme.colors.transparent}; */
+  outline: transparent;
   padding: 0;
-  /* background-color: ${props => props.theme.colors.transparent}; */
+  background-color: transparent;
   text-decoration: none;
-  /* color: ${props => {
+  color: ${props => {
     if (props['data-schedule']) {
       return props.theme.colors.blue;
     } else {
       return props.theme.colors.black;
     }
-  }}; */
+  }};
 
   border: none;
 
   &:hover,
   &:focus-visible,
   :active {
-    /* color: ${props => props.theme.colors.blue}; */
+    color: #54adff;
   }
   cursor: pointer;
 `;
@@ -185,17 +185,17 @@ export const TextContent = styled.div`
   gap: 12px;
   width: 70%;
 
-  /* @media screen and (${props => props.theme.media.md}) {
+  @media screen and (min-width: 768px) {
     font-size: 20px;
-  } */
+  }
 `;
 
 export const Link = styled.a`
   text-decoration: none;
-  /* color: ${props => props.theme.colors.black}; */
+  color: ${props => props.theme.colors.black};
   &:hover,
   &:focus-visible {
-    /* color: ${props => props.theme.colors.blue}; */
+    color: ${props => props.theme.colors.blue};
   }
   cursor: pointer;
 `;
@@ -203,16 +203,16 @@ export const Link = styled.a`
 export const Title = styled.p`
   text-align: left;
   font-size: 12px;
-  /* font-weight: ${props => props.theme.fontWeights.semibold}; */
+  font-weight: 600;
   line-height: 1.33;
-  /* @media screen and (${props => props.theme.media.md}) {
+  @media screen and (min-width: 768px) {
     font-size: 14px;
     line-height: 1.35;
-  } */
-  /* @media screen and (${props => props.theme.media.md}) {
+  }
+  @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.375;
-  } */
+  }
 `;
 
 export const Text = styled.p`
@@ -220,14 +220,14 @@ export const Text = styled.p`
 
   text-align: left;
   font-size: 12px;
-  /* font-weight: ${props => props.theme.fontWeights.regular}; */
+  font-weight: 400;
   line-height: 1.33;
-  /* @media screen and (${props => props.theme.media.md}) {
+  @media screen and (${props => props.theme.media.md}) {
     font-size: 14px;
     line-height: 1.35;
-  } */
-  /* @media screen and (${props => props.theme.media.md}) {
+  }
+  @media screen and (${props => props.theme.media.md}) {
     font-size: 16px;
     line-height: 1.375;
-  } */
+  }
 `;

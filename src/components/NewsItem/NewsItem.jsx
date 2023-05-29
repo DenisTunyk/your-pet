@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import newsData from './news.json';
 import {
+  Title,
   Card,
   Wrapper,
-  Title,
+  TitleCard,
   Content,
   Link,
   WrapImg,
@@ -25,11 +26,12 @@ export const NewsItem = () => {
 
   return (
     <>
+      <Title>News</Title>
       <Input
         type="text"
         value={searchQuery}
         onChange={handleSearch}
-        placeholder="Поиск новостей"
+        placeholder="Search"
       />
       <Wrapper>
         {filteredNews.map((item, id) => (
@@ -42,7 +44,7 @@ export const NewsItem = () => {
                 width="280"
               />
             </WrapImg>
-            <Title>{item.title}</Title>
+            <TitleCard>{item.title}</TitleCard>
             <Content>{item.text}</Content>
             <p>{item.date}</p>
             <Link href={item.url} target="blank">

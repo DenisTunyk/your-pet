@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 500px);
-  margin-top: 50px;
+  /* grid-template-columns: repeat(1, 320px); */
+  /* margin-top: 50px; */
 `;
 
 export const Card = styled.div`
@@ -21,11 +21,20 @@ export const Card = styled.div`
     height: 8px;
     border-radius: 4px;
     background-color: blue;
-    background: blue;
+    background: linear-gradient(290.46deg, #419ef1 0%, #9bd0ff 107.89%);
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled.h1`
+  color: #111111;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  margin: 40px 0px 24px 0px;
+`;
+
+export const TitleCard = styled.p`
   color: black;
   font-weight: 700;
   font-size: 24px;
@@ -60,13 +69,22 @@ export const Img = styled.img`
   width: 100%;
 `;
 export const Input = styled.input`
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   height: 44px;
+  width: 280px;
   box-shadow: rgba(136, 198, 253, 0.19) 3px 8px 14px;
   border-radius: 40px;
   border: 1px solid transparent;
   padding: 8px 20px;
   box-sizing: border-box;
   outline: none;
+  margin-bottom: 44px;
+  &::placeholder {
+    font-size: 14px;
+    color: rgba(136, 136, 136, 1);
+  }
 `;
 
 export default Card;

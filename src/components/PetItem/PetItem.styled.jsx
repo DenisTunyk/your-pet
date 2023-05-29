@@ -18,6 +18,7 @@ export const PetItem = styled.li`
   }
 `;
 export const PetImage = styled.div`
+  background-color: lightgrey;
   background-image: url(${props => props.src});
   background-size: cover;
   background-repeat: no-repeat;

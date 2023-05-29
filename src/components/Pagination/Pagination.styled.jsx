@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
 
-  @media screen and (min-width: 768px and max-width: 1279px) {
-    padding-bottom: 194px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    /* padding-bottom: 194px; */
   }
 `;
 
@@ -41,6 +45,7 @@ export const PaginationButton = styled.button`
   background-color: ${({ active }) => (active ? '#54ADFF' : 'transparent')};
   color: ${({ active }) => (active ? '#FEF9F9;' : '#CCE4FB')};
   cursor: pointer;
+  outline: none;
 
   &:hover:not(:disabled) {
     background-color: ${() => '#54ADFF'};
@@ -50,6 +55,7 @@ export const PaginationButton = styled.button`
   &:hover,
   &:focus {
     border: 1px solid #cce4fb;
+    outline: none;
   }
 
   &:disabled {

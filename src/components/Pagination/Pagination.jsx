@@ -78,3 +78,5 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     </Wrapper>
   );
 };
+
+export default Pagination;

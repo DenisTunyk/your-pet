@@ -16,7 +16,7 @@ import { Title } from 'components/UserData/UserData.styled';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from 'hooks/useAutn';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUsersNotices } from 'redux/notices/operations';
+import { getMyAdsNotices } from 'redux/notices/operations';
 import { useEffect } from 'react';
 import { PetsData as PetsList } from 'components/PetList/PetList';
 
@@ -26,8 +26,8 @@ export const PetsData = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUsersNotices())
-  }, [dispatch])
+    dispatch(getMyAdsNotices());
+  }, [dispatch]);
 
   const pets = useSelector(state => state.notices.pets);
   //   const [openModal, setOpenModal] = useState(false);
@@ -68,7 +68,7 @@ export const PetsData = () => {
         {isLoading ? (
           <ThreeDots height="100" width="100" radius="9" color="#54adff" />
         ) : (
-          <PetsList pets={pets}/>
+          <PetsList pets={pets} />
         )}
       </LoaderUser>
       {/* )} */}

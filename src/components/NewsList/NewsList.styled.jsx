@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 44px;
-  margin-top: 44px;
+  display: grid;
+  max-width: calc(100vw);
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 16px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 384px);
-    margin-top: 80px;
+    /* max-width: calc(100vw - 96px); */
+    /* grid-template-columns: repeat(auto-fill, minmax(769px, 1fr)); */
+    grid-gap: 31px;
   }
-
   @media (min-width: 1280px) {
-    display: grid;
-    grid-template-columns: repeat(3, 425px);
-    margin-top: 80px;
+    max-width: calc(100vw - 96px);
+    /* grid-template-columns: repeat(auto-fill, minmax(769px, 1fr)); */
+    grid-gap: 31px;
   }
 `;
 
@@ -29,10 +33,7 @@ export const Title = styled.h1`
   margin: 40px 0px 24px 0px;
 `;
 export const Wrapper = styled.div`
-  /* margin-left: auto; */
-  /* display: grid; */
-  /* grid-template-columns: repeat(1, 320px); */
-  /* margin-top: 50px; */
+  overflow: hidden;
 `;
 export const Input = styled.input`
   display: block;

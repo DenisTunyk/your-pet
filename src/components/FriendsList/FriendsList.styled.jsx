@@ -1,30 +1,39 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 16px 12px;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: 0 auto;
+    width: 1280px;
+  }
 `;
 
-export const Titel = styled.h1`
+export const Title = styled.h2`
   font-weight: 700;
   font-size: 24px;
-  line-height: 33px;
-  text-align: center;
+  line-height: 1.375;
   color: #000000;
   margin-top: 40px;
   margin-bottom: 24px;
 
   @media screen and (min-width: 768px) {
-    font-size: 48px;
-    line-height: 66px;
     margin-top: 80px;
+    font-size: 48px;
     margin-bottom: 40px;
   }
 
   @media screen and (min-width: 1280px) {
+    margin-top: 80px;
     margin-bottom: 60px;
   }
 `;
@@ -42,19 +51,7 @@ export const List = styled.ul`
   }
 
   @media screen and (min-width: 1280px) {
+    width: 1280px;
     row-gap: 20px;
-  }
-`;
-
-export const ListItem = styled.li`
-  width: 280px;
-  height: 239px;
-  background: #ffffff;
-  box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
-  border-radius: 40px;
-
-  @media screen and (min-width: 767px) {
-    width: 336px;
-    height: 275px;
   }
 `;

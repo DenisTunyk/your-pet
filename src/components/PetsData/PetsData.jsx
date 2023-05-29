@@ -14,9 +14,22 @@ import {
 } from './PetsData.styled';
 import { Title } from 'components/UserData/UserData.styled';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from 'hooks/useAutn';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUsersNotices } from 'redux/notices/operations';
+import { useEffect } from 'react';
+import { PetsData as PetsList } from 'components/PetList/PetList';
 
 export const PetsData = () => {
   const navigate = useNavigate();
+  const { isLoading } = useAuth();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsersNotices())
+  }, [dispatch])
+
+  const pets = useSelector(state => state.notices.pets);
   //   const [openModal, setOpenModal] = useState(false);
 
   //   const { data, isFetching: isLoading } = useGetUserPetsQuery();
@@ -40,7 +53,7 @@ export const PetsData = () => {
       <StyledWrapper>
         <Title>My pets:</Title>
         {/* <AddButton onClick={() => setOpenModal(!openModal)}> */}
-        <AddButton onClick={()=> navigate('/add-pet')}>
+        <AddButton onClick={() => navigate('/add-pet')}>
           Add pet <PlusIcon stroke="white" />
         </AddButton>
       </StyledWrapper>
@@ -52,7 +65,11 @@ export const PetsData = () => {
       )} */}
       {/* {isLoading && ( */}
       <LoaderUser>
-        <ThreeDots height="100" width="100" radius="9" color="#54adff" />
+        {isLoading ? (
+          <ThreeDots height="100" width="100" radius="9" color="#54adff" />
+        ) : (
+          <PetsList pets={pets}/>
+        )}
       </LoaderUser>
       {/* )} */}
       {/* {pets.length > 0 && <PetsList pets={pets} />}

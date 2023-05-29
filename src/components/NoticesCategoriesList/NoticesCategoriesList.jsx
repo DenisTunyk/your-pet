@@ -7,7 +7,7 @@ import {
   getFavoriteNoticesByQuery,
   getNotices,
   getNoticesByQuery,
-  getUsersNotices,
+  getMyAdsNotices,
   getMyAdsNoticesByQuery,
 } from 'redux/notices/operations';
 import { selectNotices } from 'redux/notices/selectors';
@@ -46,7 +46,8 @@ export const NoticeCategiriesList = ({ search }) => {
             await dispatch(getFavoriteNotices({}));
             break;
           case 'myAds':
-            await dispatch(getUsersNotices({}));
+            await dispatch(getMyAdsNotices({}));
+            // await dispatch(getUsersNotices({}));
             break;
           default:
             await dispatch(getNotices(category));

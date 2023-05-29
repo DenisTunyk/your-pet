@@ -69,8 +69,8 @@ export const getMyAdsNoticesByQuery = createAsyncThunk(
   }
 );
 
-export const getUsersNotices = createAsyncThunk(
-  'notices/getUsersNotices',
+export const getMyAdsNotices = createAsyncThunk(
+  'notices/getMyAdsNotices',
   async ({ rejectWithValue }) => {
     try {
       const { data } = await axios.get(`/api/notices/myAds`);

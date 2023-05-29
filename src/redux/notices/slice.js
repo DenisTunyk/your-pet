@@ -4,7 +4,7 @@ import {
   getNotices,
   getNoticesByQuery,
   getNoticeById,
-  getUsersNotices,
+  getMyAdsNotices,
   getFavoriteNotices,
   getFavoriteNoticesByQuery,
   getMyAdsNoticesByQuery,
@@ -47,13 +47,16 @@ const noticesSlice = createSlice({
           getNoticesByQuery.fulfilled,
           getFavoriteNoticesByQuery.fulfilled,
           getMyAdsNoticesByQuery.fulfilled,
-          getUsersNotices.fulfilled,
+          getMyAdsNotices.fulfilled,
           getFavoriteNotices.fulfilled
         ),
         (state, { payload }) => {
           state.items = payload;
         }
       )
+      .addMatcher(isAnyOf(getMyAdsNotices.fulfilled), (state, { payload }) => {
+        state.pets = payload;
+      })
       .addMatcher(
         isAnyOf(
           updateNotice.fulfilled,
@@ -72,7 +75,7 @@ const noticesSlice = createSlice({
           getFavoriteNoticesByQuery.pending,
           getMyAdsNoticesByQuery.pending,
           getNoticeById.pending,
-          getUsersNotices.pending,
+          getMyAdsNotices.pending,
           getFavoriteNotices.pending,
           addNotice.pending,
           updateNotice.pending,
@@ -91,7 +94,7 @@ const noticesSlice = createSlice({
           getFavoriteNoticesByQuery.fulfilled,
           getMyAdsNoticesByQuery.fulfilled,
           getNoticeById.fulfilled,
-          getUsersNotices.fulfilled,
+          getMyAdsNotices.fulfilled,
           getFavoriteNotices.fulfilled,
           addNotice.fulfilled,
           updateNotice.fulfilled,
@@ -111,7 +114,7 @@ const noticesSlice = createSlice({
           getFavoriteNoticesByQuery.rejected,
           getMyAdsNoticesByQuery.rejected,
           getNoticeById.rejected,
-          getUsersNotices.rejected,
+          getMyAdsNotices.rejected,
           getFavoriteNotices.rejected,
           addNotice.rejected,
           updateNotice.rejected,

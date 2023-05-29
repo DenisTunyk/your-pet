@@ -14,8 +14,12 @@ import {
 
 export const NewsItem = () => {
   const [searchQuery] = useState('');
+
   const filteredNews = newsData.news.filter(item =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const sortedNews = filteredNews.sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
   );
 
   const transformDate = date => {
@@ -26,7 +30,7 @@ export const NewsItem = () => {
     <>
       {/* <ButtonSearch /> */}
 
-      {filteredNews.map((item, id) => (
+      {sortedNews.map((item, id) => (
         <Card key={id}>
           <WrapImg>
             <Img

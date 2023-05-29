@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import {
   PaginationContainer,
@@ -8,36 +8,36 @@ import {
 } from './Pagination.styled';
 
 export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const [displayedPages, setDisplayedPages] = useState([1, 2, 3, 4, 5]);
+  const [displayedPages, setDisplayedPages] = useState([]);
+
+  const updatePages = useCallback(
+    page => {
+      const totalDisplayedPages = 5;
+      const halfTotalDisplayedPages = Math.floor(totalDisplayedPages / 2);
+
+      let startPage = Math.max(page - halfTotalDisplayedPages, 1);
+      let endPage = Math.min(startPage + totalDisplayedPages - 1, totalPages);
+
+      if (endPage - startPage < totalDisplayedPages - 1) {
+        startPage = Math.max(endPage - totalDisplayedPages + 1, 1);
+      }
+
+      const newPages = Array.from(
+        { length: endPage - startPage + 1 },
+        (_, index) => startPage + index
+      );
+      setDisplayedPages(newPages);
+    },
+    [totalPages]
+  );
+
+  useEffect(() => {
+    updatePages(currentPage);
+  }, [currentPage, updatePages]);
 
   const handlePageClick = page => {
     onPageChange(page);
     updatePages(page);
-  };
-
-  const updatePages = page => {
-    const totalPages = 5;
-    const halfTotalPages = Math.floor(totalPages / 2);
-
-    let startPage = page - halfTotalPages;
-    if (startPage < 1) {
-      startPage = 1;
-    }
-
-    let endPage = startPage + totalPages - 1;
-    if (endPage > totalPages) {
-      endPage = totalPages;
-      startPage = endPage - totalPages + 1;
-      if (startPage < 1) {
-        startPage = 1;
-      }
-    }
-
-    const newPages = [];
-    for (let i = startPage; i <= endPage; i++) {
-      newPages.push(i);
-    }
-    setDisplayedPages(newPages);
   };
 
   const handlePrevClick = () => {

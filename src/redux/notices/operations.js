@@ -36,7 +36,6 @@ export const getFavoriteNotices = createAsyncThunk(
   async ({ rejectWithValue }) => {
     try {
       const { data } = await axios.get(`/api/notices/favorites`);
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error);

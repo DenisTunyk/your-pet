@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-// export const Wrap = styled.div`
-//   position: absolute;
-//   right: 18px;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   gap: 12px;
-//   display: flex;
-// `;
-
 export const ButtonIcon = styled.button`
   position: absolute;
   top: 0.4em;

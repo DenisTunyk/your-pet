@@ -8,13 +8,11 @@ export const List = styled.ul`
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 384px);
-    /* column-gap: 46px; */
     margin-top: 80px;
   }
   @media (min-width: 1280px) {
     display: grid;
     grid-template-columns: repeat(3, 384px);
-    /* column-gap: 46px; */
     grid-template-columns: repeat(3, 425px);
     margin-top: 80px;
   }
@@ -32,12 +30,7 @@ export const Title = styled.h1`
   @media (min-width: 1280px) {
   }
 `;
-export const Wrapper = styled.div`
-  /* margin-left: auto; */
-  /* display: grid; */
-  /* grid-template-columns: repeat(1, 320px); */
-  /* margin-top: 50px; */
-`;
+export const Wrapper = styled.div``;
 export const Input = styled.input`
   display: block;
   margin-right: auto;

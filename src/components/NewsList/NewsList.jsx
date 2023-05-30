@@ -23,7 +23,10 @@ export const NewsList = () => {
             onChange={handleSearch}
             placeholder="Search"
           />
-          <ButtonSearch />
+          <ButtonSearch
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
         </Form>
         <List>
           <NewsItem searchQuery={searchQuery} showAllNews={showAllNews} />

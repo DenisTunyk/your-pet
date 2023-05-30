@@ -92,4 +92,18 @@ export const WrapperFuterCard = styled.div`
   padding-left: 12px;
 `;
 
+export const WrapSpinner = styled.div`
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 50px);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  @media (min-width: 768px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
 export default Card;

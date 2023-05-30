@@ -7,7 +7,7 @@ import {
   Wrapper,
 } from './Pagination.styled';
 
-export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const [displayedPages, setDisplayedPages] = useState([]);
 
   const updatePages = useCallback(

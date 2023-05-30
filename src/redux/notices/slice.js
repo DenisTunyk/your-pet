@@ -62,8 +62,12 @@ const noticesSlice = createSlice({
           removeFavoriteNotice.fulfilled
         ),
         (state, { payload }) => {
-          const index = state.items.findIndex(item => item._id === payload._id);
-          state.items.splice(index, 1, payload);
+          state.items = state.items.map(item => {
+            if (item._id === payload._id) {
+              item.favorites = payload.favorites;
+            }
+            return item;
+          });
         }
       )
       .addMatcher(

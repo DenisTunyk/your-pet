@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { getNews } from '../../api/news';
+import React, { useState } from 'react';
+import newsData from './news.json';
 import {
   Card,
   TitleCard,
@@ -15,24 +15,11 @@ import Pagination from '../Pagination/Pagination';
 const ITEMS_PER_PAGE = 6;
 
 const NewsItem = ({ searchQuery }) => {
-  const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const newsData = await getNews();
-        setNews(newsData);
-        // console.log(news);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchNews();
-  }, []);
-
-  const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedNews = newsData.news.sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
 
   const filteredNews = searchQuery
     ? sortedNews.filter(item =>

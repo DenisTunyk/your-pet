@@ -12,7 +12,7 @@ import {
   WrapSpinner,
 } from './NewsItem.styled';
 import Pagination from '../Pagination/Pagination';
-import { Spinner } from 'components/Spinner/Spinner';
+import Loader from '../../components/Loader/Loader';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -62,7 +62,7 @@ const NewsItem = ({ searchQuery }) => {
     <>
       {isLoading ? (
         <WrapSpinner>
-          <Spinner />
+          <Loader />
         </WrapSpinner>
       ) : (
         <>

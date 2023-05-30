@@ -93,16 +93,18 @@ export const WrapperFuterCard = styled.div`
 `;
 
 export const WrapSpinner = styled.div`
-  width: 100px;
+  width: 100%;
   position: absolute;
-  top: 50%;
-  left: calc(50% - 50px);
+  top: 25%;
   display: flex;
   justify-content: center;
   text-align: center;
   @media (min-width: 768px) {
+    width: 200px;
   }
   @media (min-width: 1280px) {
+    width: 300px;
+    left: calc(50% - 500px);
   }
 `;
 

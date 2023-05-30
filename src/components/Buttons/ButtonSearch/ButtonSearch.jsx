@@ -1,7 +1,6 @@
 import { ButtonIcon } from './ButtonSearch.styled';
 import crossIcon from '../../../images/iconsSearch/cross-small.svg';
 import searchIcon from '../../../images/iconsSearch/search.svg';
-// import { useState } from 'react';
 
 export const ButtonSearch = ({ searchQuery, setSearchQuery }) => {
   const handleClear = () => {

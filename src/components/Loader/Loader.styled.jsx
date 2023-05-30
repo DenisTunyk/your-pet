@@ -57,7 +57,7 @@ export const Paw3 = styled(Pawprint3)`
 
   transform: rotate(53.71deg);
 
-  animation: 3000ms pawAnimation ease-in-out 3s infinite;
+  animation: 3000ms pawAnimation ease-in-out 2s infinite;
 `;
 
 export const Paw4 = styled(Pawprint4)`
@@ -69,7 +69,7 @@ export const Paw4 = styled(Pawprint4)`
 
   transform: rotate(7.08deg);
 
-  animation: 3000ms pawAnimation ease-in-out 3s infinite;
+  animation: 2000ms pawAnimation ease-in-out 3s infinite;
 `;
 
 export const Paw5 = styled(Pawprint5)`
@@ -80,7 +80,7 @@ export const Paw5 = styled(Pawprint5)`
 
   transform: rotate(-125.93deg);
 
-  animation: 3000ms pawAnimation ease-in-out 5s infinite;
+  animation: 3000ms pawAnimation ease-in-out 4s infinite;
 `;
 
 export const Paw6 = styled(Pawprint6)`
@@ -92,7 +92,7 @@ export const Paw6 = styled(Pawprint6)`
 
   transform: rotate(-125.93deg);
 
-  animation: 3000ms pawAnimation ease-in-out 5s infinite;
+  animation: 2000ms pawAnimation ease-in-out 5s infinite;
 `;
 
 export const Paw7 = styled(Pawprint7)`
@@ -104,5 +104,5 @@ export const Paw7 = styled(Pawprint7)`
 
   transform: rotate(-65.1deg);
 
-  animation: 1000ms pawAnimation ease-in-out 1s infinite;
+  animation: 2000ms pawAnimation ease-in-out 1s infinite;
 `;

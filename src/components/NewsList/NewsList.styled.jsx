@@ -26,8 +26,10 @@ export const Title = styled.h1`
   margin: 40px 0px 24px 0px;
   @media (min-width: 768px) {
     font-size: 48px;
+    margin: 80px 0px 40px 0px;
   }
   @media (min-width: 1280px) {
+    margin: 80px 0px 60px 0px;
   }
 `;
 export const Wrapper = styled.div``;

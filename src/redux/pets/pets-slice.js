@@ -4,31 +4,40 @@ import { getPets, deletePet } from './operations';
 const petsInitialState = {
   category: 'sell',
   pets: [],
-  isLoading: false
+  isLoading: false,
 };
 
 const petsSlice = createSlice({
   name: 'pets',
   initialState: petsInitialState,
+  reducers: {
+    updateCategory(state, action) {
+      state.category = action.payload;
+    },
+  },
   extraReducers: {
-    [getPets.pending](state){
+    [getPets.pending](state) {
       state.isLoading = true;
     },
-    [getPets.fulfilled](state, action){
+    [getPets.fulfilled](state, action) {
       state.pets = action.payload;
       state.isLoading = false;
     },
-    [getPets.rejected](state){
+    [getPets.fulfilled](state, action) {
+      state.pets = action.payload;
       state.isLoading = false;
-    },    
-    [deletePet.pending](state){
+    },
+    [getPets.rejected](state) {
+      state.isLoading = false;
+    },
+    [deletePet.pending](state) {
       state.isLoading = true;
     },
-    [deletePet.fulfilled](state, action){
-      state.pets = state.pets.filter(pet => pet._id === action.payload)
+    [deletePet.fulfilled](state, action) {
+      state.pets = state.pets.filter(pet => pet._id === action.payload);
       state.isLoading = false;
     },
-    [deletePet.rejected](state){
+    [deletePet.rejected](state) {
       state.isLoading = false;
     },
   },

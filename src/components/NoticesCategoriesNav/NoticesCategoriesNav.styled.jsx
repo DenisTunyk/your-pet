@@ -21,10 +21,13 @@ export const Link = styled(NavLink)`
   line-height: 1.73;
   color: #54adff;
   letter-spacing: 0.04em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &.active,
-  &:hover {
+  &:hover,
+  &:focus {
     color: #fef9f9;
     background-color: #54adff;
+    text-decoration: none;
   }
 `;

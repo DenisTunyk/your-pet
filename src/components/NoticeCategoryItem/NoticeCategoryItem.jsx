@@ -12,7 +12,7 @@ import {
 import { ModalLearMore } from './ModalLearnMore';
 import ModalDelete from '../ModalDelete/ModalDelete.jsx';
 import { useState, useEffect } from 'react';
-import { useAuth } from '../../hooks/useAutn';
+import { useAuth } from '../../hooks/useAuth';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Icons from '../../images/icons/notices-category-icon.svg';

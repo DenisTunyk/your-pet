@@ -37,19 +37,18 @@ export const theme = {
     gradientBlue: 'linear-gradient(290.46deg, #419EF1 0%, #9BD0FF 107.89%)',
     dark: '#111111',
     orange: '#FFC107',
-    white: '#FDF7F2',
+
     whity: '#FEF9F9',
     light: '#f0f0f0',
     clearWhite: '#FFFFFF',
     blueGradient: 'linear-gradient(290.46deg, #419EF1 0%, #9BD0FF 107.89%)',
-    blue: '#54ADFF',
+
     blueLight: '#CCE4FB',
-    green: '#00C3AD;',
-    red: '#F43F5E',
+
     backdropColor: ' #61616199',
-    black: '#111111',
+
     clearBlack: '#000000',
-    grey: '#888888',
+
     transparent: 'transparent',
     currentColor: 'currentColor',
   },

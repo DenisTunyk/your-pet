@@ -2,19 +2,20 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  /* height: 100%; */
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  height: 52px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
 `;
 
 export const PaginationContainer = styled.div`
   width: 350px;
-
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
   display: flex;
   justify-content: center;
   align-items: center;

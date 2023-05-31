@@ -1,9 +1,10 @@
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import { Backgraund } from 'components/LoginForm/LoginForm.styled';
 
 export const RegisterPage = () => {
   return (
-    <div>
+    <Backgraund>
       <RegisterForm />
-    </div>
+    </Backgraund>
   );
 };

@@ -16,22 +16,22 @@ import {
   Category,
   CloseButton,
 } from './ModalLearnMore.styled';
-import Icons from '../../images/icons/notices-category-icon.svg'
+import Icons from '../../images/icons/notices-category-icon.svg';
 
 async function addToFavorite(noticeId, token) {
   const url = `https://project-7-backend.onrender.com/api/notices/favorite/${noticeId}`;
   return fetch(url, {
-    method: "PATCH",
+    method: 'PATCH',
     headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
       Authorization: `Bearer ${token}`,
     },
-  }).then((data) => data.json());
+  }).then(data => data.json());
 }
 
 export const ModalLearMore = ({ handler, data }) => {
-  console.log("data", data);
+  console.log('data', data);
   useEffect(() => {
     const handleEsc = event => {
       if (event.keyCode === 27) {
@@ -45,10 +45,9 @@ export const ModalLearMore = ({ handler, data }) => {
     };
   }, [handler]);
 
-
-  const handleAddToFavorite = (noticeId) => {
-      addToFavorite(noticeId)
-  }
+  const handleAddToFavorite = noticeId => {
+    addToFavorite(noticeId);
+  };
 
   return (
     <ModalContainer onClick={() => handler(false)}>
@@ -59,7 +58,7 @@ export const ModalLearMore = ({ handler, data }) => {
           </svg>
         </CloseButton>
         <Info>
-          <Image img={data.image}>
+          <Image img={data.avatarURL}>
             <Category> {data.category}</Category>
           </Image>
           <ContactInfo>
@@ -76,12 +75,12 @@ export const ModalLearMore = ({ handler, data }) => {
               </Contactheader>
               <ContactContent>
                 <div>{data.name}</div>
-                <div>{data.age}</div>
+                <div>{data.birthday}</div>
                 <div>{data.breed}</div>
                 <div>{data.location}</div>
                 <div>{data.sex}</div>
-                <div>{data.name}</div>
-                <div>{data.name}</div>
+                <div>{data.email}</div>
+                <div>{data.phone}</div>
               </ContactContent>
             </Contact>
           </ContactInfo>

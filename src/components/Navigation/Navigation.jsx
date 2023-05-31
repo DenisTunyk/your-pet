@@ -4,7 +4,7 @@ import { AuthNav } from 'components/AuthNav/AuthNav';
 import { Burger } from 'components/Burger/Burger';
 import { useMediaQuery } from 'react-responsive';
 // ==========
-import { useAuth } from '../../hooks/useAutn';
+import { useAuth } from '../../hooks/useAuth';
 import { UserNav } from 'components/UserNav/UserNav';
 import { Box } from './Navigation.styled';
 import { useSelector } from 'react-redux';

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/auth-operations';
-import { useAuth } from 'hooks/useAutn';
+import { useAuth } from 'hooks/useAuth';
 import { Spinner } from 'components/Spinner/Spinner';
 import { ToastContainer, Slide } from 'react-toastify';
 import { notifyError } from 'helpers/Toastify';

@@ -17,7 +17,7 @@ import { OurFriend } from 'pages/OurFriend/OurFriend';
 // import { FriendList } from '../FriendsList/FriendsList';
 import Theme from '../Theme';
 import { Container } from './App.styled';
-import { useAuth } from 'hooks/useAutn';
+import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Loader from 'components/Loader/Loader';

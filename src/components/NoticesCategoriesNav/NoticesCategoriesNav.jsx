@@ -6,7 +6,7 @@ import { updateCategory } from 'redux/pets/pets-slice';
 import { ReactComponent as PlusIcon } from '../../assets/icon/plus.svg';
 import { AddButton } from '../PetsData/PetsData.styled';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from 'hooks/useAutn';
+import { useAuth } from 'hooks/useAuth';
 
 export const NoticesCategoriesNav = () => {
   const dispatch = useDispatch();

@@ -29,6 +29,7 @@ import {
   IconCheck,
   IconCross,
 } from './RegisterForm.styled';
+import { Backgraund } from '../RegisterForm/RegisterForm.styled';
 
 const initialVelues = {
   email: '',
@@ -73,117 +74,119 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Container>
-      <ToastContainer transition={Slide} />
-      <Title>Registration</Title>
-      <Formik
-        initialValues={initialVelues}
-        validationSchema={validationRegister}
-        onSubmit={handleSubmit}
-      >
-        {({ errors, values }) => (
-          <FormAuth autoComplete="off">
-            <Label>
-              <Input
-                className={
-                  !errors.email && values.email !== ''
-                    ? 'success'
-                    : errors.email && values.email !== ''
-                    ? 'error'
-                    : 'default'
-                }
-                type="text"
-                name="email"
-                placeholder="Email"
-              />
-              {!errors.email && values.email !== '' ? (
-                <IconCheck>
-                  <Check stroke="green" />
-                </IconCheck>
-              ) : null}
-              {errors.email && values.email !== '' ? (
-                <IconCross>
-                  <Cross stroke="red" />
-                </IconCross>
-              ) : null}
-              {!errors.email && values.email !== '' ? (
-                <InputCorrect name="Email is correct" />
-              ) : null}
-              <InputError name="email" />
-            </Label>
-            <Label>
-              <Input
-                className={
-                  !errors.password && values.password !== ''
-                    ? 'success'
-                    : errors.password && values.password !== ''
-                    ? 'error'
-                    : 'default'
-                }
-                type={showPassword ? 'text' : 'password'}
-                name="password"
-                placeholder="Password"
-              />
-              {!errors.password && values.password !== '' ? (
-                <IconCheck>
-                  <Check stroke="green" />
-                </IconCheck>
+    <Backgraund>
+      <Container>
+        <ToastContainer transition={Slide} />
+        <Title>Registration</Title>
+        <Formik
+          initialValues={initialVelues}
+          validationSchema={validationRegister}
+          onSubmit={handleSubmit}
+        >
+          {({ errors, values }) => (
+            <FormAuth autoComplete="off">
+              <Label>
+                <Input
+                  className={
+                    !errors.email && values.email !== ''
+                      ? 'success'
+                      : errors.email && values.email !== ''
+                      ? 'error'
+                      : 'default'
+                  }
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                />
+                {!errors.email && values.email !== '' ? (
+                  <IconCheck>
+                    <Check stroke="green" />
+                  </IconCheck>
+                ) : null}
+                {errors.email && values.email !== '' ? (
+                  <IconCross>
+                    <Cross stroke="red" />
+                  </IconCross>
+                ) : null}
+                {!errors.email && values.email !== '' ? (
+                  <InputCorrect name="Email is correct" />
+                ) : null}
+                <InputError name="email" />
+              </Label>
+              <Label>
+                <Input
+                  className={
+                    !errors.password && values.password !== ''
+                      ? 'success'
+                      : errors.password && values.password !== ''
+                      ? 'error'
+                      : 'default'
+                  }
+                  type={showPassword ? 'text' : 'password'}
+                  name="password"
+                  placeholder="Password"
+                />
+                {!errors.password && values.password !== '' ? (
+                  <IconCheck>
+                    <Check stroke="green" />
+                  </IconCheck>
+                ) : (
+                  <IconShow onClick={togglePassword}>
+                    {showPassword ? <Open /> : <Closed />}
+                  </IconShow>
+                )}
+                {!errors.password && values.password !== '' ? (
+                  <InputCorrect name="Password is correct" />
+                ) : null}
+                <InputError name="password" />
+              </Label>
+              <Label>
+                <Input
+                  className={
+                    !errors.confirmPassword && values.confirmPassword !== ''
+                      ? 'success'
+                      : errors.confirmPassword && values.confirmPassword !== ''
+                      ? 'error'
+                      : 'default'
+                  }
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  name="confirmPassword"
+                  placeholder="Confirm password"
+                />
+                {!errors.confirmPassword && values.confirmPassword !== '' ? (
+                  <IconCheck>
+                    <Check stroke="green" />
+                  </IconCheck>
+                ) : (
+                  <IconShow onClick={toggleConfirmPassword}>
+                    {showConfirmPassword ? <Open /> : <Closed />}
+                  </IconShow>
+                )}
+                {!errors.confirmPassword && values.confirmPassword !== '' ? (
+                  <InputCorrect name="Password confirmed" />
+                ) : null}
+                <InputError name="confirmPassword" />
+              </Label>
+              {isPending ? (
+                <Spinner />
               ) : (
-                <IconShow onClick={togglePassword}>
-                  {showPassword ? <Open /> : <Closed />}
-                </IconShow>
+                <Button
+                  disabled={
+                    errors.email || errors.password || errors.confirmPassword
+                  }
+                  type="submit"
+                >
+                  Registration
+                </Button>
               )}
-              {!errors.password && values.password !== '' ? (
-                <InputCorrect name="Password is correct" />
-              ) : null}
-              <InputError name="password" />
-            </Label>
-            <Label>
-              <Input
-                className={
-                  !errors.confirmPassword && values.confirmPassword !== ''
-                    ? 'success'
-                    : errors.confirmPassword && values.confirmPassword !== ''
-                    ? 'error'
-                    : 'default'
-                }
-                type={showConfirmPassword ? 'text' : 'password'}
-                name="confirmPassword"
-                placeholder="Confirm password"
-              />
-              {!errors.confirmPassword && values.confirmPassword !== '' ? (
-                <IconCheck>
-                  <Check stroke="green" />
-                </IconCheck>
-              ) : (
-                <IconShow onClick={toggleConfirmPassword}>
-                  {showConfirmPassword ? <Open /> : <Closed />}
-                </IconShow>
-              )}
-              {!errors.confirmPassword && values.confirmPassword !== '' ? (
-                <InputCorrect name="Password confirmed" />
-              ) : null}
-              <InputError name="confirmPassword" />
-            </Label>
-            {isPending ? (
-              <Spinner />
-            ) : (
-              <Button
-                disabled={
-                  errors.email || errors.password || errors.confirmPassword
-                }
-                type="submit"
-              >
-                Registration
-              </Button>
-            )}
-          </FormAuth>
-        )}
-      </Formik>
-      <TextLink>
-        <span>Already have an account? </span>
-        <LinkToLogIn to="/login">Login</LinkToLogIn>
-      </TextLink>
-    </Container>
+            </FormAuth>
+          )}
+        </Formik>
+        <TextLink>
+          <span>Already have an account? </span>
+          <LinkToLogIn to="/login">Login</LinkToLogIn>
+        </TextLink>
+      </Container>
+    </Backgraund>
   );
 };

@@ -1,7 +1,51 @@
 import { Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import BgD from '../../images/bg_desctop1x.png';
+import BgD2x from '../../images/bg_desctop2x.png';
+import BgT from '../../images/bg_tablet1x.png';
+import BgT2x from '../../images/bg_tablet2x.png';
+import BgM from '../../images/bg_mobile1x.png';
+import BgM2x from '../../images/bg_mobile2x.png';
 
+export const Backgraund = styled.section`
+  height: 100vh;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  background-image: url(${BgM});
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${BgM2x});
+  }
+  @media screen and (min-width: 768px) {
+    display: inherit;
+    background-image: url(${BgT});
+    width: 768px;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${BgT2x});
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(${BgD});
+    display: inherit;
+    width: 1280px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(${BgD2x});
+    }
+  }
+`;
 export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;

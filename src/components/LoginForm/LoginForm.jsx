@@ -29,6 +29,7 @@ import {
   IconCross,
   IconCheck,
 } from './LoginForm.styled';
+import { Backgraund } from '../LoginForm/LoginForm.styled';
 
 const initialValues = {
   email: '',
@@ -67,85 +68,90 @@ export const LoginForm = () => {
   };
 
   return (
-    <Container>
-      <ToastContainer transition={Slide} />
-      <Titel>Login</Titel>
-      <Formik
-        validationSchema={validattionLogin}
-        onSubmit={handleSubmit}
-        initialValues={initialValues}
-      >
-        {({ errors, values }) => (
-          <FormAuth autoComplete="off">
-            <Label>
-              <Input
-                className={
-                  !errors.email && values.email !== ''
-                    ? 'success'
-                    : errors.email && values.email !== ''
-                    ? 'error'
-                    : 'default'
-                }
-                type="text"
-                name="email"
-                placeholder="Email"
-              />
-              {!errors.email && values.email !== '' ? (
-                <IconCheck>
-                  <Check stroke="green" />
-                </IconCheck>
-              ) : null}
-              {errors.email && values.email !== '' ? (
-                <IconCross>
-                  <Cross stroke="red" />
-                </IconCross>
-              ) : null}
-              {!errors.email && values.email !== '' ? (
-                <InputCorrect name="Email is correct" />
-              ) : null}
-              <InputError name="email" />
-            </Label>
-            <Label>
-              <Input
-                className={
-                  !errors.password && values.password !== ''
-                    ? 'success'
-                    : errors.password && values.password !== ''
-                    ? 'error'
-                    : 'default'
-                }
-                type={showPassword ? 'text' : 'password'}
-                name="password"
-                placeholder="Password"
-              />
-              {!errors.password && values.password !== '' ? (
-                <IconCheck>
-                  <Check stroke="green" />
-                </IconCheck>
+    <Backgraund>
+      <Container>
+        <ToastContainer transition={Slide} />
+        <Titel>Login</Titel>
+        <Formik
+          validationSchema={validattionLogin}
+          onSubmit={handleSubmit}
+          initialValues={initialValues}
+        >
+          {({ errors, values }) => (
+            <FormAuth autoComplete="off">
+              <Label>
+                <Input
+                  className={
+                    !errors.email && values.email !== ''
+                      ? 'success'
+                      : errors.email && values.email !== ''
+                      ? 'error'
+                      : 'default'
+                  }
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                />
+                {!errors.email && values.email !== '' ? (
+                  <IconCheck>
+                    <Check stroke="green" />
+                  </IconCheck>
+                ) : null}
+                {errors.email && values.email !== '' ? (
+                  <IconCross>
+                    <Cross stroke="red" />
+                  </IconCross>
+                ) : null}
+                {!errors.email && values.email !== '' ? (
+                  <InputCorrect name="Email is correct" />
+                ) : null}
+                <InputError name="email" />
+              </Label>
+              <Label>
+                <Input
+                  className={
+                    !errors.password && values.password !== ''
+                      ? 'success'
+                      : errors.password && values.password !== ''
+                      ? 'error'
+                      : 'default'
+                  }
+                  type={showPassword ? 'text' : 'password'}
+                  name="password"
+                  placeholder="Password"
+                />
+                {!errors.password && values.password !== '' ? (
+                  <IconCheck>
+                    <Check stroke="green" />
+                  </IconCheck>
+                ) : (
+                  <IconShow onClick={togglePassword}>
+                    {showPassword ? <Open /> : <Closed />}
+                  </IconShow>
+                )}
+                {!errors.password && values.password !== '' ? (
+                  <InputCorrect name="Password is secure " />
+                ) : null}
+                <InputError name="password" />
+              </Label>
+              {isPending ? (
+                <Spinner />
               ) : (
-                <IconShow onClick={togglePassword}>
-                  {showPassword ? <Open /> : <Closed />}
-                </IconShow>
+                <Button
+                  disabled={errors.email || errors.password}
+                  type="submit"
+                >
+                  Login
+                </Button>
               )}
-              {!errors.password && values.password !== '' ? (
-                <InputCorrect name="Password is secure " />
-              ) : null}
-              <InputError name="password" />
-            </Label>
-            {isPending ? (
-              <Spinner />
-            ) : (
-              <Button disabled={errors.email || errors.password} type="submit">
-                Login
-              </Button>
-            )}
-          </FormAuth>
-        )}
-      </Formik>
-      <TextLink>
-        <span>Don't have an account?</span>
-        <LinkToRegister to="/registration">Register</LinkToRegister>
-      </TextLink>
-    </Container>
+            </FormAuth>
+          )}
+        </Formik>
+        <TextLink>
+          <span>Don't have an account?</span>
+          <LinkToRegister to="/registration">Register</LinkToRegister>
+        </TextLink>
+      </Container>
+    </Backgraund>
   );
 };

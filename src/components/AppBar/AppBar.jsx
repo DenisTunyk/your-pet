@@ -1,4 +1,4 @@
-import { useAuth } from 'hooks/useAutn';
+import { useAuth } from 'hooks/useAuth';
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import { Navigation } from 'components/Navigation/Navigation';
 import { UserData } from 'components/UserData/UserData';

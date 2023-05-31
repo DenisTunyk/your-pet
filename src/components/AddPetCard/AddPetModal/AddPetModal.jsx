@@ -30,7 +30,7 @@ const AddPetModal = ({ backLink }) => {
           text="Go to profile"
           icon={<PawPrintIcon />}
           clickHandler={() => {
-            navigate('/user');
+            navigate('/profile');
           }}
           filled={false}
           isDisabled={false}

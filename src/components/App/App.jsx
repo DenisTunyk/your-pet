@@ -16,7 +16,7 @@ import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { OurFriend } from 'pages/OurFriend/OurFriend';
 // import { FriendList } from '../FriendsList/FriendsList';
 import Theme from '../Theme';
-import { Container } from './App.styled';
+import { Container, LoaderWrapper } from './App.styled';
 import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -32,7 +32,9 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Loader marginTop="30px" />
+    <LoaderWrapper>
+      <Loader />
+    </LoaderWrapper>
   ) : (
     <Theme>
       <Container>

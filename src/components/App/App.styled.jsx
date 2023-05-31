@@ -17,3 +17,11 @@ export const Container = styled.div`
     margin-top: 20px;
   }
 `;
+export const LoaderWrapper = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vh;
+`;

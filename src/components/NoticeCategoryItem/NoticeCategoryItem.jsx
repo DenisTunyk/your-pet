@@ -4,10 +4,11 @@ import {
   ContentContainer,
   Content,
   Description,
-  LearMoreButton,
+  LearnMoreButton,
   Category,
   AddToFaivoriteButton,
   RemoveFaivoriteButton,
+  WrapFuterCard,
 } from './NoticeCategoryItem.styled';
 import { ModalLearMore } from './ModalLearnMore';
 import ModalDelete from '../ModalDelete/ModalDelete.jsx';
@@ -92,10 +93,12 @@ export const NoticeCategiriesItem = data => {
             </Content>
           </ContentContainer>
         </Image>
-        <Description>{title}</Description>
-        <LearMoreButton onClick={() => setShowLearMore(true)}>
-          Lear more
-        </LearMoreButton>
+        <WrapFuterCard>
+          <Description>{title}</Description>
+          <LearnMoreButton onClick={() => setShowLearMore(true)}>
+            Learn more
+          </LearnMoreButton>
+        </WrapFuterCard>
       </Card>
       {showLearMore && <ModalLearMore handler={setShowLearMore} data={data} />}
       {modalDelete && <ModalDelete handler={setModelDelete} data={data} />}

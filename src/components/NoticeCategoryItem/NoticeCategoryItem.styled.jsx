@@ -100,37 +100,6 @@ export const Content = styled.li`
   gap: 4px;
 `;
 
-export const Description = styled.div`
-  padding: 20px 37px 20px 20px;
-
-  color: ${colors.black};
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
-
-  text-align: left;
-`;
-
-export const LearMoreButton = styled.button`
-  padding: 8px 78px;
-  color: ${colors.secondary};
-  background-color: #fff;
-
-  border: 1px solid ${colors.secondary};
-  border-radius: 20px;
-
-  cursor: pointer;
-
-  transition: color 1s ease-out 100ms, background-color 1s ease-out 100ms,
-    background 1s ease-out 100ms;
-
-  &:hover,
-  &:focus {
-    color: #fef9f9;
-    background: linear-gradient(290.46deg, #419ef1 0%, #9bd0ff 107.89%);
-  }
-`;
-
 export const RemoveFaivoriteButton = styled.button`
   width: 40px;
   height: 40px;
@@ -151,7 +120,7 @@ export const RemoveFaivoriteButton = styled.button`
 
   stroke: currentColor;
   fill: none;
-  `
+`;
 
 export const AddToFaivoriteButton = styled.button`
   width: 40px;
@@ -179,4 +148,45 @@ export const AddToFaivoriteButton = styled.button`
   &:hover .icon {
     fill: currentColor;
   }
+`;
+
+export const LearnMoreButton = styled.button`
+  padding: 8px 78px;
+  color: ${colors.secondary};
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid ${colors.secondary};
+  border-radius: 20px;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+
+  transition: color 1s ease-out 100ms, background-color 1s ease-out 100ms,
+    background 1s ease-out 100ms;
+
+  &:hover,
+  &:focus {
+    color: #fef9f9;
+    background: linear-gradient(290.46deg, #419ef1 0%, #9bd0ff 107.89%);
+  }
+`;
+
+export const Description = styled.div`
+  padding: 20px 37px 20px 20px;
+  height: 100px;
+  color: ${colors.black};
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: left;
+`;
+
+export const WrapFuterCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: auto;
+  text-align: left;
 `;

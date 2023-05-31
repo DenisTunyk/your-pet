@@ -25,7 +25,7 @@ export const Link = styled(NavLink)`
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
-  &:focus {
+  &.active {
     color: #fef9f9;
     background-color: #54adff;
     text-decoration: none;

@@ -6,7 +6,7 @@ import { LogoutBtn } from '../Buttons/LogoutBtn/LogoutBtn';
 import { updateUser, deleteUsersAvatar } from 'redux/auth/auth-operations';
 import { UserDataItem } from 'components/UserDataItem/UserDataItem';
 // ============
-import { useAuth } from '../../hooks/useAutn';
+import { useAuth } from '../../hooks/useAuth';
 
 // ================
 import camera from '../../assets/icon/camera.svg';

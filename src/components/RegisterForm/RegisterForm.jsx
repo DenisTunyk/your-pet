@@ -6,7 +6,7 @@ import { register } from 'redux/auth/auth-operations';
 import { ToastContainer, Slide } from 'react-toastify';
 import { notifyError } from 'helpers/Toastify';
 import { Spinner } from 'components/Spinner/Spinner';
-import { useAuth } from 'hooks/useAutn';
+import { useAuth } from 'hooks/useAuth';
 import {
   validationRegister,
   InputError,
@@ -60,6 +60,7 @@ export const RegisterForm = () => {
         }
         if (res.payload === 'Request failed with status code 409') {
           notifyError(`User with email ${email} already exist`);
+          console.log('error 409');
         }
       });
     }

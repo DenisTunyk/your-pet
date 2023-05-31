@@ -42,7 +42,7 @@ export const Info = styled.div`
   gap: 24px;
 
   @media (max-width: 767px) {
-    margin-top: 44px; 
+    margin-top: 44px;
     flex-direction: column;
     gap: 12px;
     height: auto;
@@ -51,13 +51,14 @@ export const Info = styled.div`
 
 export const Contact = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
   gap: 50px;
 
   font-size: 16px;
   line-height: 22px;
 
-  @media(max-width: 767px){
+  @media (max-width: 767px) {
     font-size: 12px;
     line-height: 16px;
   }
@@ -73,8 +74,6 @@ export const Description = styled.div`
   letter-spacing: -0.01em;
 
   color: #000000;
-
-  
 `;
 
 export const ContactInfo = styled.div`
@@ -94,6 +93,9 @@ export const Contactheader = styled.div`
 
 export const ContactContent = styled.div`
   display: flex;
+  position: absolute;
+  right: 20%;
+  top: 0;
   flex-direction: column;
   align-items: left;
   gap: 8px;
@@ -107,7 +109,7 @@ export const Comment = styled.div`
   line-height: 24px;
   letter-spacing: 0.04;
 
-  @media(max-width: 767px){
+  @media (max-width: 767px) {
     font-size: 14px;
     font-weight: 600;
     line-height: 19px;
@@ -122,7 +124,7 @@ export const ContactButtons = styled.div`
   justify-content: end;
   gap: 17px;
 
-  @media(max-width: 767px){
+  @media (max-width: 767px) {
     flex-direction: column;
   }
 `;
@@ -143,8 +145,8 @@ export const ContactButtonAdd = styled.button`
     fill: none;
   }
 
-  @media(max-width: 767px){
-    width: 100%
+  @media (max-width: 767px) {
+    width: 100%;
   }
 `;
 
@@ -155,17 +157,18 @@ export const ContactButtonContact = styled.button`
   border-radius: 40px;
   border: 1px solid #54adff;
 
-  @media(max-width: 767px){
-    width: 100%
+  @media (max-width: 767px) {
+    width: 100%;
   }
 `;
 export const Image = styled.div`
   position: relative;
-  width: 288px;
-  height: 288px;
+  width: 262px;
+  height: 298px;
   border-radius: 0 0 40px 40px;
   background-color: rgba(0.1, 0.1, 0.1, 0.05);
   background-image: url(${({ img }) => img});
+  background-size: cover;
 
   @media (max-width: 767px) {
     width: 240px;

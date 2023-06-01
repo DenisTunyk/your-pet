@@ -18,7 +18,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Icons from '../../images/icons/notices-category-icon.svg';
 import { useDispatch } from 'react-redux';
-import { addFavoriteNotice } from 'redux/notices/operations';
+import { addFavoriteNotice, removeNotice } from 'redux/notices/operations';
 
 export const NoticeCategiriesItem = data => {
   const {
@@ -30,12 +30,14 @@ export const NoticeCategiriesItem = data => {
     category,
     favorites = [],
     title,
+    owner,
   } = data;
   const [modalDelete, setModelDelete] = useState(false);
   const [showLearMore, setShowLearMore] = useState(false);
   const { isLoggedIn, user } = useAuth();
   const isFavorite = favorites.some(userId => userId === user.id);
   const dispatch = useDispatch();
+  const isOwnerNotice = user.id === owner;
 
   useEffect(() => {
     document.body.style.overflow = showLearMore ? 'hidden' : 'scroll';
@@ -52,7 +54,7 @@ export const NoticeCategiriesItem = data => {
   };
 
   const handleDelete = () => {
-    console.log('Delete');
+    dispatch(removeNotice(_id));
     setModelDelete(true);
   };
 
@@ -67,11 +69,13 @@ export const NoticeCategiriesItem = data => {
               <use className="icon" href={`${Icons}#like`} />
             </svg>
           </AddToFaivoriteButton>
-          <RemoveFaivoriteButton onClick={handleDelete}>
-            <svg width="20" height="18">
-              <use className="icon" href={`${Icons}#trash`} />
-            </svg>
-          </RemoveFaivoriteButton>
+          {isOwnerNotice && (
+            <RemoveFaivoriteButton onClick={handleDelete}>
+              <svg width="20" height="18">
+                <use className="icon" href={`${Icons}#trash`} />
+              </svg>
+            </RemoveFaivoriteButton>
+          )}
           <ContentContainer>
             <Content>
               <svg width="18" height="18">
@@ -100,7 +104,7 @@ export const NoticeCategiriesItem = data => {
           </LearnMoreButton>
         </WrapFuterCard>
       </Card>
-      {showLearMore && <ModalLearMore handler={setShowLearMore} data={data} />}
+      {showLearMore && <ModalLearMore handler={setShowLearMore} handleAdd={handleAdd} data={data} />}
       {modalDelete && <ModalDelete handler={setModelDelete} data={data} />}
     </>
   );

@@ -14,6 +14,7 @@ import {
   addFavoriteNotice,
   removeFavoriteNotice,
 } from './operations';
+import { ageDeterminationFunc } from 'helpers/ageDeterminationFunc';
 
 const initialState = {
   items: [],
@@ -52,7 +53,12 @@ const noticesSlice = createSlice({
           getFavoriteNotices.fulfilled
         ),
         (state, { payload }) => {
-          state.items = payload;
+          state.items = payload.map(notice => {
+            if(notice.birthday){
+              notice.age = ageDeterminationFunc(notice.birthday);
+            }
+            return notice;
+          });
         }
       )
       .addMatcher(

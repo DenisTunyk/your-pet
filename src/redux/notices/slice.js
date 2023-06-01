@@ -34,10 +34,10 @@ const noticesSlice = createSlice({
         state.currentNotice = payload.result;
       })
       .addCase(addNotice.fulfilled, (state, { payload }) => {
-        state.newNotice = payload.result;
+        state.newNotice = payload;
       })
       .addCase(removeNotice.fulfilled, (state, { payload }) => {
-        state.items = state.items.filter(item => item._id !== payload.id)
+        state.items = state.items.filter(item => item._id !== payload.id);
       })
       .addMatcher(
         isAnyOf(
@@ -51,7 +51,7 @@ const noticesSlice = createSlice({
         ),
         (state, { payload }) => {
           state.items = payload.map(notice => {
-            if(notice.birthday){
+            if (notice.birthday) {
               notice.age = ageDeterminationFunc(notice.birthday);
             }
             return notice;

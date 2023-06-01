@@ -55,7 +55,7 @@ export const NoticeCategiriesItem = data => {
 
   const handleDelete = () => {
     dispatch(removeNotice(_id));
-    setModelDelete(true);
+    setModelDelete(false);
   };
 
   return (
@@ -70,7 +70,7 @@ export const NoticeCategiriesItem = data => {
             </svg>
           </AddToFaivoriteButton>
           {isOwnerNotice && (
-            <RemoveFaivoriteButton onClick={handleDelete}>
+            <RemoveFaivoriteButton onClick={() => setModelDelete(true)}>
               <svg width="20" height="18">
                 <use className="icon" href={`${Icons}#trash`} />
               </svg>
@@ -105,7 +105,7 @@ export const NoticeCategiriesItem = data => {
         </WrapFuterCard>
       </Card>
       {showLearMore && <ModalLearMore handler={setShowLearMore} handleAdd={handleAdd} data={data} />}
-      {modalDelete && <ModalDelete handler={setModelDelete} data={data} />}
+      {modalDelete && <ModalDelete handler={setModelDelete} handleDelete={handleDelete} data={data} />}
     </>
   );
 };

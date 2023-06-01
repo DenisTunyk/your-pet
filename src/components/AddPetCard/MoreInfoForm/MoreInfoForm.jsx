@@ -71,7 +71,18 @@ const MoreInfo = ({ formData, setFormData, submit, backStep }) => {
         );
         break;
 
-      case 'lost-found' || 'for-free':
+      case 'lostFound':
+        setIsDisabled(
+          !(
+            isPetPhotoFieldValid &&
+            isLocationFieldValid &&
+            isSexFieldValid &&
+            isCommentsFieldValid
+          )
+        );
+        break;
+
+      case 'inGoodHands':
         setIsDisabled(
           !(
             isPetPhotoFieldValid &&

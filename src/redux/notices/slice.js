@@ -37,10 +37,7 @@ const noticesSlice = createSlice({
         state.newNotice = payload.result;
       })
       .addCase(removeNotice.fulfilled, (state, { payload }) => {
-        const index = state.items.findIndex(
-          contact => contact.id === payload.id
-        );
-        state.items.splice(index, 1);
+        state.items = state.items.filter(item => item._id !== payload.id)
       })
       .addMatcher(
         isAnyOf(

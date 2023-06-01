@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://project-7-backend.onrender.com';
+axios.defaults.baseURL = 'https://project-7-backend.onrender.com/';
 
 export const getNotices = createAsyncThunk(
   'notices/getNotices',
@@ -100,7 +100,7 @@ export const addNotice = createAsyncThunk(
   'notices/addNotice',
   async ({ category, newFormData }, { rejectWithValue }) => {
     try {
-      await axios.post(`/api/notices/${category}`, newFormData);
+      await axios.post(`/api/notices/addNotice/${category}`, newFormData);
     } catch (error) {
       return rejectWithValue(error.message);
     }

@@ -96,7 +96,7 @@ const AddPetPageForm = () => {
     newFormData.append('name', formData.name);
     newFormData.append('birthday', formData.birthday);
     newFormData.append('breed', formData.breed);
-    newFormData.append('pets-photo', formData.petPhoto);
+    newFormData.append('image', formData.petPhoto);
 
     if (formData.comments) {
       newFormData.append('comments', formData.comments);
@@ -108,18 +108,18 @@ const AddPetPageForm = () => {
       return;
     }
 
-    newFormData.append('titleOfAdd', formData.title);
+    newFormData.append('title', formData.title);
     newFormData.append('sex', formData.sex);
     newFormData.append('location', formData.location);
 
     if (formData.category === 'lost-found') {
-      dispatch(addNotice({ category: 'lost-found', newFormData }));
+      dispatch(addNotice({ category: 'lostFound', newFormData }));
       toggleModal();
       return;
     }
 
     if (formData.category === 'for-free') {
-      dispatch(addNotice({ category: 'in-good-hands', newFormData }));
+      dispatch(addNotice({ category: 'inGoodHands', newFormData }));
       toggleModal();
       return;
     }

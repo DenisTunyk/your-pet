@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://project-7-backend.onrender.com';
+axios.defaults.baseURL = 'https://project-7-backend.onrender.com/';
 
 export const getPets = createAsyncThunk(
   'pets/getPets',
@@ -16,13 +16,13 @@ export const getPets = createAsyncThunk(
 );
 
 export const deletePet = createAsyncThunk(
-    'pets/deletePets',
-    async (_id, { rejectWithValue }) => {
-        try {
-          await axios.delete(`/api/pets/${_id}`);
-          return _id;
-        } catch (error) {
-          rejectWithValue(error.message);
-        }
+  'pets/deletePets',
+  async (_id, { rejectWithValue }) => {
+    try {
+      await axios.delete(`/api/pets/${_id}`);
+      return _id;
+    } catch (error) {
+      rejectWithValue(error.message);
     }
-)
+  }
+);

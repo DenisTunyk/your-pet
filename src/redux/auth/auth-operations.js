@@ -50,7 +50,7 @@ export const addMyPet = createAsyncThunk(
   'user/addMyPet',
   async (credentials, { rejectWithValue }) => {
     try {
-      await axios.post('api/pets', credentials);
+      await axios.post('/api/pets', credentials);
     } catch (error) {
       return rejectWithValue(error.message);
     }

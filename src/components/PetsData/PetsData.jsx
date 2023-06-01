@@ -25,7 +25,6 @@ export const PetsData = () => {
   }, [dispatch]);
 
   const pets = useSelector(usePets);
-  // const result = pets.length > 0 ? (<PetsList pets={pets}/>) : (<p>You don't have any pets added.</p>);
 
   return (
     <Container>
@@ -42,6 +41,11 @@ export const PetsData = () => {
           <PetsList pets={pets} />
         )}
       </LoaderUser>
+      {/* {pets.length > 0 ? (
+        <PetsList pets={pets} />
+      ) : (
+        <h5>You don't have any pets added.</h5>
+      )} */}
     </Container>
   );
 };

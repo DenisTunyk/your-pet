@@ -68,15 +68,32 @@ export const updateUser = createAsyncThunk(
     }
     try {
       setAuthHeader(persistedToken);
-      const config = {
-        headers: {
-          Accept: '*/*',
-          Authorization: `Bearer ${persistedToken}`,
-          'Content-Type': 'application/json,multipart/form-data',
-        },
-      };
 
-      const response = await axios.patch('/user/auth/update', value, config);
+      const response = await axios.patch('users/data', value);
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+export const updateUserAvatar = createAsyncThunk(
+  '/auth/updateUser',
+  async ({ value }, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+    try {
+      setAuthHeader(persistedToken);
+
+      const response = await axios.patch('users/avatar', value, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
 
       return response.data;
     } catch (error) {
@@ -86,7 +103,7 @@ export const updateUser = createAsyncThunk(
 );
 
 export const deleteUsersAvatar = createAsyncThunk(
-  '/auth/updateUser/deleteUsersAvatar',
+  '/auth/deleteUsersAvatar',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
@@ -96,7 +113,7 @@ export const deleteUsersAvatar = createAsyncThunk(
     }
     try {
       setAuthHeader(persistedToken);
-      const response = await axios.get('user/auth/deleteAvatar');
+      const response = await axios.delete('users/avatar');
 
       console.log(response.data);
       return response.data;
@@ -109,19 +126,16 @@ export const deleteUsersAvatar = createAsyncThunk(
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
-    // Reading the token from the state via getState()
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
     if (persistedToken === null) {
-      // If there is no token, exit without performing any request
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
 
     try {
-      // If there is a token, add it to the HTTP header and perform the request
       setAuthHeader(persistedToken);
-      const res = await axios.get('/users/current');
+      const res = await axios.get('users/current');
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { Field } from 'formik';
+import { Field } from 'formik';
 
 export const Container = styled.div`
   display: flex;
@@ -16,20 +16,8 @@ export const Container = styled.div`
     width: 100%;
   }
 `;
-export const StyledValue = styled.p`
-  display: flex;
-  width: 56px;
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-`;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;

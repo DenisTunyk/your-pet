@@ -1,23 +1,24 @@
 export const ageDeterminationFunc = bd => {
-    const now = new Date(),
-    birthdate = new Date(bd),
-    diff = now.getTime - birthdate.getTime(),
-    years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25)),
-    months = Math.floor(
-        (diff % (1000 * 60 * 60 * 24 * 365.25)) /
-        (1000 * 60 * 60 * 24 * (365.25 / 12))
-    );
+  const now = new Date();
+  const [day, month, year] = bd.split('.');
+  const birthdate = new Date(year, month, day);
 
-    let termin = '';
+  const diff = now.getTime() - birthdate.getTime();
+  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+  const months = Math.floor(
+    (diff % (1000 * 60 * 60 * 24 * 365.25)) /
+      (1000 * 60 * 60 * 24 * (365.25 / 12))
+  );
 
-    if (years) {
-        termin = years === 1 ? 'yaer' : 'years';
-    } 
-    else{
-        termin = months === 1 ? 'month' : 'months';
-    } 
+  let termin = '';
 
-    const age = years ? `${years} $ {termin}` : `${months} ${termin}`;
+  if (years) {
+    termin = years === 1 ? 'year' : 'years';
+  } else {
+    termin = months === 1 ? 'month' : 'months';
+  }
 
-return age;
-}
+  const age = years ? `${years} ${termin}` : `${months} ${termin}`;
+
+  return age;
+};

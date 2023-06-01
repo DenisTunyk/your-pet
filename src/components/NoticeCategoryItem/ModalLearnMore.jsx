@@ -46,7 +46,7 @@ export const ModalLearMore = ({ handler, data, handleAdd }) => {
             <Category> {data.category}</Category>
           </Image>
           <ContactInfo>
-            <Description>{data.description}</Description>
+            <Description>{data.description || 'Cute dog looking for a home'}</Description>
             <Contact>
               <Contactheader>
                 <div>Name:</div>
@@ -58,7 +58,7 @@ export const ModalLearMore = ({ handler, data, handleAdd }) => {
                 <div>Phone:</div>
               </Contactheader>
               <ContactContent>
-                <div>{data.name}</div>
+                <div>{data.name || data.title}</div>
                 <div>{data.birthday}</div>
                 <div>{data.breed}</div>
                 <div>{data.location}</div>
@@ -70,9 +70,7 @@ export const ModalLearMore = ({ handler, data, handleAdd }) => {
           </ContactInfo>
         </Info>
         <Comment>
-          <b>Comments:</b> Rich would be the perfect addition to an active
-          family that loves to play and go on walks. I bet he would love having
-          a doggy playmate too!
+          <b>Comments:</b> {data.comments}
         </Comment>
         <ContactButtons>
           <ContactButtonAdd onClick={handleAdd}>

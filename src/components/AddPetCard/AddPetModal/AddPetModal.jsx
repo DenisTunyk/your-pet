@@ -19,7 +19,7 @@ const AddPetModal = ({ backLink }) => {
     ? 'Something went wrong, please try again.'
     : 'Pet was successfully added!';
 
-  console.log({ isError });
+  // console.log({ isError });
 
   return (
     <AddFormModalWrapper>

@@ -100,6 +100,7 @@ export const addNotice = createAsyncThunk(
   'notices/addNotice',
   async ({ category, newFormData }, { rejectWithValue }) => {
     try {
+      console.log(newFormData);
       await axios.post(`/api/notices/addNotice/${category}`, newFormData);
     } catch (error) {
       return rejectWithValue(error.message);

@@ -38,7 +38,18 @@ const PersonalForm = ({ formData, setFormData, nextStep, backStep }) => {
         );
         break;
 
-      case 'lost-found' || 'for-free':
+      case 'lostFound':
+        setIsDisabled(
+          !(
+            isNameFieldValid &&
+            isBirthdayFieldValid &&
+            isBreedFieldValid &&
+            isTitleFieldValid
+          )
+        );
+        break;
+
+      case 'inGoodHands':
         setIsDisabled(
           !(
             isNameFieldValid &&

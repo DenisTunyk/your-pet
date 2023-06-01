@@ -57,8 +57,8 @@ const AddPetPageForm = () => {
     const titles = {
       'my-pet': 'Add my pet',
       sell: 'Add pet for sell',
-      'lost-found': 'Add to lost or found pet',
-      'for-free': 'Add to give a Pet for Adoption',
+      'lostFound': 'Add to lost or found pet',
+      'inGoodHands': 'Add to give a Pet for Adoption',
       '': 'Add Pet',
     };
     return titles[formData.category] || 'Add Pet';
@@ -93,40 +93,43 @@ const AddPetPageForm = () => {
 
     const newFormData = new FormData();
 
-    newFormData.append('name', formData.name);
-    newFormData.append('birthday', formData.birthday);
-    newFormData.append('breed', formData.breed);
-    newFormData.append('pets-photo', formData.petPhoto);
+    newFormData.set('name', formData.name);
+    newFormData.set('birthday', formData.birthday);
+    newFormData.set('breed', formData.breed);
+
 
     if (formData.comments) {
-      newFormData.append('comments', formData.comments);
+      newFormData.set('comments', formData.comments);
     }
 
     if (formData.category === 'my-pet') {
+      newFormData.set('image', formData.petPhoto);
       dispatch(addMyPet(newFormData));
       toggleModal();
       return;
     }
 
-    newFormData.append('titleOfAdd', formData.title);
-    newFormData.append('sex', formData.sex);
-    newFormData.append('location', formData.location);
+    newFormData.set('title', formData.title);
+    newFormData.set('sex', formData.sex);
+    newFormData.set('location', formData.location);
 
-    if (formData.category === 'lost-found') {
-      dispatch(addNotice({ category: 'lost-found', newFormData }));
+    if (formData.category === 'lostFound') {
+      newFormData.set('image', formData.petPhoto);
+      dispatch(addNotice({ category: 'lostFound', newFormData }));
       toggleModal();
       return;
     }
 
-    if (formData.category === 'for-free') {
-      dispatch(addNotice({ category: 'in-good-hands', newFormData }));
+    if (formData.category === 'inGoodHands') {
+      newFormData.set('image', formData.petPhoto);
+      dispatch(addNotice({ category: 'inGoodHands',newFormData }));
       toggleModal();
       return;
     }
-
-    newFormData.append('price', formData.price);
-
+    
     if (formData.category === 'sell') {
+      newFormData.append('price', formData.price);
+      newFormData.set('image', formData.petPhoto);
       dispatch(addNotice({ category: formData.category, newFormData }));
       toggleModal();
     }

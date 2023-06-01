@@ -100,7 +100,7 @@ export const addNotice = createAsyncThunk(
   'notices/addNotice',
   async ({ category, newFormData }, { rejectWithValue }) => {
     try {
-      await axios.post(`/api/notices/${category}`, newFormData);
+      await axios.post(`/api/notices/addNotice/${category}`, newFormData);
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -123,7 +123,7 @@ export const removeNotice = createAsyncThunk(
   'notices/removeNotice',
   async (_id, { rejectWithValue }) => {
     try {
-      await axios.delete(`/api/notices/notice/${_id}`);
+      await axios.delete(`/api/notices/myads/${_id}`);
 
       return { id: _id };
     } catch (error) {

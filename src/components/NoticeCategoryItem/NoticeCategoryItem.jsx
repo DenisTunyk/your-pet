@@ -35,9 +35,9 @@ export const NoticeCategiriesItem = data => {
   const [modalDelete, setModelDelete] = useState(false);
   const [showLearMore, setShowLearMore] = useState(false);
   const { isLoggedIn, user } = useAuth();
-  const isFavorite = favorites.some(userId => userId === user.id);
+  const isFavorite = favorites.some(userId => userId === user.userId);
   const dispatch = useDispatch();
-  const isOwnerNotice = user.id === owner;
+  const isOwnerNotice = user.userId === owner;
   const categories = useSelector(state => state.notices.category);
 
   useEffect(() => {

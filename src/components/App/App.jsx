@@ -22,6 +22,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Loader from 'components/Loader/Loader';
 import { refreshUser } from 'redux/auth/auth-operations';
+import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -63,7 +64,12 @@ export const App = () => {
                 />
               }
             />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute redirectTo="/login" component={<Profile />} />
+              }
+            />
             <Route path="/notices/">
               <Route index element={<Navigate to="/notices/sell" />} />
               <Route path=":categoryName" element={<NoticesPage />} />

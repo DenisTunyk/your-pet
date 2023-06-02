@@ -7,14 +7,22 @@ import { ReactComponent as PlusIcon } from '../../assets/icon/plus.svg';
 import { AddButton } from '../PetsData/PetsData.styled';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
+import { toast, ToastContainer } from 'react-toastify';
 
 export const NoticesCategoriesNav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isLoggedIn } = useAuth();
 
+  const handlerAddPet = () => {
+    isLoggedIn
+      ? navigate('/add-pet')
+      : toast("You're not logged in", { type: 'warning' });
+  };
+
   return (
     <List>
+      <ToastContainer />
       <Item>
         <Link
           to="/notices/sell"
@@ -74,7 +82,7 @@ export const NoticesCategoriesNav = () => {
         </Item>
       )}
 
-      <AddButton onClick={() => navigate('/add-pet')}>
+      <AddButton onClick={handlerAddPet}>
         Add pet <PlusIcon stroke="white" />
       </AddButton>
     </List>

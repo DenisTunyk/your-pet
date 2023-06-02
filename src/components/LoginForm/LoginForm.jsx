@@ -39,7 +39,7 @@ const initialValues = {
 export const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isPending } = useAuth();
+  const { isRefreshing } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (values, actions) => {
@@ -134,7 +134,7 @@ export const LoginForm = () => {
                 ) : null}
                 <InputError name="password" />
               </Label>
-              {isPending ? (
+              {isRefreshing ? (
                 <Spinner />
               ) : (
                 <Button

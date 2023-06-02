@@ -94,7 +94,7 @@ export const Contactheader = styled.div`
 export const ContactContent = styled.div`
   display: flex;
   position: absolute;
-  right: 20%;
+  right: 0%;
   top: 0;
   flex-direction: column;
   align-items: left;

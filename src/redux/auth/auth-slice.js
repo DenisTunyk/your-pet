@@ -37,6 +37,7 @@ const authSlice = createSlice({
     [logIn.fulfilled](state, action) {
       state.user.id = action.payload.userId;
       state.user.email = action.payload.email;
+      state.user.avatarURL = action.payload.avatarURL;
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isRefreshing = false;
@@ -55,6 +56,7 @@ const authSlice = createSlice({
     [refreshUser.fulfilled](state, action) {
       state.user.id = action.payload.userId;
       state.user.email = action.payload.email;
+      state.user.avatarURL = action.payload.avatarURL;
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },

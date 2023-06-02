@@ -34,7 +34,7 @@ const petsSlice = createSlice({
       state.isLoading = true;
     },
     [deletePet.fulfilled](state, action) {
-      state.pets = state.pets.filter(pet => pet._id === action.payload);
+      state.pets = state.pets.filter(pet => pet._id !== action.payload);
       state.isLoading = false;
     },
     [deletePet.rejected](state) {

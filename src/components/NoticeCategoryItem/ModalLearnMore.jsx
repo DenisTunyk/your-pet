@@ -56,8 +56,8 @@ export const ModalLearMore = ({ handler, data, handleAdd }) => {
                 <div>Breed:</div>
                 <div>Place:</div>
                 <div>The sex:</div>
-                <div>Email:</div>
-                <div>Phone:</div>
+                {data.email && <div>Email:</div>}
+                {data.phone && <div>Phone:</div>}
               </Contactheader>
               <ContactContent>
                 <div>{data.name || data.title}</div>
@@ -65,8 +65,8 @@ export const ModalLearMore = ({ handler, data, handleAdd }) => {
                 <div>{data.breed}</div>
                 <div>{data.location}</div>
                 <div>{data.sex}</div>
-                <div>{data.email}</div>
-                <div>{data.phone}</div>
+                {data.email && <div>{data.email}</div>}
+                {data.phone && <div>{data.phone}</div>}
               </ContactContent>
             </Contact>
           </ContactInfo>

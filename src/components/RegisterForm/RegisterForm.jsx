@@ -54,11 +54,13 @@ export const RegisterForm = () => {
           password: password,
         })
       ).then(res => {
+        sessionStorage.setItem('firtsvisit', JSON.stringify({is_first: true}))
         if (res.payload.code === 201) {
           navigate('/user', { replace: true });
           actions.resetForm();
         }
         if (res.payload === 'Request failed with status code 409') {
+          sessionStorage.removeItem('firtsvisit')
           notifyError(`User with email ${email} already exist`);
           console.log('error 409');
         }

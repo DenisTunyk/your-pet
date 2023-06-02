@@ -10,6 +10,8 @@ import {
   Data,
   WrapperFuterCard,
   WrapSpinner,
+  WrapperPagination,
+  WrapperP,
 } from './NewsItem.styled';
 import Pagination from '../Pagination/Pagination';
 import Loader from '../../components/Loader/Loader';
@@ -86,13 +88,15 @@ const NewsItem = ({ searchQuery }) => {
               </WrapperFuterCard>
             </Card>
           ))}
-          <div>
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-          </div>
+          <WrapperP>
+            <WrapperPagination>
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+            </WrapperPagination>
+          </WrapperP>
         </>
       )}
     </>

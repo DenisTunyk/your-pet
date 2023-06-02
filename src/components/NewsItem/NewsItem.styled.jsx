@@ -108,4 +108,18 @@ export const WrapSpinner = styled.div`
   }
 `;
 
+export const WrapperPagination = styled.div`
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+`;
+
+export const WrapperP = styled.div`
+  margin-top: 60px;
+`;
+
 export default Card;

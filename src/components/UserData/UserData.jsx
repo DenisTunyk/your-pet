@@ -10,7 +10,6 @@ import {
 import { UserDataItem } from 'components/UserDataItem/UserDataItem';
 // ============
 import { useAuth } from '../../hooks/useAuth';
-import { getBirthdayString } from '../../helpers/transformDateFunc';
 
 // ================
 import camera from '../../assets/icon/camera.svg';
@@ -127,7 +126,7 @@ export const UserData = ({ user }) => {
             field="birthday"
             initValue={
               birthday
-                ? { birthday: getBirthdayString(birthday) }
+                ? { birthday }
                 : { birthday: '00.00.0000' }
             }
             setUser={async value => {

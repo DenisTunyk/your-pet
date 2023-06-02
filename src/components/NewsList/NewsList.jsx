@@ -12,11 +12,15 @@ export const NewsList = () => {
     setShowAllNews(event.target.value === '');
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <Title>News</Title>
       <Wrapper>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Input
             type="text"
             value={searchQuery}

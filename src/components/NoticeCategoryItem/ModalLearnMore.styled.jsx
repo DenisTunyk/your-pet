@@ -38,7 +38,7 @@ export const ModalWindow = styled.div`
 export const Info = styled.div`
   height: 300px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
 
   @media (max-width: 767px) {

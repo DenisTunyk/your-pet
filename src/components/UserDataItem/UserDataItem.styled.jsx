@@ -26,13 +26,16 @@ export const Input = styled(Field)`
   height: 32px;
   border: 1px solid #54adff;
   border-radius: 20px;
-  min-width:190px;
+  min-width: 190px;
 
-    @media screen and (min-width: 768px) {  min-width: 255px;}
-  
+  @media screen and (min-width: 768px) {
+    min-width: 255px;
+  }
+
   &:focus,
   &:hover {
-  box-shadow: 2px 2px 4px #456a8e84;
+    box-shadow: 2px 2px 4px #456a8e84;
+  }
 `;
 
 export const Label = styled.label`

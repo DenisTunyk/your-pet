@@ -22,7 +22,7 @@ export const NoticeCategiriesList = ({ search }) => {
   const category = useSelector(getCategories);
   const notices = useSelector(selectNotices);
   const isLoading = useSelector(selectNoticesIsLoading);
-  const itemsPerPage = 4;
+  const itemsPerPage = 12;
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

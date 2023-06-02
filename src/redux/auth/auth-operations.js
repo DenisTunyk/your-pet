@@ -59,7 +59,7 @@ export const addMyPet = createAsyncThunk(
 
 export const updateUser = createAsyncThunk(
   '/auth/updateUser',
-  async ({ value }, thunkAPI) => {
+  async (credentials, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
@@ -69,7 +69,7 @@ export const updateUser = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
 
-      const response = await axios.patch('users/data', value);
+      const response = await axios.patch('users/data', credentials);
 
       return response.data;
     } catch (error) {

@@ -62,11 +62,11 @@ export const UserDataItem = ({ field, initValue, setUser }) => {
           <Container>
             <Label>{capitalize(field)}:</Label>
             <Input autoComplete="off" name={field} disabled={!isEdit} />
-            {!isEdit ? (
+            {isEdit ? (
               <Button
                 type="button"
                 onClick={() => {
-                  setIsEdit(true);
+                  setIsEdit(false);
                 }}
               >
                 <Edit />
@@ -75,7 +75,7 @@ export const UserDataItem = ({ field, initValue, setUser }) => {
               <Button
                 type="submit"
                 onClick={() => {
-                  setIsEdit(false);
+                  setIsEdit(true);
                   setUser(values);
                 }}
               >

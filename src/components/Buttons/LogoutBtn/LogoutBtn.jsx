@@ -8,7 +8,7 @@ export const LogoutBtn = () => {
   const [congratsModal, setCongratsModal] = useState(true);
   const firstVisit = JSON.parse(sessionStorage.getItem("firtsvisit"));
 
-  const [congrats, setCongrats] = useState(firstVisit ? firstVisit.is_first : false);
+  const congrats = firstVisit ? firstVisit.is_first : false;
 
   const handleButtonLogout = () => {
     setLogoutModal(true);

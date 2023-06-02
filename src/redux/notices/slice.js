@@ -23,6 +23,12 @@ const initialState = {
   newNotice: {},
   isLoading: false,
   error: null,
+  
+  category: {
+    inGoodHands: 'in good hands',
+    sell: 'sell',
+    lostFound: 'lost/found'
+  }
 };
 
 const noticesSlice = createSlice({

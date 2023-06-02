@@ -17,7 +17,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Icons from '../../images/icons/notices-category-icon.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFavoriteNotice, removeNotice } from 'redux/notices/operations';
 
 export const NoticeCategiriesItem = data => {
@@ -38,6 +38,7 @@ export const NoticeCategiriesItem = data => {
   const isFavorite = favorites.some(userId => userId === user.id);
   const dispatch = useDispatch();
   const isOwnerNotice = user.id === owner;
+  const categories = useSelector(state => state.notices.category);
 
   useEffect(() => {
     document.body.style.overflow = showLearMore ? 'hidden' : 'scroll';
@@ -63,7 +64,7 @@ export const NoticeCategiriesItem = data => {
       <Card>
         <ToastContainer />
         <Image img={avatarURL}>
-          <Category>{category}</Category>
+          <Category>{categories[category]}</Category>
           <AddToFaivoriteButton filled={isFavorite} onClick={handleAdd}>
             <svg width="20" height="18">
               <use className="icon" href={`${Icons}#like`} />

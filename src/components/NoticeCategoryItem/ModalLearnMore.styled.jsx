@@ -20,7 +20,6 @@ export const ModalContainer = styled.div`
 
 export const ModalWindow = styled.div`
   width: 680px;
-  height: 540px;
   position: relative;
   padding: 32px;
 
@@ -31,7 +30,6 @@ export const ModalWindow = styled.div`
     width: 280px;
     padding: 20px;
     border-radius: 20px;
-    height: auto;
   }
 `;
 

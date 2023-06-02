@@ -29,7 +29,7 @@ const authSlice = createSlice({
       state.isRefreshing = false;
     },
     [register.rejected](state) {
-      state.isRefreshing = true;
+      state.isRefreshing = false;
     },
     [logIn.pending](state) {
       state.isRefreshing = true;
@@ -42,7 +42,7 @@ const authSlice = createSlice({
       state.isRefreshing = false;
     },
     [logIn.rejected](state) {
-      state.isRefreshing = true;
+      state.isRefreshing = false;
     },
     [logOut.fulfilled](state) {
       state.user = { name: null, email: null };
@@ -53,7 +53,7 @@ const authSlice = createSlice({
       state.isRefreshing = true;
     },
     [refreshUser.fulfilled](state, action) {
-      state.user = action.payload;
+      state.token = action.payload.token;
       state.user.id = action.payload.userId;
       state.isLoggedIn = true;
       state.isRefreshing = false;
@@ -62,10 +62,10 @@ const authSlice = createSlice({
       state.isRefreshing = false;
     },
     [updateUserAvatar.fulfilled](state, action) {
-      state.user = action.payload.user;
+      state.user.avatarURL = action.payload.avatarURL;
     },
-    [deleteUsersAvatar.fulfilled](state, action) {
-      state.user = action.payload.user;
+    [deleteUsersAvatar.fulfilled](state) {
+      state.user.avatarURL = null;
     },
   },
 });

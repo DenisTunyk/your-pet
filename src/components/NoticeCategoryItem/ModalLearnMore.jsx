@@ -17,8 +17,10 @@ import {
   CloseButton,
 } from './ModalLearnMore.styled';
 import Icons from '../../images/icons/notices-category-icon.svg';
+import { useSelector } from 'react-redux';
 
 export const ModalLearMore = ({ handler, data, handleAdd }) => {
+  const categories = useSelector(state => state.notices.category);
 
   useEffect(() => {
     const handleEsc = event => {
@@ -43,7 +45,7 @@ export const ModalLearMore = ({ handler, data, handleAdd }) => {
         </CloseButton>
         <Info>
           <Image img={data.avatarURL}>
-            <Category> {data.category}</Category>
+            <Category> {categories[data.category]}</Category>
           </Image>
           <ContactInfo>
             <Description>{data.description || 'Cute dog looking for a home'}</Description>
@@ -79,7 +81,7 @@ export const ModalLearMore = ({ handler, data, handleAdd }) => {
               <use className="icon" href={`${Icons}#like`} />
             </svg>
           </ContactButtonAdd>
-          <ContactButtonContact>Contact</ContactButtonContact>
+          {data.phone && <ContactButtonContact>Contact</ContactButtonContact>}
         </ContactButtons>
       </ModalWindow>
     </ModalContainer>

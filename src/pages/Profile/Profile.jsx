@@ -9,9 +9,18 @@ import {
   StyledWrapper,
 } from 'components/UserData/UserData.styled';
 import { Container } from './Profile.styled';
+import { useAuth } from 'hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 export const Profile = () => {
   const user = useSelector(selectUser);
+  const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
+
+  if (!isLoggedIn) {
+    navigate('/', { replace: true });
+  }
+
   return (
     <Container>
       <WrapperUser>

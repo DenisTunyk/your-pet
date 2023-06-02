@@ -49,7 +49,7 @@ const Schema = yup.object({
 const capitalize = d => (d && d[0].toUpperCase() + d.slice(1)) || '';
 
 export const UserDataItem = ({ field, initValue, setUser }) => {
-  const [isEdit, setIsEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(true);
 
   return (
     <Formik
@@ -62,11 +62,11 @@ export const UserDataItem = ({ field, initValue, setUser }) => {
           <Container>
             <Label>{capitalize(field)}:</Label>
             <Input autoComplete="off" name={field} disabled={!isEdit} />
-            {!isEdit ? (
+            {isEdit ? (
               <Button
                 type="button"
                 onClick={() => {
-                  setIsEdit(true);
+                  setIsEdit(false);
                 }}
               >
                 <Edit />
@@ -75,8 +75,7 @@ export const UserDataItem = ({ field, initValue, setUser }) => {
               <Button
                 type="submit"
                 onClick={() => {
-                  console.log(values);
-                  setIsEdit(false);
+                  setIsEdit(true);
                   setUser(values);
                 }}
               >

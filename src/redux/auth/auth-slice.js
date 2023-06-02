@@ -6,10 +6,11 @@ import {
   refreshUser,
   updateUserAvatar,
   deleteUsersAvatar,
+  updateUser,
 } from './auth-operations';
 
 const initialState = {
-  user: { email: null, password: null, id: null },
+  user: { email: null, id: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -37,6 +38,7 @@ const authSlice = createSlice({
     [logIn.fulfilled](state, action) {
       state.user.id = action.payload.userId;
       state.user.email = action.payload.email;
+      state.user.avatarURL = action.payload.avatarURL;
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isRefreshing = false;
@@ -53,8 +55,7 @@ const authSlice = createSlice({
       state.isRefreshing = true;
     },
     [refreshUser.fulfilled](state, action) {
-      state.token = action.payload.token;
-      state.user.id = action.payload.userId;
+      state.user = { ...action.payload };
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },
@@ -66,6 +67,16 @@ const authSlice = createSlice({
     },
     [deleteUsersAvatar.fulfilled](state) {
       state.user.avatarURL = null;
+    },
+    [updateUser.pending](state) {
+      state.isRefreshing = true;
+    },
+    [updateUser.fulfilled](state, { payload }) {
+      state.isRefreshing = false;
+      state.user = { ...payload };
+    },
+    [updateUser.rejected](state) {
+      state.isRefreshing = false;
     },
   },
 });

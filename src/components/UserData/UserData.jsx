@@ -110,7 +110,7 @@ export const UserData = ({ user }) => {
               if (value.name === name) {
                 return;
               }
-              await dispatch(updateUser({ value }));
+              await dispatch(updateUser({ name: value.name }));
             }}
           ></UserDataItem>
           <UserDataItem
@@ -120,7 +120,7 @@ export const UserData = ({ user }) => {
               if (value.email === email) {
                 return;
               }
-              await dispatch(updateUser({ value }));
+              await dispatch(updateUser({ email: value.email }));
             }}
           ></UserDataItem>
           <UserDataItem
@@ -134,7 +134,7 @@ export const UserData = ({ user }) => {
               if (value.birthday === birthday) {
                 return;
               }
-              await dispatch(updateUser({ value }));
+              await dispatch(updateUser({ birthday: value.birthday }));
             }}
           ></UserDataItem>
           <UserDataItem
@@ -144,7 +144,7 @@ export const UserData = ({ user }) => {
               if (value.phone === phone) {
                 return;
               }
-              await dispatch(updateUser({ value }));
+              await dispatch(updateUser({ phone: value.phone }));
             }}
           ></UserDataItem>
           <UserDataItem
@@ -155,7 +155,7 @@ export const UserData = ({ user }) => {
               if (value.city === city) {
                 return;
               }
-              await dispatch(updateUser({ value }));
+              await dispatch(updateUser({ city: value.city }));
             }}
           ></UserDataItem>
           <LogoutBtn />

@@ -77,5 +77,3 @@ export const LoaderUser = styled.div`
   display: flex;
   justify-content: space-around;
 `;
-
-export const PetsList = styled.ul``;

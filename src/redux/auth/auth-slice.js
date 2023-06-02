@@ -53,8 +53,8 @@ const authSlice = createSlice({
       state.isRefreshing = true;
     },
     [refreshUser.fulfilled](state, action) {
-      state.token = action.payload.token;
       state.user.id = action.payload.userId;
+      state.user.email = action.payload.email;
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },

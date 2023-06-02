@@ -24,6 +24,10 @@ export const ButtonIcon = styled.button`
     color: green;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1280px) {
